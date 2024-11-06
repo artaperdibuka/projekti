@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BookstoreBuzuku - Products Page</title>
+</head>
+<body>
+   <div>
+    <header class="header">
+        <div class="flex">
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="order.html"> Order</a>
+                <a href="about.html">About me</a>
+                <a href="contact.html">Contact me</a>
+    
+            </nav>
+            <div class="icons">
+                <i class="bx bxs-user" id="user-btn"></i>
+                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup>0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup>0</sup></a>
+                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+            </div>
+            <div class="user-box">
+                <p>Username: <span><?php /*echo $_SESSION['user_name'];*/?></span></p>
+                <p>Email: <span><?php  /*echo $_SESSION['user_email'];*/?></span></p>
+                <a href="login.php" class="btn">Login</a>
+                <a href="register.php" class="btn">Register</a>
+                <form method="post">
+                    <button type="submit" name="logout" class="logout-btn">Log out</button>
+    
+                </form>
+            </div>
+        </div>
+    </header>
+   </div>
+
+   <section class="products box-container">
+        <div class="box">
+                <img src="img/book1.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">SOUL</h3>
+                <h3 class="author">By: Olivia Vilson</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>19€</p>
+                </div>
+                <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book2.webp" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">WALK INTO THE SHADOW</h3>
+            <h3 class="author">By: Estelle Darcy</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>24€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book3.webp" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">HIDE AND SEEK</h3>
+            <h3 class="author">By: Olivia Vilson</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>22€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book4.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">THE REGENERATION OF STELLA YIN</h3>
+            <h3 class="author">By: Kristen Loesch</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>11€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book7.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">THE LONGEST REVOLUTION</h3>
+            <h3 class="author">By: Simone Writer</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>13€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book5.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">OMNI</h3>
+            <h3 class="author">By: Andreas Brandhost</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>27€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book8.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">BEIEANG</h3>
+            <h3 class="author">By: Lisa Brennan</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>18€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book9.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">GENIE UND REBELL</h3>
+            <h3 class="author">By: John Lennon</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>13€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book6.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">EISIGES LAND</h3>
+            <h3 class="author">By: Tore Kvaeven</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>32€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book10.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">KEEP THE MEMORIES</h3>
+            <h3 class="author">By: Raleigh College</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>12€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book11.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">ANGEL'S TRIBUTE</h3>
+            <h3 class="author">By: Andrew J.Smith</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>22€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+        <div class="box">
+            <img src="img/book12.jpg" class="img">
+            <div class="button">
+                <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                <a href="view-book-details" class="bx bxs-show"></a>
+            </div>
+            <h3 class="name">RUDOLF STEINER</h3>
+            <h3 class="author">By: Helmut Zander</h3>
+            <input type="hidden" name="product_id">
+            
+            <div class="fles">
+                <div class="price">Price</div>
+                <p>17€</p>
+            </div>
+            <a href="checkout.php"></a>
+        </div>
+
+
+    </section>
+
+
+
+
+
+   <div>
+    <div class="top-footer">
+        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+        <div class="input-field">
+            <input type="text" name="" placeholder="email address...">
+            <button class="btn">Subscribe</button>
+        </div>
+    </div>
+    <footer>
+        <div  class="overlay"></div>
+        <div class="footer-content">
+            <div class="img-box">
+            <img src="img/logoo.png">
+        </div>
+        <div class="inner-footer">
+            <div class="card">
+                <h3>about us</h3>
+                <ul>
+                    <li>about us</li>
+                    <li>our difference</li>
+                    <li>community matters</li>
+                    <li>press</li>
+                    <li>blog</li>
+                </ul>
+            </div> 
+            <div class="card">
+                <h3>services</h3>
+                <ul>
+                    <li>order</li>
+                    <li>help center</li>
+                    <li>shipping</li>
+                    <li>term of use</li>
+                    <li>account detail</li>
+                    <li>my account</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>local</h3>
+                <ul>
+                    <li>Sheshi Skenderbeu</li>
+                    <li>Albi Mall</li>
+                    <li>Prishtina Mall</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>newsletter</h3>
+                 <p>Sign Up For Newsletter</p>
+                 <div class="social-links">
+                    <i class="bx bxl-instagram"></i>
+                    <i class="bx bxl-facebook"></i>
+                    <i class="bx bxl-whatsapp"></i>
+                 </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+    
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
