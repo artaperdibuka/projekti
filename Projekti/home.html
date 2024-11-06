@@ -1,10 +1,3 @@
-<?php 
-include 'components/connection.php'
-?>
-<style type="text/css"> 
-    <?php  include 'style.css' ; ?>
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +7,37 @@ include 'components/connection.php'
     <title>BookstoreBuzuku - Home Page</title>
 </head>
 <body>
-    <?php  include 'components/header.php'; ?>
+   <div>
+    <header class="header">
+        <div class="flex">
+            <a href="home.php" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <nav class="navbar">
+                <a href="home.php">Home</a>
+                <a href="view_products.php">Products</a>
+                <a href="order.php"> Order</a>
+                <a href="about.php">About me</a>
+                <a href="contact.php">Contact me</a>
+    
+            </nav>
+            <div class="icons">
+                <i class="bx bxs-user" id="user-btn"></i>
+                <a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>0</sup></a>
+                <a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i><sup>0</sup></a>
+                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+            </div>
+            <div class="user-box">
+                <p>Username: <span><?php /*echo $_SESSION['user_name'];*/?></span></p>
+                <p>Email: <span><?php  /*echo $_SESSION['user_email'];*/?></span></p>
+                <a href="login.php" class="btn">Login</a>
+                <a href="register.php" class="btn">Register</a>
+                <form method="post">
+                    <button type="submit" name="logout" class="logout-btn">Log out</button>
+    
+                </form>
+            </div>
+        </div>
+    </header>
+   </div>
     <div class="main">
       <section class="home-section">
         <div class="slider">
@@ -79,12 +102,69 @@ include 'components/connection.php'
             <!-- home slider end -->
       </section>
 
-      <?php include 'components/footer.php'?> <!-- Vendosim footer-in këtu -->
     </div>
-    
-    <script scr="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <div>
+        <div class="top-footer">
+            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+            <div class="input-field">
+                <input type="text" name="" placeholder="email address...">
+                <button class="btn">Subscribe</button>
+            </div>
+        </div>
+        <footer>
+            <div  class="overlay"></div>
+            <div class="footer-content">
+                <div class="img-box">
+                <img src="img/logoo.png">
+            </div>
+            <div class="inner-footer">
+                <div class="card">
+                    <h3>about us</h3>
+                    <ul>
+                        <li>about us</li>
+                        <li>our difference</li>
+                        <li>community matters</li>
+                        <li>press</li>
+                        <li>blog</li>
+                    </ul>
+                </div> 
+                <div class="card">
+                    <h3>services</h3>
+                    <ul>
+                        <li>order</li>
+                        <li>help center</li>
+                        <li>shipping</li>
+                        <li>term of use</li>
+                        <li>account detail</li>
+                        <li>my account</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>local</h3>
+                    <ul>
+                        <li>Sheshi Skenderbeu</li>
+                        <li>Albi Mall</li>
+                        <li>Prishtina Mall</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>newsletter</h3>
+                     <p>Sign Up For Newsletter</p>
+                     <div class="social-links">
+                        <i class="bx bxl-instagram"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-whatsapp"></i>
+                     </div>
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+        
+                </div>
+            </div>
+        </footer>
+    </div>
+   
     <script src="script.js"></script>
-    <?php  include 'components/alert.php' ; ?>
-
 </body>
 </html>
