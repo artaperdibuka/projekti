@@ -261,6 +261,118 @@
                 </div>
                 <a href="checkout.php"></a>
             </div>
+
+            <div class="box">
+                <img src="img/book13.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">THE MIRROR & THE LIGHT</h3>
+                <h3 class="author">By: Hilary Mantel </h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+
+            <div class="box">
+                <img src="img/book14.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">WHEN NIGHT FALLS SILENT</h3>
+                <h3 class="author">By: Author Name</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+
+            <div class="box">
+                <img src="img/book15.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">OMNI</h3>
+                <h3 class="author">By: Andreas Brandhost</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+            <div class="box">
+                <img src="img/book16.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">TALES FROM BETWEEN PRESENTS</h3>
+                <h3 class="author">By: Ai Jiang</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+            <div class="box">
+                <img src="img/book17.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">AUTUMN OF THE GRIMOIRE</h3>
+                <h3 class="author">By: J. L. Vampa</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+            <div class="box">
+                <img src="img/book18.jpg" class="img">
+                <div class="button">
+                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                    <a href="view-book-details" class="bx bxs-show"></a>
+                </div>
+                <h3 class="name">SANGUE E CENERE</h3>
+                <h3 class="author">By: Jennifer Armentrout</h3>
+                <input type="hidden" name="product_id">
+                
+                <div class="fles">
+                    <div class="price">Price</div>
+                    <p>27€</p>
+                </div>
+                <a href="checkout.php"></a>
+            </div>
+
+        
     </section>
 
     <div id="paginationControls" class="pagination">
@@ -346,28 +458,20 @@
     function displayPage(page) {
     const startIndex = (page - 1) * booksPerPage;
     const endIndex = startIndex + booksPerPage;
-    let visibleBooksCount = 0;
-
     books.forEach((book, index) => {
-        if (book.style.display !== 'none') {
-            visibleBooksCount++;
-            if (visibleBooksCount > startIndex && visibleBooksCount <= endIndex) {
-                book.style.display = 'block';
-            } else {
-                book.style.display = 'none';
-            }
+        if (index >= startIndex && index < endIndex) {
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none';
         }
     });
 }
 
 // Function to update pagination
 function updatePagination() {
-    const visibleBooks = books.filter(book => book.style.display !== 'none').length;
-    const totalPages = Math.ceil(visibleBooks / booksPerPage);
-    
+    // Generate page number buttons dynamically
+    const totalPages = Math.ceil(books.length / booksPerPage);
     pageNumbers.innerHTML = ''; // Clear previous page numbers
-
-    // Create page number buttons dynamically
     for (let i = 1; i <= totalPages; i++) {
         const pageLink = document.createElement('button');
         pageLink.classList.add('page-link');
@@ -378,13 +482,12 @@ function updatePagination() {
             if (page !== currentPage) {
                 currentPage = page;
                 displayPage(currentPage);
+                updatePagination();
             }
         });
         pageNumbers.appendChild(pageLink);
     }
 
-    // Enable/Disable Previous and Next buttons
-    const totalVisibleBooks = visibleBooks; // Update this to show correct pagination count
     prevButton.disabled = currentPage === 1;
     nextButton.disabled = currentPage === totalPages;
 }
@@ -412,12 +515,12 @@ nextButton.addEventListener('click', () => {
     books.forEach(function(book) {
         const bookName = book.querySelector('.name').textContent.toLowerCase(); 
         if (bookName.includes(query)) {
-            book.style.display = 'block';
+            book.style.display = '';
         } else {
             book.style.display = 'none';
         }
     });
-  
+    updatePagination(); // Update pagination after filtering books
 });
 
 // Initial page load

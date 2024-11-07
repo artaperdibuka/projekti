@@ -802,29 +802,66 @@ footer .bottom-footer{
     color: #000;
 }    
 
-
 .pagination {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.pagination a {
-    color: #007BFF;
+.pagination-btn {
+    font-size: 1rem;
     padding: 8px 16px;
-    text-decoration: none;
-    border: 1px solid #00ffaa;
     margin: 0 5px;
-    border-radius: 4px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.pagination a:hover {
+.pagination-btn:hover {
     background-color: #00ffaa;
     color: white;
 }
 
-.pagination .active {
-    background-color: #00ffaa;;
-    color: white;}
+.pagination-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.page-link {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #00ffaa;
+    color: white;
+}
+
+.page-link.active {
+    background-color: #00ffaa;
+    color: white;
+}
+
+#pageNumbers {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-btn,
+.page-link {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
 /* services */
 .services{
     padding: 3rem 0;
