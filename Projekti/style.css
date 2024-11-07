@@ -138,7 +138,6 @@ button {
 }
 
 .banner {
-    background-image: url(); /* Shto një URL të vlefshme nëse ke */
     background-size: cover;
     background-position: center;
     background-color: var(--green);
@@ -157,14 +156,39 @@ button {
 }
 
 .tittle2 {
-    border-top: 1px solid var(--green);
+    background: #fff;
     padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    box-shadow: var(--box-shadow);
 }
 
 .tittle2 a {
     color: var(--green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tittle2 a:hover {
+    color: #333;
+}
+
+.tittle2 span {
+    color: #666;
+    margin-left: 0.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.tittle2 span::before {
+    content: '/';
+    position: absolute;
+    left: 0;
+    color: #999;
 }
 
 /* Header */
@@ -845,4 +869,85 @@ footer .bottom-footer{
 }
 .services img{
     width: 30%;
+}
+/* about */
+.about-category{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    margin: 2rem auto;
+}
+.about-category .box{
+    position: relative;
+    margin: 1rem;
+    box-shadow: var(--box-shadow);
+}
+.about-category .box img{
+    width: 60%;
+}
+
+.about-category .box .detail{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+.about-category .box .detail h1{
+    margin-bottom: 1.5rem;
+
+}
+.about-category .box .detail span{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #555;
+}
+.about-category .box .detail .btn{
+    opacity: .6;
+}
+.about {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.about .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .row .detail h1 {
+    font-family: inherit;
+    font-size: 26px;
+    color: #000;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 400; /* Më pak e trashë se default */
+    letter-spacing: 0.5px; 
+}
+
+.about .row .detail p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.5;
+}
+.about .row .detail{
+    width: 50%;
+    margin: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.about .row .detail p{
+    margin-bottom: 2rem;
+}
+.about .row .img-box{
+    width: 50%;
+
+}
+.about .row .detail h1{
+    text-align: center;
+    margin: 1rem 0;
 }
