@@ -791,3 +791,24 @@ footer .bottom-footer{
     font-size: 1.2rem;
     color: #000;
 }    
+/* services */
+.services{
+    padding: 3rem 0;
+    text-align: center;
+    line-height: 2;
+    margin: 3rem 0;
+    background-color: #fff; /* Ngjyra e bardhë për sfondin */
+   
+    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hije për theksim të seksionit */
+    position: relative;
+
+}
+.services h3{
+    text-transform: capitalize;
+    color: var(--green);
+
+}
+.services img{
+    width: 30%;
+}
