@@ -1,4 +1,5 @@
 
+
 const header = document.querySelector('header');
 function fixedNavbar(){
     header.classList.toggle('scroll', window.pageYOffset > 0)
@@ -17,7 +18,6 @@ userBtn.addEventListener('click', function(){
     let userBox = document.querySelector('.user-box');
     userBox.classList.toggle('active');
 })
-
 "use strict";
 // Home page slider
 const leftArrow = document.querySelector('.left-arrow .bxs-left-arrow'),
@@ -71,41 +71,95 @@ slider.addEventListener('click', function(ev){
 })
 
 // Shop Slider
-"use strict";
+const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow'),
+      rightArrowShop = document.querySelector('.shop-right-arrow .bxs-right-arrow'),
+      shopSlider = document.querySelector('.shop-slider'),
+      boxContainer = document.querySelector('.shop-slider .box-container');
 
-const shopSlider = document.querySelector('.shop-slider');
-const boxContainer = shopSlider.querySelector('.box-container');
-const boxes = boxContainer.querySelectorAll('.box');
-const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow');
-const rightArrowShop = document.querySelector('.shop-right-arrow .bxs-right-arrow');
+let currentPosition = 0;
+const boxWidth = 25; // 25% për secilin libër
+const visibleBooks = 4; // Numri i librave të dukshëm njëkohësisht
+let totalBooks;
+let autoSlideInterval;
 
-let currentIndex = 0;
-const visibleBoxes = 4; // Numri i librave të dukshëm njëkohësisht
-const totalBoxes = boxes.length;
-const boxWidth = 100 / visibleBoxes; // Gjerësia e një boxi në përqindje
+function setupInfiniteSlider() {
+    const originalBoxes = document.querySelectorAll('.shop-slider .box');
+    totalBooks = originalBoxes.length;
 
-function updateShopSlider() {
-    const translateX = -(currentIndex * boxWidth);
-    boxContainer.style.transform = `translateX(${translateX}%)`;
+    // Klono librat në fillim dhe në fund
+    for (let i = 0; i < visibleBooks; i++) {
+        boxContainer.appendChild(originalBoxes[i].cloneNode(true));
+        boxContainer.insertBefore(originalBoxes[totalBooks - 1 - i].cloneNode(true), boxContainer.firstChild);
+    }
+
+    // Vendos pozicionin fillestar
+    currentPosition = visibleBooks;
+    updateSliderPosition(false);
 }
 
 function scrollRightShop() {
-    if (currentIndex < totalBoxes - visibleBoxes) {
-        currentIndex++;
-        updateShopSlider();
-    }
+    currentPosition++;
+    updateSliderPosition(true);
 }
 
 function scrollLeftShop() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateShopSlider();
+    currentPosition--;
+    updateSliderPosition(true);
+}
+
+function updateSliderPosition(animate) {
+    if (animate) {
+        boxContainer.style.transition = 'transform 0.5s ease';
+    } else {
+        boxContainer.style.transition = 'none';
+    }
+    
+    boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
+
+    // Kontrollo për reset
+    if (currentPosition >= totalBooks + visibleBooks) {
+        setTimeout(() => {
+            currentPosition = visibleBooks;
+            boxContainer.style.transition = 'none';
+            boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
+        }, 500);
+    } else if (currentPosition < visibleBooks) {
+        setTimeout(() => {
+            currentPosition = totalBooks + visibleBooks - 1;
+            boxContainer.style.transition = 'none';
+            boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
+        }, 500);
     }
 }
 
-// Event Listeners
-leftArrowShop.addEventListener('click', scrollLeftShop);
-rightArrowShop.addEventListener('click', scrollRightShop);
+function startAutoSlide() {
+    autoSlideInterval = setInterval(scrollRightShop, 7000);
+}
 
-// Initialize the slider
-updateShopSlider();
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+function resetAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+}
+
+// Event Listeners
+leftArrowShop.addEventListener('click', () => {
+    scrollLeftShop();
+    resetAutoSlide();
+});
+
+rightArrowShop.addEventListener('click', () => {
+    scrollRightShop();
+    resetAutoSlide();
+});
+
+// Mouse events për slider
+shopSlider.addEventListener('mouseenter', stopAutoSlide);
+shopSlider.addEventListener('mouseleave', startAutoSlide);
+
+// Inicializimi
+setupInfiniteSlider();
+startAutoSlide();
