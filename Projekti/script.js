@@ -1,6 +1,7 @@
+
 const header = document.querySelector('header');
 function fixedNavbar(){
-    header.classList.toggle('scroll', window.pageYOffset >0)
+    header.classList.toggle('scroll', window.pageYOffset > 0)
 }
 fixedNavbar();
 window.addEventListener('scroll', fixedNavbar);
@@ -8,7 +9,7 @@ window.addEventListener('scroll', fixedNavbar);
 let menu = document.querySelector('#menu-btn');
 let userBtn = document.querySelector('#user-btn');
 
-menu.addEventListener('click',function(){
+menu.addEventListener('click', function(){
     let nav = document.querySelector('.navbar');
     nav.classList.toggle('active');
 })
@@ -16,42 +17,45 @@ userBtn.addEventListener('click', function(){
     let userBox = document.querySelector('.user-box');
     userBox.classList.toggle('active');
 })
-// home page
-"use strict"
+
+"use strict";
+// Home page slider
 const leftArrow = document.querySelector('.left-arrow .bxs-left-arrow'),
 rightArrow = document.querySelector('.right-arrow .bxs-right-arrow'),
 slider = document.querySelector('.slider');
-// scrolll to right 
+
+// Scroll to right 
 function scrollRight(){
     if(slider.scrollWidth - slider.clientWidth === slider.scrollLeft){
         slider.scrollTo({
-            left : 0,
-            behavior:"smooth"
+            left: 0,
+            behavior: "smooth"
         });
-
-    }else{
+    } else {
         slider.scrollBy({
-            left : window.innerWidth,
-            behavior:"smooth"
+            left: window.innerWidth,
+            behavior: "smooth"
         })
     }
 }
-// scrolll to left
+
+// Scroll to left
 function scrollLeft(){
     slider.scrollBy({
         left: -window.innerWidth,
-        behavior:"smooth"
+        behavior: "smooth"
     })
 }
-let timerId = setInterval(scrollRight , 7000);
 
-// reset timer to srcoll right
+let timerId = setInterval(scrollRight, 7000);
 
+// Reset timer to scroll right
 function resetTimer(){
     clearInterval(timerId);
-    timerId = setInterval(scrollRight , 7000);
+    timerId = setInterval(scrollRight, 7000);
 }
-// scroll event
+
+// Scroll event
 slider.addEventListener('click', function(ev){
     if(ev.target === leftArrow){
         scrollLeft();
@@ -65,3 +69,43 @@ slider.addEventListener('click', function(ev){
         resetTimer();
     }
 })
+
+// Shop Slider
+"use strict";
+
+const shopSlider = document.querySelector('.shop-slider');
+const boxContainer = shopSlider.querySelector('.box-container');
+const boxes = boxContainer.querySelectorAll('.box');
+const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow');
+const rightArrowShop = document.querySelector('.shop-right-arrow .bxs-right-arrow');
+
+let currentIndex = 0;
+const visibleBoxes = 4; // Numri i librave të dukshëm njëkohësisht
+const totalBoxes = boxes.length;
+const boxWidth = 100 / visibleBoxes; // Gjerësia e një boxi në përqindje
+
+function updateShopSlider() {
+    const translateX = -(currentIndex * boxWidth);
+    boxContainer.style.transform = `translateX(${translateX}%)`;
+}
+
+function scrollRightShop() {
+    if (currentIndex < totalBoxes - visibleBoxes) {
+        currentIndex++;
+        updateShopSlider();
+    }
+}
+
+function scrollLeftShop() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateShopSlider();
+    }
+}
+
+// Event Listeners
+leftArrowShop.addEventListener('click', scrollLeftShop);
+rightArrowShop.addEventListener('click', scrollRightShop);
+
+// Initialize the slider
+updateShopSlider();
