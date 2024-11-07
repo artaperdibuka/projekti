@@ -8,7 +8,7 @@
     <title>BookstoreBuzuku - Home Page</title>
 </head>
 <body>
-   <div>
+    <!-- Header do të vendoset këtu -->
     <header class="header">
         <div class="flex">
             <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
@@ -27,10 +27,10 @@
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
-                <p>Username: <span><?php /*echo $_SESSION['user_name'];*/?></span></p>
-                <p>Email: <span><?php  /*echo $_SESSION['user_email'];*/?></span></p>
-                <a href="login.php" class="btn">Login</a>
-                <a href="register.php" class="btn">Register</a>
+                <p>Username: <span></span></p>
+                <p>Email: <span></span></p>
+                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">Register</a>
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
     
@@ -38,16 +38,15 @@
             </div>
         </div>
     </header>
-   </div>
     <div class="main">
       <section class="home-section">
         <div class="slider">
                 <div class="slider__slider slide1">
                     <div class="overlay"></div>
                     <div class="slide-detail">
-                        <h1>Welcome to Library</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-                        <a href="products.html" class="btn">Shop now</a>
+                     <h1>Welcome to Library</h1>
+                        <p>x</p>
+                        <a href="view_products.html" class="btn">Shop now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -56,9 +55,9 @@
             <div class="slider__slider slide2">
                     <div class="overlay"></div>
                     <div class="slide-detail">
-                        <h1>Welcome to Library</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-                        <a href="products.html" class="btn">Shop now</a>
+                    <h1>Welcome to Library</h1>
+                    <p>x</p>
+                        <a href="view_products.html" class="btn">Shop now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -69,7 +68,7 @@
                     <div class="slide-detail">
                         <h1>Welcome to Library</h1>
                         <p>x</p>
-                        <a href="products.html" class="btn">Shop now</a>
+                        <a href="view_products.html" class="btn">Shop now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -79,8 +78,8 @@
                     <div class="overlay"></div>
                     <div class="slide-detail">
                         <h1>Welcome to Library</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-                        <a href="products.html" class="btn">Shop now</a>
+                        <p></p>
+                        <a href="view_products.html" class="btn">Shop now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -91,7 +90,7 @@
                     <div class="slide-detail">
                         <h1>Welcome to Library</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-                        <a href="products.html" class="btn">Shop now</a>
+                        <a href="view_products.html" class="btn">Shop now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -100,11 +99,10 @@
             <div class="left-arrow"><i class="bx bxs-left-arrow"></i></div>
             <div class="right-arrow"><i class="bx bxs-right-arrow"></i></div>
             </div>
-            <!-- home slider end -->
+            
       </section>
-
-    </div>
-    <section class="thumb">
+      <!-- home slider end -->
+       <section class="thumb">
         <div class="box-container">
             <div class="box">
                 <img src="img/thumb11.png">
@@ -148,61 +146,72 @@
        </section>
        <section class="shop">
             <div class="title">
-                <!-- <img src="img/download.png"> -->
                 <h1>Librat me te shitura</h1>
             </div>
-            <!-- <div class="row">
-                <img src="img/about.jpg">
-                <div class="row-detail">
-                    <img src="img/basil.png">
-                    <div class="top-footer">
-                        <h1>Librat me te shitura</h1>
+            <div class="shop-slider">
+                <div class="box-container">
+                    <div class="box">
+                        <img src="img/b1.png" alt="book1">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b2.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b3.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b4.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b5.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b6.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b2.png">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b5.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b1.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b6.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b4.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
+                    </div>
+                    <div class="box">
+                        <img src="img/b3.jpg">
+                        <a href="view_product.html" class="btn">Shop now</a>
                     </div>
                 </div>
-            </div> -->
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/b1.png">
-                    <a href="view_product.html" class="btn">Shop now</a>
-                </div>
-                <div class="box">
-                    <img src="img/b2.jpg">
-                    <a href="view_product.html" class="btn">Shop now</a>
-                </div>
-                <div class="box">
-                    <img src="img/b3.jpg">
-                    <a href="view_product.html" class="btn">Shop now</a>
-                </div>
-                <div class="box">
-                    <img src="img/b4.jpg">
-                    <a href="view_product.html" class="btn">Shop now</a>
-                </div>
-                <div class="box">
-                    <img src="img/b5.jpg">
-                    <a href="view_product.html" class="btn">Shop now</a>
-                </div>
-                <div class="box">
-                    <img src="img/b6.jpg">
-                    <a href="view_product.html" class="btn">Shop now</a>
             </div>
-
-         </div>
-        
        </section>
-
-    <!-- footer-->
-    <div>
-        <div class="top-footer">
-            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-            <div class="input-field">
-                <input type="text" name="" placeholder="email address...">
-                <button class="btn">Subscribe</button>
-            </div>
+       <div class="top-footer">
+        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+        <div class="input-field">
+            <input type="text" name="" placeholder="email address...">
+            <button class="btn">Subscribe</button>
         </div>
-        <footer>
-            <div  class="overlay"></div>
-            <div class="footer-content">
-                <div class="img-box">
+    </div>
+    <footer>
+        <div class="overlay"></div>
+        <div class="footer-content">
+            <div class="img-box">
                 <img src="img/logoo.png">
             </div>
             <div class="inner-footer">
@@ -237,23 +246,25 @@
                 </div>
                 <div class="card">
                     <h3>newsletter</h3>
-                     <p>Sign Up For Newsletter</p>
-                     <div class="social-links">
+                    <p>Sign Up For Newsletter</p>
+                    <div class="social-links">
                         <i class="bx bxl-instagram"></i>
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-whatsapp"></i>
-                     </div>
                     </div>
                 </div>
-                <div class="bottom-footer">
-                    <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
-        
-                </div>
             </div>
-        </footer>
+            <div class="bottom-footer">
+                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
     </div>
-   
-   
+
+    <!-- Footer Section -->
+    
+
+    <!-- Add your JavaScript file here -->
     <script src="script.js"></script>
 </body>
 </html>
