@@ -631,6 +631,7 @@ footer .inner-footer{
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -725,12 +726,20 @@ footer .bottom-footer{
     }
 }                  
 /* produktet */
+
+.search-box{
+    width:100%;
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+    
+}
 .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     padding: 2rem;
-    margin-top: 150px;
 }
 
 .products .box {
@@ -784,6 +793,7 @@ footer .bottom-footer{
     display: flex;
     gap: 0.5rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .products .box .button button,
@@ -791,3 +801,28 @@ footer .bottom-footer{
     font-size: 1.2rem;
     color: #000;
 }    
+
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination a {
+    color: #007BFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #00ffaa;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #00ffaa;
+    color: white;
+}
+
+.pagination .active {
+    background-color: #00ffaa;;
+    color: white;
+}
