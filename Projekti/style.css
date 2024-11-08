@@ -37,7 +37,7 @@ a {
     text-decoration: none;
 }
 
-.tittle {
+.title {
     text-align: center;
     text-transform: uppercase;
     font-size: 1rem;
@@ -45,7 +45,7 @@ a {
     line-height: 1.5; /* Rregullim i lartësisë së linjës */
 }
 
-.tittle p {
+.title p {
     text-transform: none;
 }
 
@@ -485,7 +485,7 @@ header.scrolled {
 .container .box #sale-image { /* Përdorimi i selektorit të saktë */
     max-width: 100%; /* Përcaktoni madhësinë e imazhit */
     height: auto; /* Ruajtja e raportit të lartësisë */
-    margin: 20px 0 5px 0; /* Shtimi i margjinës sipër për të lëvizur imazhin poshtë */
+    margin: 20px 0 5px 35px; /* Shtimi i margjinës sipër për të lëvizur imazhin poshtë */
 }
 
 /* section shop */
