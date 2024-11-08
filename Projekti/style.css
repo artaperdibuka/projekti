@@ -49,6 +49,7 @@ a {
     text-transform: none;
 }
 
+
 ul {
     list-style: none;
 }
@@ -988,7 +989,7 @@ footer .bottom-footer{
     text-align: center;
     margin: 1rem 0;
 }
-<<<<<<< HEAD
+/* <<<<<<<head */
 
 .wishlist-item-img {
     width: 60%;
@@ -1173,7 +1174,7 @@ footer .bottom-footer{
 .heading2{
     margin-bottom: 10px;
 }
-=======
+/* ======= */
 /* contact */
 .main-container{
     background: #fff;
@@ -1273,4 +1274,4 @@ textarea{
     font-size: 0.8em;
     margin-top: 5px;
 }
->>>>>>> 5543517de53cac41da9371e5bf3f172e5338ec1c
+/* >>>>>>> 5543517de53cac41da9371e5bf3f172e5338ec1c */
