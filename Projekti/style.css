@@ -25,6 +25,8 @@ body {
 }
 
 .main {
+   
+  
     width: 85vw;
     background: #fff;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
@@ -48,11 +50,7 @@ a {
 .title p {
     text-transform: none;
 }
-.paragraph1{
-    text-align: center;
-    margin: 1rem 0;
-    line-height: 1.5;
-}
+
 
 ul {
     list-style: none;
@@ -199,9 +197,10 @@ button {
 /* Header */
 header {
     position: fixed;
-    top: 5%;
-    left: 7%;
-    width: 85vw;
+    top: 7%;
+    left: 5%;
+    right: 2%;
+    width: 89vw;
     padding: 1rem;
     z-index: 101;
     transition: 0.3s;
@@ -1178,7 +1177,7 @@ footer .bottom-footer{
 .heading2{
     margin-bottom: 10px;
 }
-/* ======= */
+
 /* contact */
 .main-container{
     background: #fff;
@@ -1278,3 +1277,4 @@ textarea{
     font-size: 0.8em;
     margin-top: 5px;
 }
+/* >>>>>>> 5543517de53cac41da9371e5bf3f172e5338ec1c */
