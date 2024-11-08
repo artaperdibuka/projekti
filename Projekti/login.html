@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BookstoreBuzuku - login Now</title>
+</head>
+<body>
+   
+   <div class="main-container">
+    <section class="form-container">
+        <div class="title">
+            <h1>LOGIN Now</h1>
+            <p>Lorem ipsum lorem ispum haha</p>
+        </div>
+        <form id="loginForm" onsubmit="login(event)">
+           
+            <div class="input-field">
+                <p>Your email<span class="required-star">*</span></p>
+                <input type="email" name="email"  required placeholder=" Enter your email" maxlength="50"
+                oninput="this.value=this.value.replace(/\s/g, '')">
+            </div>
+            <div class="input-field">
+                <p>Your password<span class="required-star">*</span></p>
+                <input type="password" name="pass"  required placeholder=" Enter your password" maxlength="50"
+                oninput="this.value=this.value.replace(/\s/g, '')">
+            </div>
+            <input type="submit" name="submit" value="login now" class="btn">
+            <p>Don't have an account?<a href="register.html">Register now</a></p>
+
+        </form>
+
+    </section>
+
+</div>
+    
+        </body>
+   <script src="account.js"></script>
+
+</body>
+</html> 
