@@ -163,3 +163,35 @@ shopSlider.addEventListener('mouseleave', startAutoSlide);
 // Inicializimi
 setupInfiniteSlider();
 startAutoSlide();
+
+//login register
+// Check login status on page load
+window.addEventListener("DOMContentLoaded", () => {
+    const userBox = document.querySelector(".user-box");
+    const username = localStorage.getItem("username");
+    const email = localStorage.getItem("email");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+        // Display username and email
+        userBox.querySelector("p:nth-child(1) span").textContent = username;
+        userBox.querySelector("p:nth-child(2) span").textContent = email;
+
+        // Hide login and register buttons
+        userBox.querySelector(".btn").style.display = "none";
+        userBox.querySelectorAll(".btn")[1].style.display = "none";
+    } else {
+        // Show login and register buttons if not logged in
+        userBox.querySelector("p:nth-child(1) span").textContent = "Guest";
+    }
+});
+
+// Logout function
+document.querySelector(".logout-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+    localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    alert("You have been logged out!");
+    window.location.href = "login.html";
+});
