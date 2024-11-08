@@ -48,6 +48,11 @@ a {
 .title p {
     text-transform: none;
 }
+.paragraph1{
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
 
 ul {
     list-style: none;
@@ -988,6 +993,7 @@ footer .bottom-footer{
     text-align: center;
     margin: 1rem 0;
 }
+/* <<<<<<<head */
 
 .wishlist-item-img {
     width: 60%;
@@ -1172,6 +1178,7 @@ footer .bottom-footer{
 .heading2{
     margin-bottom: 10px;
 }
+/* ======= */
 /* contact */
 .main-container{
     background: #fff;

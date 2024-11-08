@@ -22,8 +22,8 @@
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
-                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup>0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup>0</sup></a>
+                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
@@ -46,8 +46,8 @@
             </div>
             <div class="form-container">
             <form id="contactForm" method="post">
-                <div class="title">
-                    <h1>leave a message</h1>
+                <div>
+                    <h1 class="title">leave a message</h1>
                 </div>
                     <div class="input-field">
                         <p>Your name<span class="required-star">*</span></p>
@@ -74,9 +74,9 @@
             </div>
 
             <div class="address">
-                <div class="title">
-                    <h1>Contact Details</h1>
-                    <p>lorem ipsum tulius elite.bla bla bla lorem</p>
+                <div>
+                    <h1 class="title">Contact Details</h1>
+                    <p class="paragraph1">lorem ipsum tulius elite.bla bla bla lorem</p>
                 </div>
                 <div class="box-container">
                     <div class="box">
@@ -103,8 +103,8 @@
                 </div>
         </div>
                 <section class="services">
-                    <div class="title">
-                        <h1>Pse ne?</h1>
+                    <div>
+                        <h1 class="title">Pse ne?</h1>
                         <p>ktu ni pargraf e marrim prej chatgbts</p>
         
                     </div>
@@ -210,6 +210,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="script.js"></script>
-
+        <script src="count.js"></script>
 </body>
 </html> 

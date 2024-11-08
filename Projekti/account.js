@@ -11,11 +11,30 @@ function register(event) {
         localStorage.setItem("username", name);
         localStorage.setItem("email", email);
         localStorage.setItem("isLoggedIn", "true");
+        window.Swal.fire({
+            icon: 'success',
+            title: 'Messag',
+            text: 'Register successful!',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Zbraz fushat pas klikimit OK
+            window.location.href = "login.html";
+        });
 
-        alert("Registration successful!");
-        window.location.href = "login.html";
     } else {
-        alert("Passwords do not match!");
+     
+        window.Swal.fire({
+            icon: 'success',
+            title: 'try again',
+            text: 'Passwords do not match!',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Zbraz fushat pas klikimit OK
+            name.value = '';
+            email.value = '';
+            password.value = '';
+            confirmPassword.value = '';
+        });
     }
 }
 
@@ -28,9 +47,27 @@ function login(event) {
 
     if (email === localStorage.getItem("email") && password) {
         localStorage.setItem("isLoggedIn", "true");
-        alert("Login successful!");
-        window.location.href = "home.html";
+        window.Swal.fire({
+            icon: 'success',
+            title: 'Messag',
+            text: 'Login successful!',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Zbraz fushat pas klikimit OK
+            window.location.href = "home.html";
+        });
+        
     } else {
-        alert("Invalid email or password!");
+      
+        window.Swal.fire({
+            icon: 'success',
+            title: 'try again',
+            text: 'Invalid email or password.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Zbraz fushat pas klikimit OK
+            email.value = '';
+            password.value = '';
+        });
     }
 }
