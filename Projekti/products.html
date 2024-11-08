@@ -18,19 +18,18 @@
                 <a href="order.html"> Order</a>
                 <a href="about.html">About me</a>
                 <a href="contact.html">Contact me</a>
-    
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
-                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup>0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup>0</sup></a>
+                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
-                <p>Username: <span>/*<?php echo $_SESSION['user_name'];?>*/</span></p>
-                <p>Email: <span>/*<?php  echo $_SESSION['user_email'];?>*/</span></p>
-                <a href="login.php" class="btn">Login</a>
-                <a href="register.php" class="btn">Register</a>
+                <p>Username: <span></span></p>
+                <p>Email: <span></span></p>
+                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">Register</a>
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
     
@@ -59,7 +58,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>19€</p>
+                    <p class="price-value">19€</p>
                 </div>
                 <a href="checkout.php"></a>
              </div>
@@ -77,7 +76,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>24€</p>
+                    <p class="price-value">24€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -95,7 +94,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>22€</p>
+                    <p class="price-value">22€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -113,7 +112,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>11€</p>
+                    <p class="price-value">11€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -131,7 +130,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>13€</p>
+                    <p class="price-value">13€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -149,7 +148,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">27€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -167,7 +166,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>18€</p>
+                    <p class="price-value">18€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -185,7 +184,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>13€</p>
+                    <p class="price-value">13€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -203,7 +202,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>32€</p>
+                    <p class="price-value">32€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -221,7 +220,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>12€</p>
+                    <p class="price-value">12€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -239,7 +238,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>22€</p>
+                    <p class="price-value">22€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -257,7 +256,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>17€</p>
+                    <p class="price-value">23€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -275,7 +274,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">10€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -294,7 +293,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">21€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -313,7 +312,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">17€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -331,7 +330,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">15€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -349,7 +348,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">14€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -367,7 +366,7 @@
                 
                 <div class="fles">
                     <div class="price">Price</div>
-                    <p>27€</p>
+                    <p class="price-value">23€</p>
                 </div>
                 <a href="checkout.php"></a>
             </div>
@@ -443,84 +442,88 @@
     </footer>
 </div>
 </div>
+
+<script src="count.js"></script>
 <script>
-    const searchInput = document.getElementById('searchInput');
-    const booksList = document.getElementById('booksList');
-    const books = Array.from(booksList.getElementsByClassName('box'));
-    const booksPerPage = 6;
-    const paginationControls = document.getElementById('paginationControls');
-    const prevButton = document.getElementById('prevPage');
-    const nextButton = document.getElementById('nextPage');
-    const pageNumbers = document.getElementById('pageNumbers');
 
-    let currentPage = 1;
+    
+const searchInput = document.getElementById('searchInput');
+const booksList = document.getElementById('booksList');
+const books = Array.from(booksList.getElementsByClassName('box'));
+const booksPerPage = 6;
+const paginationControls = document.getElementById('paginationControls');
+const prevButton = document.getElementById('prevPage');
+const nextButton = document.getElementById('nextPage');
+const pageNumbers = document.getElementById('pageNumbers');
 
-    function displayPage(page) {
-    const startIndex = (page - 1) * booksPerPage;
-    const endIndex = startIndex + booksPerPage;
-    books.forEach((book, index) => {
-        if (index >= startIndex && index < endIndex) {
-            book.style.display = 'block';
-        } else {
-            book.style.display = 'none';
-        }
-    });
+let currentPage = 1;
+
+function displayPage(page) {
+const startIndex = (page - 1) * booksPerPage;
+const endIndex = startIndex + booksPerPage;
+books.forEach((book, index) => {
+    if (index >= startIndex && index < endIndex) {
+        book.style.display = 'block';
+    } else {
+        book.style.display = 'none';
+    }
+});
 }
 
 // Function to update pagination
 function updatePagination() {
-    // Generate page number buttons dynamically
-    const totalPages = Math.ceil(books.length / booksPerPage);
-    pageNumbers.innerHTML = ''; // Clear previous page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        const pageLink = document.createElement('button');
-        pageLink.classList.add('page-link');
-        pageLink.textContent = i;
-        pageLink.setAttribute('data-page', i);
-        pageLink.addEventListener('click', (e) => {
-            const page = parseInt(e.target.getAttribute('data-page'));
-            if (page !== currentPage) {
-                currentPage = page;
-                displayPage(currentPage);
-                updatePagination();
-            }
-        });
-        pageNumbers.appendChild(pageLink);
-    }
+// Generate page number buttons dynamically
+const totalPages = Math.ceil(books.length / booksPerPage);
+pageNumbers.innerHTML = ''; // Clear previous page numbers
+for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement('button');
+    pageLink.classList.add('page-link');
+    pageLink.textContent = i;
+    pageLink.setAttribute('data-page', i);
+    pageLink.addEventListener('click', (e) => {
+        const page = parseInt(e.target.getAttribute('data-page'));
+        if (page !== currentPage) {
+            currentPage = page;
+            displayPage(currentPage);
+            updatePagination();
+        }
+    });
+    pageNumbers.appendChild(pageLink);
+}
 
-    prevButton.disabled = currentPage === 1;
-    nextButton.disabled = currentPage === totalPages;
+prevButton.disabled = currentPage === 1;
+nextButton.disabled = currentPage === totalPages;
 }
 
 prevButton.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        displayPage(currentPage);
-        updatePagination();
-    }
+if (currentPage > 1) {
+    currentPage--;
+    displayPage(currentPage);
+    updatePagination();
+}
 });
 
 nextButton.addEventListener('click', () => {
-    const totalPages = Math.ceil(books.length / booksPerPage);
-    if (currentPage < totalPages) {
-        currentPage++;
-        displayPage(currentPage);
-        updatePagination();
-    }
+const totalPages = Math.ceil(books.length / booksPerPage);
+if (currentPage < totalPages) {
+    currentPage++;
+    displayPage(currentPage);
+    updatePagination();
+}
 });
 
 
-   searchInput.addEventListener('input', function() {
-    const query = searchInput.value.toLowerCase();
-    books.forEach(function(book) {
-        const bookName = book.querySelector('.name').textContent.toLowerCase(); 
-        if (bookName.includes(query)) {
-            book.style.display = '';
-        } else {
-            book.style.display = 'none';
-        }
-    });
-    updatePagination(); // Update pagination after filtering books
+searchInput.addEventListener('input', function() {
+const query = searchInput.value.toLowerCase();
+books.forEach(function(book) {
+    const bookName = book.querySelector('.name').textContent.toLowerCase(); 
+    if (bookName.includes(query)) {
+        book.style.display = '';
+    } else {
+        book.style.display = 'none';
+    }
+});
+updatePagination(); // Update pagination after filtering books
 });
 
 // Initial page load
@@ -528,7 +531,54 @@ displayPage(currentPage);
 updatePagination();
 
 
-    
+//creating local storage
+// Initialize local storage data when the document loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve existing wishlist and cart data or initialize empty arrays if not present
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    document.querySelectorAll('.box').forEach(productBox => {
+        // Extract product details from the product box
+        const name = productBox.querySelector('.name').textContent;
+        const author = productBox.querySelector('.author').textContent;
+        const price = productBox.querySelector('.price-value').textContent;
+        const imageSrc = productBox.querySelector('img').src; // Get the image source
+
+        // Add to Cart button functionality
+        productBox.querySelector('[name="add_to_cart"]').addEventListener('click', () => {
+            // Check if the product is already in the cart
+            const existsInCart = cart.some(item => item.name === name && item.author === author);
+
+            if (!existsInCart) {
+                // Add product to cart if it doesn't already exist
+                cart.push({ name, author, price, imageSrc });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCounts(); // Update cart count
+                alert(`${name} added to cart.`);
+            } else {
+                alert(`${name} is already in your cart.`);
+            }
+        });
+
+        // Add to Wishlist button functionality
+        productBox.querySelector('[name="add_to_wishlist"]').addEventListener('click', () => {
+            // Check if the product is already in the wishlist
+            const existsInWishlist = wishlist.some(item => item.name === name && item.author === author);
+
+            if (!existsInWishlist) {
+                // Add product to wishlist if it doesn't already exist
+                wishlist.push({ name, author, price, imageSrc });
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateCounts(); // Update wishlist count
+                alert(`${name} added to wishlist.`);
+            } else {
+                alert(`${name} is already in your wishlist.`);
+            }
+        });
+    });
+});
+
 </script>
 </body>
 </html> 

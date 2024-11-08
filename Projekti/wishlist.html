@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BookstoreBuzuku - Wishlist</title>
+</head>
+<body>
+   <div>
+    <header class="header">
+        <div class="flex">
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="order.html"> Order</a>
+                <a href="about.html">About me</a>
+                <a href="contact.html">Contact me</a>
+            </nav>
+            <div class="icons">
+                <i class="bx bxs-user" id="user-btn"></i>
+                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
+                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+            </div>
+            <div class="user-box">
+                <p>Username: <span></span></p>
+                <p>Email: <span></span></p>
+                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">Register</a>
+                <form method="post">
+                    <button type="submit" name="logout" class="logout-btn">Log out</button>
+    
+                </form>
+            </div>
+        </div>
+    </header>
+   </div>
+
+    <div class="main">
+        <div class="tittle2">
+            <a href="home.html">Home</a><span>Wishlist</span>
+        </div>
+        <section>
+            <h1 class="title">Products added in wishlist</h1>
+            <div id="wishlist-container">
+                <!-- Wishlist items will be dynamically inserted here -->
+            </div>
+        </section>
+        <footer>
+            <div  class="overlay"></div>
+            <div class="footer-content">
+                <div class="img-box">
+                <img src="img/logoo.png">
+            </div>
+            <div class="inner-footer">
+                <div class="card">
+                    <h3>about us</h3>
+                    <ul>
+                        <li>about us</li>
+                        <li>our difference</li>
+                        <li>community matters</li>
+                        <li>press</li>
+                        <li>blog</li>
+                    </ul>
+                </div> 
+                <div class="card">
+                    <h3>services</h3>
+                    <ul>
+                        <li>order</li>
+                        <li>help center</li>
+                        <li>shipping</li>
+                        <li>term of use</li>
+                        <li>account detail</li>
+                        <li>my account</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>local</h3>
+                    <ul>
+                        <li>Sheshi Skenderbeu</li>
+                        <li>Albi Mall</li>
+                        <li>Prishtina Mall</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>newsletter</h3>
+                     <p>Sign Up For Newsletter</p>
+                     <div class="social-links">
+                        <i class="bx bxl-instagram"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-whatsapp"></i>
+                     </div>
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+        
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+    <script>
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const wishlistContainer = document.getElementById('wishlist-container');
+
+function updateLocalStorage() {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+if (wishlist.length > 0) {
+    wishlist.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('wishlist-item');
+
+        itemDiv.innerHTML = `
+            <div class="box">
+                <img src="${item.imageSrc}" alt="${item.name}" class="wishlist-item-img">
+                <div class="wishlist-item-details">
+                    <h4 class="wishlist-item-name">${item.name}</h4>
+                    <p class="wishlist-item-author">${item.author}</p>
+                    <p class="wishlist-item-price">${item.price}</p>
+                    <button class="remove-btn" data-index="${index}">Remove</button>
+                    <button class="add-to-cart-btn" data-index="${index}">Add to cart</button>
+                </div>
+            </div>
+        `;
+
+        wishlistContainer.appendChild(itemDiv);
+    });
+
+    // Add event listeners to the buttons
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    removeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            wishlist.splice(index, 1); // Remove the item from the wishlist array
+            updateLocalStorage(); // Update localStorage
+            e.target.closest('.wishlist-item').remove(); // Remove the item from the DOM
+            alert('Item removed from wishlist');
+        });
+    });
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            const itemToAdd = wishlist[index];
+
+            // Check if item is already in the cart
+            const itemExistsInCart = cart.some(item => item.name === itemToAdd.name && item.author === itemToAdd.author);
+            if (!itemExistsInCart) {
+                cart.push(itemToAdd); // Add item to cart array
+                updateLocalStorage(); // Update localStorage
+                alert('Item added to cart');
+            } else {
+                alert('Item is already in the cart');
+            }
+        });
+    });
+} else {
+    wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+}
+
+    </script>
+    <script src="count.js"></script>
+</body>
+</html> 
