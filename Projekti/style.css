@@ -964,6 +964,7 @@ footer .bottom-footer{
     top: 30%;
     right: 10%;
 }
+
 .about-category .box .detail h1{
     margin-bottom: 1.5rem;
 
@@ -984,9 +985,10 @@ footer .bottom-footer{
     border-radius: 10px;
 }
 .about .row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Aktivizo flexbox */
+    justify-content: space-between; /* Lejon që elementët të jenë në skajet e kundërta */
+    align-items: center; /* Qendro elementët vertikalisht */
+    margin: 20px 0;
 }
 .about .row .detail h1 {
     font-family: inherit;
@@ -1018,11 +1020,14 @@ footer .bottom-footer{
 }
 .about .row .img-box{
     width: 50%;
+    flex: 1; /* Merrni hapësirë të barabartë */
+    margin-right: 20px;
 
 }
 .about .row .detail h1{
     text-align: center;
     margin: 1rem 0;
+    font-size: 24px;
 }
 /* <<<<<<<head */
 
@@ -1254,9 +1259,9 @@ footer .bottom-footer{
     /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
 }
 .event-description {
-    background-color: #f9f9f9; /* Ngjyra e sfondit të kutisë */
-    border: 1px solid #ddd; /* Kufiri i kutisë */
-    border-radius: 8px; /* Rrumbullakosja e skajeve */
+  
+    border: .5px solid #ddd; /* Kufiri i kutisë */
+    border-radius: 6px; /* Rrumbullakosja e skajeve */
     padding: 20px; /* Hapësira brenda kutisë */
     box-shadow: var(--box-shadow); /* Hija për theksim të kutisë */
     margin: 20px 0; /* Hapësira lart dhe poshtë kutisë */

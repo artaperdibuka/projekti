@@ -1,6 +1,3 @@
-// reservation.js
-
-// Funksioni për të rezervuar një datë
 function reserveEvent(event) {
     event.preventDefault(); // Parandalon dërgimin e formës
 
@@ -16,7 +13,16 @@ function reserveEvent(event) {
     const isDateReserved = reservedEvents.some(event => event.date === date);
 
     if (isDateReserved) {
-        alert('Kjo datë është e rezervuar. Ju lutemi zgjidhni një datë tjetër.');
+        // Shfaq një dritare SweetAlert2 nëse data është e rezervuar
+        window.Swal.fire({
+            icon: 'warning',
+            title: 'Kjo datë është e rezervuar',
+            text: 'Ju lutemi zgjidhni një datë tjetër.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Pas klikimit të OK, sugjero disa data alternative
+            suggestAlternativeDates(reservedEvents);
+        });
     } else {
         // Ruaj rezervimin
         const newEvent = { date, name, surname, email, number };
@@ -26,31 +32,39 @@ function reserveEvent(event) {
         // Shtoni rezervimin në listën e rezervimeve
         addEventToList(newEvent);
         
+        // Shfaq një mesazh me SweetAlert2 për sukses
+        window.Swal.fire({
+            icon: 'success',
+            title: 'Rezervimi i suksesshëm',
+            text: `Data e rezervuar: ${date}`,
+            confirmButtonText: 'OK'
+        });
+
         // Pastroni formën
         event.target.reset();
     }
 }
 
-// Funksioni për të shtuar rezervimin në listë (vetëm data)
-function addEventToList(event) {
-    const reservedEventsList = document.getElementById('reservedEventsList');
-    
-    // Kontrolloni nëse data është e vlefshme
-    if (event.date) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Data e rezervuar: ${event.date}`; // Tani shfaq vetëm datën
-        reservedEventsList.appendChild(listItem);
+function suggestAlternativeDates(reservedEvents) {
+    // Merr datat e rezervuara dhe sugjero disa alternativa
+    const reservedDates = reservedEvents.map(event => new Date(event.date).getTime());
+    const alternativeDates = [];
+
+    // Sugjero 3 data të ardhshme që nuk janë të rezervuara
+    let currentDate = new Date();
+    for (let i = 1; alternativeDates.length < 3; i++) {
+        const nextDate = new Date(currentDate);
+        nextDate.setDate(currentDate.getDate() + i);
+        if (!reservedDates.includes(nextDate.getTime())) {
+            alternativeDates.push(nextDate.toISOString().split('T')[0]); // Formato datën
+        }
     }
+
+    // Shfaq datat alternative me SweetAlert2
+    window.Swal.fire({
+        icon: 'info',
+        title: 'Data alternative',
+        html: `<p>Mund zgjidhni njërën nga këto data:</p><ul>${alternativeDates.map(date => `<li>${date}</li>`).join('')}</ul>`,
+        confirmButtonText: 'OK'
+    });
 }
-
-// Ngarko rezervimet nga localStorage kur ngarkohet faqja
-function loadReservedEvents() {
-    const reservedEvents = JSON.parse(localStorage.getItem('reservedEvents')) || [];
-    reservedEvents.forEach(addEventToList);
-}
-
-// Ngarko rezervimet kur faqja ngarkohet
-window.onload = loadReservedEvents;
-
-// Shto event listener për formën
-document.getElementById('contactForm').addEventListener
