@@ -179,6 +179,7 @@ if (wishlist.length > 0) {
             updateLocalStorage(); // Update localStorage
             e.target.closest('.wishlist-item').remove(); // Remove the item from the DOM
             alert('Item removed from wishlist');
+            updateCounts();
         });
     });
 
@@ -193,6 +194,7 @@ if (wishlist.length > 0) {
                 cart.push(itemToAdd); // Add item to cart array
                 updateLocalStorage(); // Update localStorage
                 alert('Item added to cart');
+                updateCounts();
             } else {
                 alert('Item is already in the cart');
             }
