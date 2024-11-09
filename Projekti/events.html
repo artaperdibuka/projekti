@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>BookstoreBuzuku - Events Page</title>
+</head>
+<body>
+ 
+    <header class="header">
+        <div class="flex">
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="order.html"> Order</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact us</a>
+    
+            </nav>
+            <div class="icons">
+                <i class="bx bxs-user" id="user-btn"></i>
+                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+            </div>
+            <div class="user-box">
+                <p>Username: <span></span></p>
+                <p>Email: <span></span></p>
+                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">Register</a>
+                <form method="post">
+                    <button type="submit" name="logout" class="logout-btn">Log out</button>
+    
+                </form>
+            </div>
+        </div>
+    </header>
+   </div>
+
+    <div class="main">
+        <div class="tittle2">
+            <a href="home.html">Home</a><span>events</span>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="centere-content">
+                    <h1>Përjetoni Magjinë e Eventeve – Rezervoni Datën Tuaj</h1>
+                    <div class="event-description">
+                        
+                        <p>Ejani dhe bëhuni pjesë e momenteve të paharrueshme në "BookstoreBuzuku"! 
+                            Përgatituni për lançime të librave më të rinj, lexime pasionante, diskutime frymëzuese me autorë të mirënjohur dhe biseda të thelluara që zgjojnë imagjinatën. 
+                            Zbuloni botë të reja përmes punëtorive krijuese dhe përvojave unike që sjellim vetëm për ju.
+                            Rezervoni datën tuaj dhe bashkohuni me ne në këtë udhëtim të pasionuar letrar – një eksperiencë që nuk do të dëshironi ta humbisni!
+                        </p>
+                    </div>
+                </div>
+            </div>
+     
+    </div> 
+
+    
+    <div class="box-container">
+        <section class="home-section">
+            <div class="slider">
+                    <div class="slider__slider slide6">
+                       
+                        
+                        <div class="hero-dec-top"></div>
+                        <div class="hero-dec-bottom"></div>
+                    </div>
+                <!-- slide end -->
+                <div class="slider__slider slide7">
+                     
+                        <div class="hero-dec-top"></div>
+                        <div class="hero-dec-bottom"></div>
+                    </div>
+                <!-- slide end -->
+                <div class="slider__slider slide8">
+                       
+                        <div class="hero-dec-top"></div>
+                        <div class="hero-dec-bottom"></div>
+                    </div>
+                <!-- slide end -->
+                <div class="slider__slider slide9">
+                       
+                        <div class="hero-dec-top"></div>
+                        <div class="hero-dec-bottom"></div>
+                    </div>
+                <!-- slide end -->
+                <div class="slider__slider slide10">
+                       
+                        <div class="hero-dec-top"></div>
+                        <div class="hero-dec-bottom"></div>
+                    </div>
+                <!-- slide end -->
+                <div class="left-arrow"><i class="bx bxs-left-arrow"></i></div>
+                <div class="right-arrow"><i class="bx bxs-right-arrow"></i></div>
+                </div>
+                
+          </section>
+        </div>
+
+        
+        <div class="form-container">
+            <form id="contactForm" onsubmit="reserveEvent(event)">
+                <div >
+                    <h1 class="title reserve">Reserve an Event Date</h1>
+                </div>
+                <div class="input-field">
+                    <p>CHOOSE DATE<span class="required-star">*</span></p>
+                    <input type="date" name="date" id="eventDate" required placeholder="choose a date">
+                </div>
+                
+                <div class="input-field">
+                    <p>YOUR NAME<span class="required-star">*</span></p>
+                    <input type="text" name="name"  required placeholder=" Enter your name" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+        
+                <div class="input-field">
+                    <p>YOUR SURNAME<span class="required-star">*</span></p>
+                    <input type="text" name="surname"  required placeholder=" Enter your surname" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+                <div class="input-field">
+                    <p>YOUR EMAIL<span class="required-star">*</span></p>
+                    <input type="email" name="email"  required placeholder=" Enter your email" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+                <div class="input-field">
+                    <p>YOUR PHONE NUMBER<span class="required-star">*</span></p>
+                    <input type="tel" name="number"  required placeholder=" Enter your password" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+        
+                <button type="submit" name="submit" value="reserve event" class="btn">Reserve Event</button>
+
+                
+            </form>
+            
+
+        </div>
+        <div class="reserved-data">
+                    <h3>Reserved Events:</h3>
+                    <ul id="reservedEventsList">
+                        <!-- Reserved events will be listed here -->
+                    </ul>
+                </div>
+               
+                <section class="services">
+                    
+                    <div class="box-container">
+                        <div class="box">
+                            <img src="img/icon2.png">
+                            <div class="detail">
+                                <h3>great savings</h3>
+                                <p>save big every order</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon1.png">
+                            <div class="detail">
+                                <h3>24*7</h3>
+                                <p>one-on-one support</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon0.png">
+                            <div class="detail">
+                                <h3>gift vouchers</h3>
+                                <p>vouchers on every festivals</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon.png">
+                            <div class="detail">
+                                <h3>worlwide delivery</h3>
+                                <p>dropship worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+               </section>
+               
+                <div>
+                    <div class="top-footer">
+                        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+                        <div class="input-field">
+                            <input type="text" name="" placeholder="email address...">
+                            <button class="btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <footer>
+                        <div  class="overlay"></div>
+                        <div class="footer-content">
+                            <div class="img-box">
+                            <img src="img/logoo.png">
+                        </div>
+                        <div class="inner-footer">
+                            <div class="card">
+                                <h3>about us</h3>
+                                <ul>
+                                    <li>about us</li>
+                                    <li>our difference</li>
+                                    <li>community matters</li>
+                                    <li>press</li>
+                                    <li>blog</li>
+                                </ul>
+                            </div> 
+                            <div class="card">
+                                <h3>services</h3>
+                                <ul>
+                                    <li>order</li>
+                                    <li>help center</li>
+                                    <li>shipping</li>
+                                    <li>term of use</li>
+                                    <li>account detail</li>
+                                    <li>my account</li>
+                                </ul>
+                            </div>
+                            <div class="card">
+                                <h3>local</h3>
+                                <ul>
+                                    <li>Sheshi Skenderbeu</li>
+                                    <li>Albi Mall</li>
+                                    <li>Prishtina Mall</li>
+                                </ul>
+                            </div>
+                            <div class="card">
+                                <h3>newsletter</h3>
+                                <p>Sign Up For Newsletter</p>
+                                <div class="social-links">
+                                    <i class="bx bxl-instagram"></i>
+                                    <i class="bx bxl-facebook"></i>
+                                    <i class="bx bxl-whatsapp"></i>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="bottom-footer">
+                                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+                    
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                </div>
+        
+            <!-- Vendosim footer-in këtu -->
+        </div>  
+        </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="reservation.js"></script>
+   <script src="script.js"></script>
+   <script src="count.js"></script>
+</body>
+</html> 
