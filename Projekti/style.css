@@ -610,6 +610,23 @@ header.scrolled {
     border-left: 2px solid #e2e2e255;
     border-bottom: 2px solid #e2e2e255;
 }
+/* events */
+
+.reserved-data {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.reserved-data h3 {
+    margin: 0 0 10px;
+}
+.title.reserve{
+    text-align: center; /* Vendos titullin në të djathtë */
+    margin-bottom: 20px; /* Shtoni pak hapësirë poshtë titullit */
+}
 /* footer*/
 .top-footer{
     width: 100%;
@@ -1179,25 +1196,55 @@ footer .bottom-footer{
 }
 
 /* contact */
-.main-container{
-    background: #fff;
-    width: 60vw;
-    min-width: 80vh;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    padding: 1rem 0;
+.main-container {
+    background: #fff; /* Ngjyra e sfondit */
+    width: 60vw; /* Gjerësia e kontejnerit */
+    min-height: 80vh; /* Lartësia minimale e kontejnerit */
+    box-shadow: var(--box-shadow); /* Hija e kontejnerit */
+    margin: 2rem auto; /* Margjina automatikisht në majtas dhe djathtas */
+    padding: 1rem; /* Hapësira brenda kontejnerit */
+    position: relative; /* Aktivizoni pozicionimin relativ për elementët brenda */
 }
-.form-container{
-    width: 50vw;
-    margin: 0 auto;
+
+.form-container {
+    width: 70%;
+    min-height: 300px; /* Gjerësia e formës */
+    margin: 0 auto; /* Qendro formën në qendër */
+    background-color: rgb(255, 255, 255 / 80%); /* Ngjyra e sfondit të formës */
+    box-shadow: var(--box-shadow); /* Hija e formës */
+    padding: 2rem; /* Hapësira brenda formës */
+    border-radius: 5px; /* Rrumbullakoni skajet */
+    text-align: left 10px; 
+   
+    /* Qendro përmbajtjen e formës */
+}
+.centere-content h1 {
+    font-size: 32px; /* Rrit madhësinë e shkronjave të titullit */
+    text-align: center; /* Rreshto titullin në qendër */
+     /* Ngjyra e titullit */
+    margin-bottom: 20px; /* Hapësira poshtë titullit */
+    font-weight: bold; /* Bëni titullin të jetë me peshë të theksuar */
+    text-transform: uppercase; /* Shkruani titullin me shkronja të mëdha */
+}
+
+.centere-content p {
+    font-size: 18px; /* Rrit madhësinë e shkronjave të paragrafit */
+    /* Justifikoni përmbajtjen e paragrafit */
+    line-height: 1.4; /* Rritni hapësirën midis rreshtave për lehtësim të leximit (mund ta zvogëloni) */
+    color: #555; /* Ngjyra e paragrafit */
+    margin: 0; /* Hiqni hapësirën e parazgjedhur */
+    padding: 10px 0; /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
+    max-width: 850px; /* Rregulloni gjerësinë maksimale të përmbajtjes */
+    margin: 0 auto; 
+    /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
 }
 .form-container input,
  textarea{
-    background-color: transparent;
-    width: 85%;
+    width: 80%; /* Gjerësia e input field-it */
+    margin: 1rem auto; /* Qendro input field-in në qendër */
+    display: block; /* Ngjyra e kufirit */
+   
+  
 }
 textarea{
     height: 200px;
@@ -1220,13 +1267,17 @@ textarea{
     color: #000 !important;
     cursor: pointer;
 }
-.form-container form{
+.form-container form {
     margin: 1rem auto;
     background-color: rgb(255, 255, 255 / 80%);
     box-shadow: var(--box-shadow);
     padding: 2rem;
     position: relative;
     border-radius: 5px;
+   /* Aktivizo flexbox */
+    flex-direction: column; /* Vendos elementët në një kolone */
+    justify-content: center; /* Qendro elementët vertikalisht */
+    align-items: center; /* Qendro elementët horizontalisht */
 }
 .form-container form p{
     text-transform: uppercase;

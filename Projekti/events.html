@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Events Page</title>
 </head>
@@ -42,6 +43,67 @@
    </div>
 
     <div class="main">
+        <div class="tittle2">
+            <a href="home.html">Home</a><span>events</span>
+        </div>
+        <div class="box-container">
+        <div class="centere-content">
+            <h1>Përjetoni Magjinë e Eventeve – Rezervoni Datën Tuaj</h1>
+                <p>Ejani dhe bëhuni pjesë e momenteve të paharrueshme në "BookstoreBuzuku"! <span></span>
+                    Përgatituni për lançime të librave më të rinj, lexime pasionante, diskutime frymëzuese me autorë të mirënjohur dhe biseda të thelluara që zgjojnë imagjinatën. 
+                    Zbuloni botë të reja përmes punëtorive krijuese dhe përvojave unike që sjellim vetëm për ju.
+                     Rezervoni datën tuaj dhe bashkohuni me ne në këtë udhëtim të pasionuar letrar – një eksperiencë që nuk do të dëshironi ta humbisni!</p> 
+        </div>
+       
+    </div> 
+    <div>
+            <h1>Eventet tona</h1>
+        </div>
+        <div class="form-container">
+            <form id="contactForm" onsubmit="reserveEvent(event)">
+                <div >
+                    <h1 class="title reserve">Reserve an Event Date</h1>
+                </div>
+                <div class="input-field">
+                    <p>CHOOSE DATE<span class="required-star">*</span></p>
+                    <input type="date" name="date" id="eventDate" required placeholder="choose a date">
+                </div>
+                
+                <div class="input-field">
+                    <p>YOUR NAME<span class="required-star">*</span></p>
+                    <input type="text" name="name"  required placeholder=" Enter your name" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+        
+                <div class="input-field">
+                    <p>YOUR SURNAME<span class="required-star">*</span></p>
+                    <input type="text" name="surname"  required placeholder=" Enter your surname" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+                <div class="input-field">
+                    <p>YOUR EMAIL<span class="required-star">*</span></p>
+                    <input type="email" name="email"  required placeholder=" Enter your email" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+                <div class="input-field">
+                    <p>YOUR PHONE NUMBER<span class="required-star">*</span></p>
+                    <input type="tel" name="number"  required placeholder=" Enter your password" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+        
+                <button type="submit" name="submit" value="reserve event" class="btn">Reserve Event</button>
+
+                
+            </form>
+            
+
+        </div>
+        <div class="reserved-data">
+                    <h3>Reserved Events:</h3>
+                    <ul id="reservedEventsList">
+                        <!-- Reserved events will be listed here -->
+                    </ul>
+                </div>
                
                 <section class="services">
                     
@@ -143,6 +205,8 @@
             <!-- Vendosim footer-in këtu -->
                  
         </body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="reservation.js"></script>
    <script src="script.js"></script>
    <script src="count.js"></script>
 </body>
