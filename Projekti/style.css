@@ -367,6 +367,21 @@ header.scrolled {
 .slide5{
     background-image: url('img/5.jpg');
 }
+.slide10{
+    background-image: url('img/10.jpg');
+}
+.slide9{
+    background-image: url('img/9.jpg');
+}
+.slide8{
+    background-image: url('img/8.jpg');
+}
+.slide7{
+    background-image: url('img/7.jpg');
+}
+.slide6{
+    background-image: url('img/6.jpg');
+}
 .left-arrow,
 .right-arrow{
     position: absolute;
@@ -1218,7 +1233,7 @@ footer .bottom-footer{
    
     /* Qendro përmbajtjen e formës */
 }
-.centere-content h1 {
+.box-container .box .centere-content h1 {
     font-size: 32px; /* Rrit madhësinë e shkronjave të titullit */
     text-align: center; /* Rreshto titullin në qendër */
      /* Ngjyra e titullit */
@@ -1227,7 +1242,7 @@ footer .bottom-footer{
     text-transform: uppercase; /* Shkruani titullin me shkronja të mëdha */
 }
 
-.centere-content p {
+.box-container .box .centere-content p {
     font-size: 18px; /* Rrit madhësinë e shkronjave të paragrafit */
     /* Justifikoni përmbajtjen e paragrafit */
     line-height: 1.4; /* Rritni hapësirën midis rreshtave për lehtësim të leximit (mund ta zvogëloni) */
@@ -1237,6 +1252,14 @@ footer .bottom-footer{
     max-width: 850px; /* Rregulloni gjerësinë maksimale të përmbajtjes */
     margin: 0 auto; 
     /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
+}
+.event-description {
+    background-color: #f9f9f9; /* Ngjyra e sfondit të kutisë */
+    border: 1px solid #ddd; /* Kufiri i kutisë */
+    border-radius: 8px; /* Rrumbullakosja e skajeve */
+    padding: 20px; /* Hapësira brenda kutisë */
+    box-shadow: var(--box-shadow); /* Hija për theksim të kutisë */
+    margin: 20px 0; /* Hapësira lart dhe poshtë kutisë */
 }
 .form-container input,
  textarea{
