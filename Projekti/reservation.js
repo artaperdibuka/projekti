@@ -29,9 +29,6 @@ function reserveEvent(event) {
         reservedEvents.push(newEvent);
         localStorage.setItem('reservedEvents', JSON.stringify(reservedEvents));
 
-        // Shtoni rezervimin në listën e rezervimeve
-        addEventToList(newEvent);
-        
         // Shfaq një mesazh me SweetAlert2 për sukses
         window.Swal.fire({
             icon: 'success',
