@@ -73,3 +73,12 @@ function suggestAlternativeDates(reservedEvents) {
 document.addEventListener('DOMContentLoaded', function() {
     initializeFlatpickr();
 });
+
+
+    // Aktivizoni Flatpickr për input-in e datës
+    flatpickr("#eventDate", {
+        enableTime: true, // Nëse doni të lejoni zgjedhjen e kohës, vendosni këtë në true
+        dateFormat: "Y-m-d", // Formati i datës që dëshironi
+        minDate: "today", // Data minimale që mund të zgjidhet
+        // Mund të shtoni opsione të tjera sipas nevojës
+    });
