@@ -19,6 +19,7 @@
                         <a href="#" onclick="filterCategory('Roman')">Roman</a>
                         <a href="#" onclick="filterCategory('Poetry')">Poetry</a>
                         <a href="#" onclick="filterCategory('Biography')">Biography</a>
+                        <a href="accessories.html">Accessories</a>
                     </div>
                 </div>
                 <a href="order.html"> Order</a>
@@ -521,78 +522,67 @@ const nextButton = document.getElementById('nextPage');
 const pageNumbers = document.getElementById('pageNumbers');
 
 let currentPage = 1;
+let filteredBooks = books;
 
 function displayPage(page) {
-const startIndex = (page - 1) * booksPerPage;
-const endIndex = startIndex + booksPerPage;
-books.forEach((book, index) => {
-    if (index >= startIndex && index < endIndex) {
-        book.style.display = 'block';
-    } else {
-        book.style.display = 'none';
-    }
-});
+    const startIndex = (page - 1) * booksPerPage;
+    const endIndex = startIndex + booksPerPage;
+    
+    // Hide all books initially
+    books.forEach(book => book.style.display = 'none');
+    
+    // Display only the books in the current filtered list and current page
+    filteredBooks.slice(startIndex, endIndex).forEach(book => book.style.display = 'block');
 }
 
-// Function to update pagination
 function updatePagination() {
-// Generate page number buttons dynamically
-const totalPages = Math.ceil(books.length / booksPerPage);
-pageNumbers.innerHTML = ''; // Clear previous page numbers
-for (let i = 1; i <= totalPages; i++) {
-    const pageLink = document.createElement('button');
-    pageLink.classList.add('page-link');
-    pageLink.textContent = i;
-    pageLink.setAttribute('data-page', i);
-    pageLink.addEventListener('click', (e) => {
-        const page = parseInt(e.target.getAttribute('data-page'));
-        if (page !== currentPage) {
-            currentPage = page;
-            displayPage(currentPage);
-            updatePagination();
-        }
-    });
-    pageNumbers.appendChild(pageLink);
-}
+    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+    pageNumbers.innerHTML = ''; // Clear previous page numbers
 
-prevButton.disabled = currentPage === 1;
-nextButton.disabled = currentPage === totalPages;
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('button');
+        pageLink.classList.add('page-link');
+        pageLink.textContent = i;
+        pageLink.setAttribute('data-page', i);
+        pageLink.addEventListener('click', (e) => {
+            const page = parseInt(e.target.getAttribute('data-page'));
+            if (page !== currentPage) {
+                currentPage = page;
+                displayPage(currentPage);
+                updatePagination();
+            }
+        });
+        pageNumbers.appendChild(pageLink);
+    }
+
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
 }
 
 prevButton.addEventListener('click', () => {
-if (currentPage > 1) {
-    currentPage--;
-    displayPage(currentPage);
-    updatePagination();
-}
+    if (currentPage > 1) {
+        currentPage--;
+        displayPage(currentPage);
+        updatePagination();
+    }
 });
 
 nextButton.addEventListener('click', () => {
-const totalPages = Math.ceil(books.length / booksPerPage);
-if (currentPage < totalPages) {
-    currentPage++;
-    displayPage(currentPage);
-    updatePagination();
-}
-});
-
-
-searchInput.addEventListener('input', function() {
-const query = searchInput.value.toLowerCase();
-books.forEach(function(book) {
-    const bookName = book.querySelector('.name').textContent.toLowerCase(); 
-    if (bookName.includes(query)) {
-        book.style.display = '';
-    } else {
-        book.style.display = 'none';
+    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayPage(currentPage);
+        updatePagination();
     }
 });
-updatePagination(); // Update pagination after filtering books
-});
 
-// Initial page load
-displayPage(currentPage);
-updatePagination();
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    filteredBooks = books.filter(book => book.querySelector('.name').textContent.toLowerCase().includes(query));
+    currentPage = 1;
+    displayPage(currentPage);
+    updatePagination();
+});
 
 
 //creating local storage
@@ -643,17 +633,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 function filterCategory(category) {
-    const books = document.querySelectorAll('.box');
-    books.forEach(book => {
-        const bookCategory = book.querySelector('.category-text').textContent;
-        if (bookCategory.includes(category)) {
-            book.style.display = 'block';
-        } else {
-            book.style.display = 'none';
-        }
-    });
+    filteredBooks = books.filter(book => book.querySelector('.category-text').textContent.includes(category));
+    currentPage = 1;
+    displayPage(currentPage);
+    updatePagination();
 }
 
+// Initial page load
+displayPage(currentPage);
+updatePagination();
 </script>
 </html> 
