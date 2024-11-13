@@ -1,67 +1,75 @@
-function reserveEvent(event) {
-    event.preventDefault(); // Parandalon dërgimin e formës
+// Funksioni për të inicializuar Flatpickr me datat e rezervuara
+function initializeFlatpickr() {
+    const reservedEvents = JSON.parse(localStorage.getItem('reservedEvents')) || [];
+    const reservedDates = reservedEvents.map(event => event.date);
 
-    // Merr të dhënat nga forma
+    flatpickr("#eventDate", {
+        dateFormat: "Y-m-d",
+        disable: reservedDates, // Çdo datë e rezervuar do të jetë e papërshkruar
+        onOpen: function() {
+            const calendar = this;
+            reservedDates.forEach(date => {
+                const dateElement = calendar.calendarContainer.querySelector(`.flatpickr-day[data-date="${new Date(date).getTime()}"]`);
+                if (dateElement) {
+                    dateElement.classList.add('reserved-date'); // Shtoni klasën për stilizim
+                }
+            });
+        }
+    });
+}
+
+// Funksioni për të rezervuar një ngjarje
+function reserveEvent(event) {
+    event.preventDefault();
+
     const date = document.getElementById('eventDate').value;
     const name = event.target.name.value;
     const surname = event.target.surname.value;
     const email = event.target.email.value;
     const number = event.target.number.value;
 
-    // Kontrollo nëse data është e rezervuar
     const reservedEvents = JSON.parse(localStorage.getItem('reservedEvents')) || [];
     const isDateReserved = reservedEvents.some(event => event.date === date);
 
     if (isDateReserved) {
-        // Shfaq një dritare SweetAlert2 nëse data është e rezervuar
-        window.Swal.fire({
-            icon: 'warning',
-            title: 'Kjo datë është e rezervuar',
-            text: 'Ju lutemi zgjidhni një datë tjetër.',
-            confirmButtonText: 'OK'
-        }).then(() => {
-            // Pas klikimit të OK, sugjero disa data alternative
-            suggestAlternativeDates(reservedEvents);
-        });
+        alert('Kjo datë është e rezervuar. Ju lutemi zgjidhni një datë tjetër.');
     } else {
-        // Ruaj rezervimin
         const newEvent = { date, name, surname, email, number };
         reservedEvents.push(newEvent);
         localStorage.setItem('reservedEvents', JSON.stringify(reservedEvents));
 
-        // Shfaq një mesazh me SweetAlert2 për sukses
-        window.Swal.fire({
-            icon: 'success',
-            title: 'Rezervimi i suksesshëm',
-            text: `Data e rezervuar: ${date}`,
-            confirmButtonText: 'OK'
-        });
-
-        // Pastroni formën
+        alert(`Rezervimi i suksesshëm! Data e rezervuar: ${date}`);
         event.target.reset();
+        initializeFlatpickr(); // Rinisni Flatpickr për të reflektuar datat e reja të rezervuara
     }
 }
 
+// Inicializoni Flatpickr kur ngarkohet faqja
+document.addEventListener('DOMContentLoaded', function() {
+    initializeFlatpickr();
+});
+
+// Function to suggest alternative dates
 function suggestAlternativeDates(reservedEvents) {
-    // Merr datat e rezervuara dhe sugjero disa alternativa
+    // Get reserved dates and suggest some alternatives
     const reservedDates = reservedEvents.map(event => new Date(event.date).getTime());
     const alternativeDates = [];
 
-    // Sugjero 3 data të ardhshme që nuk janë të rezervuara
+    // Suggest 3 upcoming dates that are not reserved
     let currentDate = new Date();
     for (let i = 1; alternativeDates.length < 3; i++) {
         const nextDate = new Date(currentDate);
         nextDate.setDate(currentDate.getDate() + i);
         if (!reservedDates.includes(nextDate.getTime())) {
-            alternativeDates.push(nextDate.toISOString().split('T')[0]); // Formato datën
+            alternativeDates.push(nextDate.toISOString().split('T')[0]); // Format the date
         }
     }
 
-    // Shfaq datat alternative me SweetAlert2
-    window.Swal.fire({
-        icon: 'info',
-        title: 'Data alternative',
-        html: `<p>Mund zgjidhni njërën nga këto data:</p><ul>${alternativeDates.map(date => `<li>${date}</li>`).join('')}</ul>`,
-        confirmButtonText: 'OK'
-    });
+    // Show alternative dates
+    alert(`Mund zgjidhni njërën nga këto data: ${alternativeDates.join(', ')}`); // Replace with your desired alert method
 }
+
+// Initialize Flatpickr on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initializeFlatpickr();
+});
