@@ -25,13 +25,11 @@ body {
 }
 
 .main {
-   
-  
-    width: 85vw;
+    width: 89vw;
     background: #fff;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     margin: 1rem auto;
-    margin-top: 10rem;
+    margin-top: 8rem;
     padding: 2%;
 }
 
@@ -197,7 +195,7 @@ button {
 /* Header */
 header {
     position: fixed;
-    top: 7%;
+    top: 2%;
     left: 5%;
     right: 2%;
     width: 89vw;
@@ -650,7 +648,6 @@ header.scrolled {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     color: #000;
 }
 .top-footer h2 i {
@@ -689,7 +686,6 @@ footer .overlay{
 footer .inner-footer{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
@@ -1178,18 +1174,14 @@ footer .bottom-footer{
 }
 
 .order-form button {
-    background-color: #32d600;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
     width:100%;
 }
-.order-form button:hover {
-    background-color: #339800;
-}
+
 .cart-item2 {
     display: flex;
     justify-content: space-between;
@@ -1396,4 +1388,8 @@ textarea{
     background-color: rgba(255, 0, 0, 0.5); /* Ngjyrë e kuqe me transparencë */
     color: white; /* Ngjyra e bardhë për tekstin */
     pointer-events: none; /* Përdoret për të parandaluar se si mund të klikohen këto data */
+}
+.category-text{
+    padding-top: 5px;
+    color: #686868;
 }
