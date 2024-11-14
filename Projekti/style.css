@@ -273,7 +273,12 @@ header.scrolled {
     border-radius: 0.5rem;
     padding: 0 1.5rem;
 }
-
+.log-title{
+    font-size: 36px;
+}
+.log-paragraph{
+    font-size: 20px;
+}
 .logout-btn {
     background: #000;
     color: #fff;
@@ -660,11 +665,14 @@ header.scrolled {
 footer{
     /* background-image: url('img/0.webp'); */
     width: 100%;
-    min-height: 73vh;
+    min-height: 63vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 footer .overlay{
@@ -678,11 +686,16 @@ footer .overlay{
     /* opacity: 0.5; */
 }
 .footer-content{
-    position:absolute;
-    top: 10%;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .footer-content .img-box{
     text-align: center;
+    margin-bottom: 30px;
 }
 footer .inner-footer{
     display: grid;
@@ -690,9 +703,6 @@ footer .inner-footer{
     justify-content: center;
     text-align: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 0;
     color: #000;
 }
 footer .inner-footer .card{
@@ -739,9 +749,8 @@ footer .inner-footer .card .social-links i:hover{
 footer .bottom-footer{
     text-transform: capitalize;
     text-align: center;
-    padding: 3rem 0;
+    padding-top: 50px;
     color: #000;
-    padding-bottom: 1rem;
 }
 
 
@@ -1237,7 +1246,6 @@ footer .bottom-footer{
     min-height: 300px; /* Gjerësia e formës */
     margin: 0 auto; /* Qendro formën në qendër */
     background-color: rgb(255, 255, 255 / 80%); /* Ngjyra e sfondit të formës */
-    box-shadow: var(--box-shadow); /* Hija e formës */
     padding: 2rem; /* Hapësira brenda formës */
     border-radius: 5px; /* Rrumbullakoni skajet */
     text-align: left 10px; 
@@ -1254,18 +1262,16 @@ footer .bottom-footer{
 }
 
 .box-container .box .centere-content p {
-    font-size: 18px; /* Rrit madhësinë e shkronjave të paragrafit */
+    font-size: 17px; /* Rrit madhësinë e shkronjave të paragrafit */
     /* Justifikoni përmbajtjen e paragrafit */
     line-height: 1.4; /* Rritni hapësirën midis rreshtave për lehtësim të leximit (mund ta zvogëloni) */
     color: #555; /* Ngjyra e paragrafit */
     margin: 0; /* Hiqni hapësirën e parazgjedhur */
     padding: 10px 0; /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
-    max-width: 850px; /* Rregulloni gjerësinë maksimale të përmbajtjes */
     margin: 0 auto; 
     /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
 }
 .event-description {
-  
     border: .5px solid #ddd; /* Kufiri i kutisë */
     border-radius: 6px; /* Rrumbullakosja e skajeve */
     padding: 20px; /* Hapësira brenda kutisë */
@@ -1277,8 +1283,6 @@ footer .bottom-footer{
     width: 80%; /* Gjerësia e input field-it */
     margin: 1rem auto; /* Qendro input field-in në qendër */
     display: block; /* Ngjyra e kufirit */
-   
-  
 }
 textarea{
     height: 200px;
@@ -1406,7 +1410,6 @@ textarea{
     padding-top: 5px;
     color: #686868;
 }
-<<<<<<< HEAD
 .form-layout {
     display: flex; /* Përdorimi i Flexbox për të krijuar dy kolona */
     justify-content: center; /* Qendro elementët horizontalisht */
@@ -1516,9 +1519,7 @@ textarea{
     padding-top: 10px;
 }
 .selected {
-    border-color: blue; /* Vendos kufi për kartën e zgjedhur */
-=======
+    border-color: blue; /* Vendos kufi për kartën e zgjedhur */}
 .acc-paragraph{
     text-align: center;
->>>>>>> 95cd2b37c9d04351517e7606263a5cc08733833c
 }
