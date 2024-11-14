@@ -1174,14 +1174,16 @@ footer .bottom-footer{
 }
 
 .order-form button {
-    color: white;
+    color: rgb(51, 143, 140);
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
     width:100%;
 }
-
+.order-form button:hover{
+    color: white;
+}
 .cart-item2 {
     display: flex;
     justify-content: space-between;
