@@ -161,7 +161,7 @@
                     <img src="${item.imageSrc}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h4 class="cart-item-name">${item.name}</h4>
-                        <p class="cart-item-author">${item.author}</p>
+                        <p class="cart-item-author">${item.author || ''}</p>
                         <p class="cart-item-price">${item.price}</p>
                         <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
                         <button class="add-to-cart-btn" onclick="buyProduct('${item.name}')">Buy now</button>

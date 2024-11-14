@@ -1185,14 +1185,16 @@ footer .bottom-footer{
 }
 
 .order-form button {
-    color: white;
+    color: rgb(51, 143, 140);
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
     width:100%;
 }
-
+.order-form button:hover{
+    color: white;
+}
 .cart-item2 {
     display: flex;
     justify-content: space-between;
@@ -1404,6 +1406,7 @@ textarea{
     padding-top: 5px;
     color: #686868;
 }
+<<<<<<< HEAD
 .form-layout {
     display: flex; /* Përdorimi i Flexbox për të krijuar dy kolona */
     justify-content: center; /* Qendro elementët horizontalisht */
@@ -1514,4 +1517,8 @@ textarea{
 }
 .selected {
     border-color: blue; /* Vendos kufi për kartën e zgjedhur */
+=======
+.acc-paragraph{
+    text-align: center;
+>>>>>>> 95cd2b37c9d04351517e7606263a5cc08733833c
 }

@@ -165,7 +165,7 @@ if (wishlist.length > 0) {
                 <img src="${item.imageSrc}" alt="${item.name}" class="wishlist-item-img">
                 <div class="wishlist-item-details">
                     <h4 class="wishlist-item-name">${item.name}</h4>
-                    <p class="wishlist-item-author">${item.author}</p>
+                    <p class="wishlist-item-author">${item.author || ''}</p>
                     <p class="wishlist-item-price">${item.price}</p>
                     <button class="remove-btn" data-index="${index}">Remove</button>
                     <button class="add-to-cart-btn" data-index="${index}">Add to cart</button>
