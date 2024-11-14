@@ -195,3 +195,12 @@ document.querySelector(".logout-btn").addEventListener("click", (event) => {
     alert("You have been logged out!");
     window.location.href = "login.html";
 });
+
+function subscribeNewsletter() {
+    var email = document.getElementById('emailInput').value;
+    if (email) {
+        Swal.fire("Thank you!", "You will be informed of all the news!", "success");
+    } else {
+        Swal.fire("Error!", "Please enter an email address!", "error");
+    }
+}

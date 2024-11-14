@@ -649,6 +649,7 @@ header.scrolled {
     flex-wrap: wrap;
     justify-content: space-between;
     color: #000;
+    align-items: center;
 }
 .top-footer h2 i {
     margin-right: .5rem;
@@ -696,6 +697,7 @@ footer .inner-footer{
 }
 footer .inner-footer .card{
     margin: .5rem;
+   
 }
 footer .inner-footer .card li{
     cursor: pointer;
@@ -927,7 +929,7 @@ footer .bottom-footer{
     margin: 3rem 0;
     background-color: #fff; /* Ngjyra e bardhë për sfondin */
    
-    
+
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hije për theksim të seksionit */
     position: relative;
 
@@ -939,6 +941,15 @@ footer .bottom-footer{
 }
 .services img{
     width: 30%;
+}
+.paragraph1{
+    padding-bottom: 20px;
+    text-align: center;
+}
+.title1{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
 }
 /* about */
 .about-category{
@@ -1392,4 +1403,115 @@ textarea{
 .category-text{
     padding-top: 5px;
     color: #686868;
+}
+.form-layout {
+    display: flex; /* Përdorimi i Flexbox për të krijuar dy kolona */
+    justify-content: center; /* Qendro elementët horizontalisht */
+    align-items: flex-start; /* Qendro elementët vertikalisht në fillim */
+    margin-top: 20px; /* Hapësira nga titulli ose elementi i sipërm */
+    gap: 20px; /* Hapësira midis box1 dhe box2 */
+}
+
+.box1, .box2 {
+    flex: 1; /* Lejon që box1 dhe box2 të ndajnë hapësirën e disponueshme */
+    max-width: 400px; /* Limito hapësirën maksimale për secilin box */
+}
+.box1 {
+    flex-grow: 1;
+    max-width: 300px; 
+   /* Box1 do të rritet sa më shumë të jetë e mundur */
+}
+
+.box2 {
+    flex-grow: 1; /* Box2 do të rritet më shumë se box1 */
+    min-height: 100px; /* Ju mund të vendosni një lartësi minimale për box2 */
+}
+
+.card-selection {
+    text-align: center; 
+    align-items: center;
+    justify-content: center;
+    /* Gjerësia e seksionit të kartave */
+    padding-right: 20px; /* Hapësira midis kartave dhe formës */
+}
+
+.options {
+    display: flex; /* Përdorimi i Flexbox për opsionet */
+    flex-wrap: wrap; /* Lejon që opsionet të rreshtohen në rreshta */
+    gap: 10px; /* Hapësira midis opsioneve */
+    justify-content: space-between; /* Sigurohuni që opsionet të mbushin hapësirën */
+    width: 100%; /* Sigurohuni që të mbushin hapësirën e disponueshme */
+}
+
+.option {
+    flex: 1; /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
+    padding: 10px; /* Hapësira brenda opsionit */
+    border: 2px solid #ccc; /* Kufiri i opsioneve */
+    border-radius: 5px; /* Rrafshtimi i skajeve */
+    cursor: pointer; /* Tregon se opsioni është klikuar */
+    transition: background-color 0.3s ease; /* Efekti i kalimit */
+    text-align: center; /* Qendro tekstin në qendër */
+    min-width: 70px; /* Gjerësia minimale e opsioneve */
+}
+.option1{
+    flex: 1; /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
+    padding: 10px; /* Hapësira brenda opsionit */
+    border: 2px solid #ccc; /* Kufiri i opsioneve */
+    border-radius: 5px; /* Rrafshtimi i skajeve */
+    cursor: pointer; /* Tregon se opsioni është klikuar */
+    transition: background-color 0.3s ease; /* Efekti i kalimit */
+    text-align: center; /* Qendro tekstin në qendër */
+    min-width: 100px; /* Gjerësia minimale e opsioneve */
+}
+
+.option1 img {
+    width: 50px; /* Gjerësia e imazhit */
+    height: 47px; /* Lartësia e imazhit */
+}
+
+.large-image-container {
+    margin-top: 20px; /* Hapësira nga opsionet e kartave */
+    text-align: center; /* Qendrimi i imazhit të madh */
+    display: none; /* Fillimisht e fshehur */
+    border-radius: 10px;
+    width: 100%;
+}
+
+.large-image-container img {
+    width: 100%; /* Gjerësia e imazhit të madh */
+    max-width: 300px; /* Gjerësia maksimale e imazhit të madh */
+    height: auto; /* Ruajtja e proporcioneve të imazhit */
+    border-radius: 10px;
+}
+
+.form-section {
+    width: 100%; /* Gjerësia e seksionit të formës */
+}
+.gift-card-section {
+    background-color: #fff;
+    padding: 20px;
+    margin:auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+}
+.input-field {
+    width: 100%; /* Sigurohuni që input field-at të mbushin hapësirën */
+    /* Hapësira poshtë secilit input */
+}
+
+.input-field input,
+.input-field textarea {
+    width: 100%; /* Gjerësia 100% për input field-at dhe textarea */
+    padding: 10px; /* Hapësira brenda input field-it */
+    border: 1px solid #ccc; /* Kufiri i input field-it */
+    border-radius: 5px; /* Rrafshtimi i skajeve */
+}
+.description{
+    font-size: 13px;
+    padding-top: 10px;
+}
+.selected {
+    border-color: blue; /* Vendos kufi për kartën e zgjedhur */
 }

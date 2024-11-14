@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Home Page</title>
 </head>
@@ -140,16 +141,16 @@
             </div>
             <div class="box">
                 <img src="img/sale.png" >
-                <span>Nxitoni</span>
-                <h1>Zbritje deri ne 50%</h1>
-                <p> Ne shume lloje te librave, nga me te shiturat e deri nga me te rejat...</p>
+                <span>Hurry!</span>
+                <h1>Discount up to 50%</h1>
+                <p> for many types of books, from the best sellers to the newest ones...</p>
             </div>
         </div>
        </section>
        <section class="shop">
         <div class="title">
                 <!-- <img src="img/download.png"> -->
-            <h1>Librat me te shitura</h1>
+            <h1>Recommended</h1>
         </div>
         <div class="shop-slider">
             
@@ -253,11 +254,11 @@
    </section>
        <div class="top-footer">
         <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-        <div class="input-field">
-            <input type="text" name="" placeholder="email address...">
-            <button class="btn">Subscribe</button>
+            <div class="input-field">
+                <input type="email" id="emailInput" name="" placeholder="email address...">
+                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
         </div>
-    </div>
         <footer>
             <div class="overlay"></div>
             <div class="footer-content">
@@ -289,7 +290,7 @@
                     <div class="card">
                         <h3>local</h3>
                         <ul>
-                            <li>Sheshi Skenderbeu</li>
+                            <li>Sheshi "Nënë Tereza"</li>
                             <li>Albi Mall</li>
                             <li>Prishtina Mall</li>
                         </ul>
@@ -314,10 +315,11 @@
 
 
     <!-- Footer Section -->
-    
+ 
 
     <!-- Add your JavaScript file here -->
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
     <script src="count.js"></script>
 </body>
 </html>

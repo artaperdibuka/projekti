@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - About us Page</title>
 </head>
@@ -47,18 +48,18 @@
                 </div>
                 <div class="about-category">
                     <div class="box">
-                        <img src="img/1.png">
+                        <img src="img/2.png">
                         <div class="detail">
                             <span>Books</span>
-                            <h1> Libra shqip</h1>
+                            <h1> Books</h1>
                             <a href="products.html" class="btn">shop now</a>
                         </div>
                     </div>
                     <div class="box">
-                        <img src="img/2.png">
+                        <img src="img/1.png">
                         <div class="detail">
-                            <span>Books</span>
-                            <h1> Libra te huaj</h1>
+                            <span>Accessories</span>
+                            <h1> Accessories</h1>
                             <a href="products.html" class="btn">shop now</a>
                         </div>
                     </div>
@@ -75,7 +76,7 @@
                         <div class="detail">
                             <span>Cards</span>
                             <h1> E-Gift Card</h1>
-                            <a href="products.html" class="btn">shop now</a>
+                            <a href="gift-card.html" class="btn">shop now</a>
                         </div>
                     </div>
                     </div><div class="about">
@@ -84,12 +85,11 @@
                             <img src="img/events1.jpg">
                         </div>
                         <div class="detail">
-                            <h1>Ejani dhe mbani eventet tuaja tek ne</h1>
+                            <h1>
+                                Come and hold your events with us</h1>
                             <div class="event-description">
-                                <p>Kërkoni një vend të veçantë për të mbajtur eventin tuaj të ardhshëm? 
-                                    Tek ne do të gjeni ambientin perfekt për çdo lloj aktiviteti: qoftë një seminar, një lansim libri, apo një takim letrar.
-                                    Me hapësira moderne dhe komode, ne ofrojmë gjithçka që ju nevojitet për ta bërë ngjarjen tuaj të paharrueshme.
-                                    Na kontaktoni dhe le të krijojmë së bashku një përvojë të veçantë për ju dhe të ftuarit tuaj!</p>
+                                <p>
+                                    Looking for a special place to hold your next event? Here you will find the perfect environment for any type of activity: whether it's a seminar, a book launch, or a literary meeting. With modern and comfortable spaces, we offer everything you need to make your event unforgettable. Contact us and let's create together a special experience for you and your guests!</p>
             
                                 <a href="events.html" class="btn">Reserve event</a>
 
@@ -102,8 +102,8 @@
                     </div>
                 <section class="services">
                     <div>
-                        <h1 class="title">Pse ne?</h1>
-                        <p class="paragraph1">ktu ni pargraf e marrim prej chatgbts</p>
+                        <h1 class="title1">Why us?</h1>
+                        <p class="paragraph1">Our bookstore: where stories spark curiosity and worlds await.</p>
         
                     </div>
                 <div class="box-container">
@@ -141,11 +141,11 @@
                 <div>
                     <div class="top-footer">
                         <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                        <div class="input-field">
-                            <input type="text" name="" placeholder="email address...">
-                            <button class="btn">Subscribe</button>
+                            <div class="input-field">
+                                <input type="email" id="emailInput" name="" placeholder="email address...">
+                                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+                            </div>
                         </div>
-                    </div>
                     <footer>
                         <div  class="overlay"></div>
                         <div class="footer-content">
@@ -177,7 +177,7 @@
                             <div class="card">
                                 <h3>local</h3>
                                 <ul>
-                                    <li>Sheshi Skenderbeu</li>
+                                    <li>Sheshi "Nënë Tereza"</li>
                                     <li>Albi Mall</li>
                                     <li>Prishtina Mall</li>
                                 </ul>

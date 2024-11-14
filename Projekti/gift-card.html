@@ -43,41 +43,78 @@
   
 
     <div class="main">
-        <div class="tittle2">
-            <a href="home.html">Home</a><span>ORDER</span>
-        </div>
+            <div class="tittle2">
+                <a href="home.html">Home</a><span>E-Gift Card</span>
+            </div>
+           <section class="gift-card-section">
+                    <div class="form-layout">
+                       <div class="box1">
+                        <div class="card-selection">
+                            <div class="options">
+                                <div class="option1 selected" onclick="selectCard('Card 1', 'img/card1.png')">
+                                    <img src="img/card1.png" alt="Card 1" />
+                                </div>
+                                <div class="option1" onclick="selectCard('Card 2', 'img/card2.png')">
+                                    <img src="img/card2.png" alt="Card 2" />
+                                </div>
+                                <div class="option1" onclick="selectCard('Card 3', 'img/card3.png')">
+                                    <img src="img/card3.png" alt="Card 3" />
+                                </div>
+                                <div class="option1" onclick="selectCard('Card 4', 'img/card4.png')">
+                                    <img src="img/card4.png" alt="Card 4" />
+                                </div>
+                            </div>
+                            <div class="large-image-container" style="display: none;">
+                                <!-- Imazhi i madh do të shfaqet këtu -->
+                            </div>
+                        </div>
+                       </div>
+                        <div class="box2">
+                            <div class="form-section">
+                                <form id="order-form" method="post">
+                                    <div class="options">
+                                        <div class="option" onclick="selectOption('10')">10$</div>
+                                        <div class="option" onclick="selectOption('20')">20$</div>
+                                        <div class="option" onclick="selectOption('50')">50$</div>
+                                        <div class="option" onclick="selectOption('100')">100$</div>
+                                        <div class="option" onclick="selectOption('200')">200$</div>
+                                    </div>
+                                    <input type="text" id="selectedOption" placeholder="Select an option..." readonly />
+                                    <div class="input-field">
+                                        <input type="text" name="recipient" id="recipient" placeholder="The recipient of the gift" />
+                                        <div id="nameError" class="error-message"></div>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="text" name="giver" id="giver" placeholder="The gift giver" />
+                                        <div id="giverError" class="error-message"></div>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="email" name="email" id="email" placeholder="The email of the lucky gift receiver" />
+                                        <div id="emailError" class="error-message"></div>
+                                    </div>
+                                    <div class="input-field">
+                                        <textarea name="message" id="message" placeholder="A message for the gift receiver"></textarea>
+                                        <div id="messageError" class="error-message"></div>
+                                    </div>
+                                    <button type="submit" class="btn">Shop Now</button>
+                                    <p class="description">Description: A gift card is a special type of product. Its value can be used as payment toward future orders from your online store. Gift card is available only for online purchases.</p>
+                                </form>
+                            </div>
 
-        <main class="order-main">
-            <h1 class="title">Order Summary</h1>
-    
-                <div id="cart-summary">
-                    <!-- Cart items will be dynamically inserted here -->
-                </div>
-    
-                <div class="order-form">
-                    <h2 class="heading2">Delivery Details:</h2>
-                    <form id="order-form">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-    
-                        <label for="phone">Phone Number:</label>
-                        <input type="text" id="phone" name="phone" required>
-                        
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" name="address" required>
+                        </div>
+                   
+            
+                
+               </div>
+                
+           </section>
+                    
+                  
 
-                        <label for="transport">Transport Method:</label>
-                        <select id="transport" name="transport" required>
-                            <option value="standard">Standard Delivery (5.00€)</option>
-                            <option value="express">Express Delivery (15.00€)</option>
-                        </select>
+              
+              
     
-                        <h3 id="total-price">Total: 0.00€</h3>
-                        <button type="submit" class=" btn">Confirm Order</button>
-                    </form>
-                </div>
-    
-            </main>
+            
             <section class="services">
                     
                 <div class="box-container">
@@ -231,6 +268,43 @@
             localStorage.removeItem('order');
             window.location.href = 'home.html';  // Redirect to home page
         });
+        window.onload = function() {
+            selectCard('Card 1', 'img/card1.png'); // Zgjedh automatikisht kartën e parë
+        };
+
+        function selectCard(cardName, imagePath) {
+            // Shfaq imazhin e madh
+            const largeImageContainer = document.querySelector('.large-image-container');
+            largeImageContainer.style.display = 'block'; // Shfaq container-in
+            largeImageContainer.innerHTML = `<img src="${imagePath}" alt="${cardName}" style="width: 300px; height: 300px;" />`; // Shto imazhin e madh
+
+            // Hiq klasën 'selected' nga të gjitha opsionet
+            let options = document.querySelectorAll('.options .option1');
+            options.forEach(opt => opt.classList.remove('selected'));
+
+            // Shto klasën 'selected' në opsionin e zgjedhur
+            const selectedOption = Array.from(options).find(opt => opt.onclick.toString().includes(cardName));
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+            }
+        }
+
+
+function selectOption(option) {
+    const selectedOptionInput = document.getElementById("selectedOption");
+    selectedOptionInput.value = option;
+
+    // Remove the 'selected' class from all options
+    let options = document.querySelectorAll('.options .option');
+    options.forEach(opt => opt.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked option
+    const selectedOption = Array.from(options).find(opt => opt.textContent === option);
+    selectedOption.classList.add('selected');
+}
+
+
+
         </script>
           <script src="script.js"></script>
 
