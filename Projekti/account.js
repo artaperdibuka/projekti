@@ -13,7 +13,7 @@ function register(event) {
         localStorage.setItem("isLoggedIn", "true");
         window.Swal.fire({
             icon: 'success',
-            title: 'Messag',
+            title: 'Message',
             text: 'Register successful!',
             confirmButtonText: 'OK'
         }).then(() => {
@@ -49,7 +49,7 @@ function login(event) {
         localStorage.setItem("isLoggedIn", "true");
         window.Swal.fire({
             icon: 'success',
-            title: 'Messag',
+            title: 'Message',
             text: 'Login successful!',
             confirmButtonText: 'OK'
         }).then(() => {

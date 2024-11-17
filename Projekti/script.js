@@ -198,9 +198,13 @@ document.querySelector(".logout-btn").addEventListener("click", (event) => {
 
 function subscribeNewsletter() {
     var email = document.getElementById('emailInput').value;
-    if (email) {
+    
+    // Check if email contains '@'
+    if (email && email.includes('@')) {
         Swal.fire("Thank you!", "You will be informed of all the news!", "success");
-    } else {
+    } else if (!email) {
         Swal.fire("Error!", "Please enter an email address!", "error");
+    } else {
+        Swal.fire("Error!", "Please enter a valid email address!", "error");
     }
 }
