@@ -1406,7 +1406,6 @@ textarea{
     padding-top: 5px;
     color: #686868;
 }
-<<<<<<< HEAD
 .form-layout {
     display: flex; /* Përdorimi i Flexbox për të krijuar dy kolona */
     justify-content: center; /* Qendro elementët horizontalisht */
@@ -1516,9 +1515,41 @@ textarea{
     padding-top: 10px;
 }
 .selected {
-    border-color: blue; /* Vendos kufi për kartën e zgjedhur */
-=======
+    border-color: blue; /* Vendos kufi për kartën e zgjedhur */}
 .acc-paragraph{
     text-align: center;
->>>>>>> 95cd2b37c9d04351517e7606263a5cc08733833c
+}
+#loyalty-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#loyalty-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#loyalty-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loyalty-form button {
+    background-color: #40b298;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loyalty-form button:hover {
+    background-color: #36a68a;
 }

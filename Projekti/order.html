@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - Cart</title>
+    <title>BookstoreBuzuku - Order page</title>
 </head>
 <body>
     <header class="header">
@@ -174,7 +174,7 @@
     </div>
 </div>
     <script>
-          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const orderSummary = document.getElementById('cart-summary');
         const totalPriceElement = document.getElementById('total-price');
         const transportSelect = document.getElementById('transport');
@@ -231,9 +231,10 @@
             localStorage.removeItem('order');
             window.location.href = 'home.html';  // Redirect to home page
         });
+        
         </script>
-          <script src="script.js"></script>
 
+<script src="script.js"></script>
 <script src="count.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
 </body>

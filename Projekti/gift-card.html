@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - Cart</title>
+    <title>BookstoreBuzuku - Gift Card page</title>
 </head>
 <body>
     <header class="header">
@@ -73,11 +73,11 @@
                             <div class="form-section">
                                 <form id="order-form" method="post">
                                     <div class="options">
-                                        <div class="option" onclick="selectOption('10')">10$</div>
-                                        <div class="option" onclick="selectOption('20')">20$</div>
-                                        <div class="option" onclick="selectOption('50')">50$</div>
-                                        <div class="option" onclick="selectOption('100')">100$</div>
-                                        <div class="option" onclick="selectOption('200')">200$</div>
+                                        <div class="option" onclick="selectOption('10€')">10€</div>
+                                        <div class="option" onclick="selectOption('20€')">20€</div>
+                                        <div class="option" onclick="selectOption('50€')">50€</div>
+                                        <div class="option" onclick="selectOption('100€')">100€</div>
+                                        <div class="option" onclick="selectOption('200€')">200€</div>
                                     </div>
                                     <input type="text" id="selectedOption" placeholder="Select an option..." readonly />
                                     <div class="input-field">
@@ -96,24 +96,16 @@
                                         <textarea name="message" id="message" placeholder="A message for the gift receiver"></textarea>
                                         <div id="messageError" class="error-message"></div>
                                     </div>
-                                    <button type="submit" class="btn">Shop Now</button>
+                                    <button type="submit" class="btn" onclick="addGiftCardCardToCart()">Shop Now</button>
                                     <p class="description">Description: A gift card is a special type of product. Its value can be used as payment toward future orders from your online store. Gift card is available only for online purchases.</p>
                                 </form>
                             </div>
 
-                        </div>
-                   
-            
+                        </div>  
                 
                </div>
                 
            </section>
-                    
-                  
-
-              
-              
-    
             
             <section class="services">
                     
@@ -210,65 +202,38 @@
         </footer>
     </div>
 </div>
+<script>
+    // Handle form submission
+// Handle form submission
+const orderForm = document.getElementById('order-form');
+orderForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Parandalon dërgimin e formularit
+
+    // Merr të dhënat nga formulari
+    const recipient = document.getElementById('recipient').value;
+    const giver = document.getElementById('giver').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const selectedOption = document.getElementById('selectedOption').value;
+
+    // Ruaj të dhënat në localStorage
+    const orderData = {
+        recipient,
+        giver,
+        email,
+        message,
+        selectedOption
+    };
+    
+    localStorage.setItem('order', JSON.stringify(orderData));
+
+    // Drejto në faqen e karrocës
+    window.location.href = 'cart.html';  // Ndryshoni në emrin e saktë të faqes së karrocës
+});
+</script>
     <script>
-          const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const orderSummary = document.getElementById('cart-summary');
-        const totalPriceElement = document.getElementById('total-price');
-        const transportSelect = document.getElementById('transport');
-
-        let totalPrice = 0;
-
-        if (cart.length > 0) {
-            cart.forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item2');
-
-                itemDiv.innerHTML = `
-                    <div class="cart-item-details2">
-                        <img src="${item.imageSrc}" alt="${item.name}" class="cart-item-img2">
-                        <div>
-                            <h4 class="cart-item-name">${item.name}</h4>
-                            <p class="cart-item-author">${item.author}</p>
-                            <p class="cart-item-price">${item.price}</p>
-                        </div>
-                    </div>
-                `;
-
-                orderSummary.appendChild(itemDiv);
-                totalPrice += parseFloat(item.price.replace('$', ''));
-            });
-
-            updateTotalPrice(); // Initial price calculation
-        } else {
-            orderSummary.innerHTML = '<p>Your cart is empty. Please add items before proceeding to checkout.</p>';
-        }
-
-        // Update total price based on selected transport method
-        transportSelect.addEventListener('change', updateTotalPrice);
-
-        function updateTotalPrice() {
-            const transportCost = transportSelect.value === 'express' ? 15.00 : 5.00;
-            const finalTotalPrice = totalPrice + transportCost;
-            totalPriceElement.innerHTML = `<h3>Total: ${finalTotalPrice.toFixed(2)}€</h3>`;
-        }
-
-        // Handle form submission
-        const orderForm = document.getElementById('order-form');
-        orderForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const address=document.getElementById('address').value;
-            const transport = transportSelect.value;
-
-            alert(`Order confirmed!\nEmail: ${email}\nPhone: ${phone}\nTransport: ${transport}\nTotal Price: $${(totalPrice + (transport === 'express' ? 15.00 : 5.00)).toFixed(2)}€`);
-
-            localStorage.removeItem('cart');
-            localStorage.removeItem('order');
-            window.location.href = 'home.html';  // Redirect to home page
-        });
-        window.onload = function() {
+          
+window.onload = function() {
             selectCard('Card 1', 'img/card1.png'); // Zgjedh automatikisht kartën e parë
         };
 
@@ -302,12 +267,48 @@ function selectOption(option) {
     const selectedOption = Array.from(options).find(opt => opt.textContent === option);
     selectedOption.classList.add('selected');
 }
+function addGiftCardCardToCart() {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Get the selected gift card details
+    const selectedOption = document.getElementById('selectedOption').value;
+    const recipient = document.getElementById('recipient').value;
+    const giver = document.getElementById('giver').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const cardName = document.querySelector('.options .option1.selected img').alt; // Get the selected card name
+    const cardImageSrc = document.querySelector('.options .option1.selected img').src; // Get the selected card image
+
+    // Create the gift card object
+    const giftCard = {
+        name: cardName,
+        imageSrc: cardImageSrc,
+        price: selectedOption,
+        recipient,
+        giver,
+        email,
+        message
+    };
+
+    // Get the current cart from localStorage or create a new one
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the gift card to the cart
+    cart.push(giftCard);
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Redirect to the cart page
+    window.location.href = 'cart.html';
+}
+
 
 
 
         </script>
-          <script src="script.js"></script>
-
+<script src="script.js"></script>
 <script src="count.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
 </body>

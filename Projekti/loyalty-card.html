@@ -6,7 +6,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - About us Page</title>
+    <title>BookstoreBuzuku - Loyalty Card Page</title>
 </head>
 <body>
  
@@ -44,101 +44,28 @@
 
     <div class="main">
                 <div class="tittle2">
-                    <a href="home.html">Home</a><span>about</span>
+                    <a href="home.html">Home</a><span>Loyality card</span>
                 </div>
-                <div class="about-category">
-                    <div class="box">
-                        <img src="img/2.png">
-                        <div class="detail">
-                            <span>Books</span>
-                            <h1> Books</h1>
-                            <a href="products.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/1.png">
-                        <div class="detail">
-                            <span>Accessories</span>
-                            <h1> Accessories</h1>
-                            <a href="products.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/5.png">
-                        <div class="detail">
-                            <span>Cards</span>
-                            <h1>Loyalty Card</h1>
-                            <a href="loyalty-card.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/6.png">
-                        <div class="detail">
-                            <span>Cards</span>
-                            <h1> E-Gift Card</h1>
-                            <a href="gift-card.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    </div><div class="about">
-                    <div class="row">
-                        <div class="img-box">
-                            <img src="img/events1.jpg">
-                        </div>
-                        <div class="detail">
-                            <h1>
-                                Come and hold your events with us</h1>
-                            <div class="event-description">
-                                <p>
-                                    Looking for a special place to hold your next event? Here you will find the perfect environment for any type of activity: whether it's a seminar, a book launch, or a literary meeting. With modern and comfortable spaces, we offer everything you need to make your event unforgettable. Contact us and let's create together a special experience for you and your guests!</p>
-            
-                                <a href="events.html" class="btn">Reserve event</a>
-
-                            </div>
-                                
-                        </div>
-            
-                    </div>
-            
-                    </div>
-                <section class="services">
-                    <div>
-                        <h1 class="title1">Why us?</h1>
-                        <p class="paragraph1">Our bookstore: where stories spark curiosity and worlds await.</p>
+                <div class="loyalty-card-section">
+                    <h2>Register for the Loyalty Card</h2>
+                    <p>Sign up and enjoy a 20% discount on your first two purchases at any of our stores!</p>
+                    <form id="loyalty-form">
+                        <label for="first-name">Emri:</label>
+                        <input type="text" id="first-name" name="first-name" required>
         
-                    </div>
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/icon2.png">
-                        <div class="detail">
-                            <h3>great savings</h3>
-                            <p>save big every order</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon1.png">
-                        <div class="detail">
-                            <h3>24*7</h3>
-                            <p>one-on-one support</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon0.png">
-                        <div class="detail">
-                            <h3>gift vouchers</h3>
-                            <p>vouchers on every festivals</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon.png">
-                        <div class="detail">
-                            <h3>worlwide delivery</h3>
-                            <p>dropship worldwide</p>
-                        </div>
-                    </div>
+                        <label for="last-name">Mbiemri:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="phone">Numri i telefonit:</label>
+                        <input type="tel" id="phone" name="phone" required>
+        
+                        <button type="submit">Regjistrohu</button>
+                    </form>
                 </div>
-               </section>
-               
-                <div>
+                
                     <div class="top-footer">
                         <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
                             <div class="input-field">
@@ -204,7 +131,49 @@
             <!-- Vendosim footer-in këtu -->
                  
         </body>
+        <script>
+           document.getElementById('loyalty-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Parandaloni dërgimin e formularit
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    // Kontrolloni nëse përdoruesi është regjistruar tashmë
+    const existingUser  = JSON.parse(localStorage.getItem('user'));
+    if (existingUser  && existingUser .email === email) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Regjistrimi i dështuar',
+            text: 'Ky email është regjistruar tashmë!',
+        });
+    } else {
+        registerUser (firstName, lastName, email, phone);
+        Swal.fire({
+            icon: 'success',
+            title: 'Regjistrimi u krye me sukses!',
+            text: 'Mirë se vini në programin tonë të besnikërisë!',
+        });
+    }
+});
+
+function registerUser (firstName, lastName, email, phone) {
+    const user = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        purchases: 0 // Numri i përdorimeve të email-it
+    };
+
+    localStorage.setItem('user', JSON.stringify(user));
+    console.log('Përdoruesi është regjistruar:', user);
+}
+        
+          
+        </script> 
    <script src="script.js"></script>
+   <script src="gift-card.js" defer></script>
    <script src="count.js"></script>
 </body>
 </html> 
