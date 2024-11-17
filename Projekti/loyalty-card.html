@@ -44,26 +44,39 @@
 
     <div class="main">
                 <div class="tittle2">
-                    <a href="home.html">Home</a><span>Loyality card</span>
+                    <a href="home.html">Home</a><span>Loyalty card</span>
                 </div>
                 <div class="loyalty-card-section">
                     <h2>Register for the Loyalty Card</h2>
                     <p>Sign up and enjoy a 20% discount on your first two purchases at any of our stores!</p>
-                    <form id="loyalty-form">
-                        <label for="first-name">Emri:</label>
-                        <input type="text" id="first-name" name="first-name" required>
-        
-                        <label for="last-name">Mbiemri:</label>
-                        <input type="text" id="last-name" name="last-name" required>
-        
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-        
-                        <label for="phone">Numri i telefonit:</label>
-                        <input type="tel" id="phone" name="phone" required>
-        
-                        <button type="submit">Regjistrohu</button>
-                    </form>
+                    <div class="form-container">
+                        <form id="registerForm">
+                            <div class="input-field">
+                                <p>YOUR NAME<span class="required-star">*</span></p>
+                                <input type="text" id="first-name" required placeholder="Enter your name" maxlength="50"
+                                oninput="this.value=this.value.replace(/\s/g, '')">
+                            </div>
+                            <div class="input-field">
+                                <p>YOUR SURNAME<span class="required-star">*</span></p>
+                                <input type="text" id="last-name" required placeholder="Enter your surname" maxlength="50"
+                                oninput="this.value=this.value.replace(/\s/g, '')">
+                            </div>
+                            <div class="input-field">
+                                <p>YOUR EMAIL<span class="required-star">*</span></p>
+                                <input type="email" id="email" required placeholder="Enter your email" maxlength="50"
+                                oninput="this.value=this.value.replace(/\s/g, '')">
+                            </div>
+                            <div class="input-field">
+                                <p>YOUR PHONE NUMBER<span class="required-star">*</span></p>
+                                <input type="tel" id="phone" required placeholder="Enter your phone number" maxlength="50"
+                                oninput="this.value=this.value.replace(/\s/g, '')">
+                            </div>
+                            <button type="submit" class="btn">Register now</button>
+                        </form>
+
+
+                    </div>
+                    
                 </div>
                 
                     <div class="top-footer">
@@ -132,7 +145,7 @@
                  
         </body>
         <script>
-           document.getElementById('loyalty-form').addEventListener('submit', function(event) {
+            document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Parandaloni dërgimin e formularit
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
@@ -144,15 +157,15 @@
     if (existingUser  && existingUser .email === email) {
         Swal.fire({
             icon: 'info',
-            title: 'Regjistrimi i dështuar',
-            text: 'Ky email është regjistruar tashmë!',
+            title: 'Registration Failed',
+            text: 'This email is already registered!',
         });
     } else {
         registerUser (firstName, lastName, email, phone);
         Swal.fire({
             icon: 'success',
-            title: 'Regjistrimi u krye me sukses!',
-            text: 'Mirë se vini në programin tonë të besnikërisë!',
+            title: 'Registration Successful!',
+            text: 'Welcome to our loyalty program! You can now pick up your loyalty card at one of our stores and use it to earn discounts.',
         });
     }
 });
@@ -169,9 +182,7 @@ function registerUser (firstName, lastName, email, phone) {
     localStorage.setItem('user', JSON.stringify(user));
     console.log('Përdoruesi është regjistruar:', user);
 }
-        
-          
-        </script> 
+    </script>
    <script src="script.js"></script>
    <script src="gift-card.js" defer></script>
    <script src="count.js"></script>

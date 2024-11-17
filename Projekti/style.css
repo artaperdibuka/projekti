@@ -1523,37 +1523,15 @@ textarea{
 .acc-paragraph{
     text-align: center;
 }
-#loyalty-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.loyalty-card-section {
+    padding: 20px; /* Padding inside the section */    
 }
 
-#loyalty-form label {
-    display: block;
-    margin-bottom: 5px;
+.loyalty-card-section h2 {
+    font-size: 24px; /* Font size for the heading */
+    margin-bottom: 10px; /* Space below the heading */
 }
 
-#loyalty-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#loyalty-form button {
-    background-color: #40b298;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#loyalty-form button:hover {
-    background-color: #36a68a;
+.loyalty-card-section p {
+    font-size: 16px; /* Font size for the paragraph */ 
 }
