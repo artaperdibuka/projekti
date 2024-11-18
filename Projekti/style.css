@@ -300,61 +300,92 @@ header.scrolled {
     position: relative;
     margin-bottom:2rem ;
 }
-.slider{
+.slider {
     font-family: "Roboto", sans-serif;
-    max-height: 80vh;
     width: 100%;
     display: flex;
     overflow-x: hidden;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; 
+    background:radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);
 }
-.slider__slider{
-    height: 80vh;
-    min-width: 100vw;
-    width: 100%;
+
+.slider__slider {
+    background: radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);/* Ngjyra e sfondit të slider-it */
+    height: 80vh; /* 80% e lartësisë së dritares */
+    min-width: 85vw; /* Gjerësi minimale prej 90% të dritares */
+    width: 100%; /* Gjerësi 100% */
     scroll-snap-align: start;
+    justify-content: space-between;
+   
     background-position: center center;
-    background-size: cover;
-    position: relative;
+    position: relative; /* Pozita relative për elementet absolute brenda */
+    overflow: hidden; /* Fsheh çdo përmbajtje që del jashtë */
 }
-.slider__slider .slide-detail{
+
+.slider__slider .slide-detail {
+    position: relative; /* Pozita relative për të lejuar pozicionimin absolute të imazhit */
+    width: 100%; /* Gjerësi 100% */
+    height: 100%; /* Lartësi 100% */
+}
+
+.slider__slider .slide-detail img {
+    position: absolute; /* Pozicionimi absolute për të mbushur plotësisht slider-in */
+    top: 50%; /* Qendro në qendër vertikalisht */
+    left: 50%; /* Qendro në qendër horizontalisht */
+    width: 100%; /* Mbush gjerësinë e slider-it */
+    height: 100%; /* Mbush lartësinë e slider-it */
+    object-fit: cover; /* Siguron që imazhi të mbulojë plotësisht hapësirën pa deformim */
+    transform: translate(-50%, -50%); /* Qendro imazhin në qendër */
+}
+
+.slider__slider .slide-detail1 img{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 250px;
+    text-align: left;
+    
+}
+.slider__slider .slide-detail2{
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 35%;
     text-align: center;
+    
+    color: #fff; /* Text color */
+    margin-left: 20px;
 }
-.slider__slider .slide-detail h1{
+.slider__slider .slide-detail2 .text-detail2 p {
+    font-size: 14px; /* Madhësia e tekstit të paragrafit */
+    margin-bottom: 60px; /* Hapësira poshtë paragrafit */
+    margin-left: 10px;
+    line-height: 1.6; /* Lartësia e rreshtit për lehtësim të leximit */
+    color: #fff; /* Ngjyra e tekstit të paragrafit */
+    background-color: rgba(0, 0, 0, 0.5); /* Sfond gjysmëtransparent për të përmirësuar kontrastin */
+    padding: 10px; /* Hapësira brenda paragrafit */
+    border-radius: 5px; /* Këndet e rrumbullakosura për një pamje më të butë */
+    text-align: justify; /* Rreshtimi i tekstit në mënyrë të rregullt */
+}
+.slider__slider .slide-detail2 .text-detail .btn{
+    margin-top: 10px;
+}
+
+
+
+.slider__slider .slide-detail2 h1{
     font-size: 30px;
     color: #fff;
     text-transform: uppercase;
     position: relative;
+    text-align: center;
+    margin-bottom: 10px;
 }
-.slider__slider .slide-detail h1::before{
-    position: absolute;
-    content: '';
-    background: #e2e2e244;
-    width: 380px;
-    height: 1px;
-    bottom: -40px;
-    left: 20%;
+.slider__slider .slide-detail2 .text-detail{
+    width: 100%;
 }
-.slider__slider .slide-detail h1::after{
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    bottom: -50%;
-    left: 50%;
-    background: #f7b90f;
-}
-.slider__slider .slide-detail p{
-    font-size: 14px;
-    color: #fff;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
+
+
 .slide1{
     background-image: url('img/1.jpg');
 }
