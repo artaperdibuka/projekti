@@ -317,7 +317,7 @@ header.scrolled {
     width: 100%; /* Gjerësi 100% */
     scroll-snap-align: start;
     justify-content: space-between;
-   
+    display: block;
     background-position: center center;
     position: relative; /* Pozita relative për elementet absolute brenda */
     overflow: hidden; /* Fsheh çdo përmbajtje që del jashtë */
