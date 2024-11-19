@@ -21,54 +21,62 @@ userBtn.addEventListener('click', function(){
 "use strict";
 // Home page slider
 const leftArrow = document.querySelector('.left-arrow .bxs-left-arrow'),
-rightArrow = document.querySelector('.right-arrow .bxs-right-arrow'),
-slider = document.querySelector('.slider');
+      rightArrow = document.querySelector('.right-arrow .bxs-right-arrow'),
+      slider = document.querySelector('.slider');
 
-// Scroll to right 
-function scrollRight(){
-    if(slider.scrollWidth - slider.clientWidth === slider.scrollLeft){
+// Scroll to right
+function scrollRight() {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+    if (slider.scrollLeft >= maxScrollLeft) {
+        // Rikthehu në fillim pa animacion
         slider.scrollTo({
             left: 0,
-            behavior: "smooth"
+            behavior: "auto"
         });
     } else {
         slider.scrollBy({
-            left: window.innerWidth,
+            left: window.innerWidth, // Lëviz madhësinë e një ekrani
             behavior: "smooth"
-        })
+        });
     }
 }
 
 // Scroll to left
-function scrollLeft(){
-    slider.scrollBy({
-        left: -window.innerWidth,
-        behavior: "smooth"
-    })
+function scrollLeft() {
+    if (slider.scrollLeft === 0) {
+        // Shko në fund pa animacion
+        slider.scrollTo({
+            left: slider.scrollWidth,
+            behavior: "auto"
+        });
+    } else {
+        slider.scrollBy({
+            left: -window.innerWidth,
+            behavior: "smooth"
+        });
+    }
 }
 
-let timerId = setInterval(scrollRight, 7000);
+let timerId = setInterval(scrollRight, 7000); // Automatikisht lëviz djathtas
 
-// Reset timer to scroll right
-function resetTimer(){
+// Reset timer për scrolling automatik
+function resetTimer() {
     clearInterval(timerId);
     timerId = setInterval(scrollRight, 7000);
 }
 
-// Scroll event
-slider.addEventListener('click', function(ev){
-    if(ev.target === leftArrow){
-        scrollLeft();
-        resetTimer();
-    }
-})
+// Event për klikime
+leftArrow.addEventListener('click', () => {
+    scrollLeft();
+    resetTimer();
+});
 
-slider.addEventListener('click', function(ev){
-    if(ev.target === rightArrow){
-        scrollRight();
-        resetTimer();
-    }
-})
+rightArrow.addEventListener('click', () => {
+    scrollRight();
+    resetTimer();
+});
+
 
 // Shop Slider
 const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow'),
