@@ -460,6 +460,7 @@ header.scrolled {
     border-bottom: 2px solid #e2e2e255;
 
 }
+
 .thumb{
     max-width: 1200px;
     box-shadow: var(--box-shadow);
@@ -542,12 +543,15 @@ header.scrolled {
 }
 
 /* section shop */
-.shop {
-    background-color: #fff; /* Ngjyra e bardhë për sfondin */
-    margin: 3rem 0;
-    padding: 2rem 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hije për theksim të seksionit */
+
+
+
+.shop-slider {
     position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 .shop .title {
    
@@ -555,66 +559,63 @@ header.scrolled {
     padding: 1.5rem; /* Hapësira brenda titullit */
   
 }
-
-.shop-slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.shop-slider .box-container {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-}
-
-.shop-slider .box {
-    flex: 0 0 25%; /* Kjo përcakton gjerësinë e çdo libri (25% për 4 libra në një rresht) */
-    min-width: 25%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.shop-slider .box img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.shop-slider .box-container.hide {
-    transform: translateX(-100%); /* Lëviz të tjerët kur klikoni shigjetat */
-}
-
 .shop .title h1 {
     font-size: 1.5rem; /* Madhësia e titullit */
     letter-spacing: 3px; /* Hapësira midis shkronjave */
-    margin: 0; /* Eliminon margjinat e parazgjedhura */
+    
     font-family: 'Arial', sans-serif; /* Zgjidhni një font të përshtatshëm */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
     text-align: left;
     border-bottom: 1px solid #1b1a1a23;
-    padding-bottom: 10px;
+   
+}
+.shop-slider .box-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * (5 / 4));
 }
 
-
-.shop .box-container .box{
-    margin: 1rem;
-    box-shadow: var(--box-shadow);
+.shop-slider .box {
     position: relative;
-    background-color: #fff;
+    flex: 0 0 20%; /* 5 libra = 20% për secilin libër */
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f9f9f9; /* Ngjyra e kutisë */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Organizim vertikal */
+    align-items: center;
+    justify-content: space-between;
 }
 
-.shop .btn{ 
-    position: absolute; 
-    left: 30%; bottom: -3%;
-    display: block;
-    margin: 0; 
+.shop-slider .box img {
+    width: 100%;
+    height: 250px; /* Madhësia e reduktuar */
+    object-fit: contain; /* Siguron që e gjithë fotografia të duket */
+    border-radius: 5px;
+    margin-bottom: 10px; /* Hapësirë poshtë fotos */
+}
+
+.shop-slider .box .btn {
+    margin-top: 10px;
     background-color: var(--light-green);
     color: #000;
     padding: 0.5rem 1rem;
-    bottom: 10px;
-
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: center; /* Qendërzimi horizontal */
 }
+
+.shop-slider .box .btn:hover {
+    background-color: #aad576; /* Ngjyra gjatë hover-it */
+}
+
 .shop-left-arrow,
 .shop-right-arrow{
     position: absolute;
@@ -625,7 +626,7 @@ header.scrolled {
     height: 40px;
     border-radius: 50%;
     background: var(--light-green);
-    box-shadow: 0 0 0 6px rgb(255, 255, 255 / 40%);
+    box-shadow: 0 0 0 6px rgb(255, 255, 255 ,0.4);
     z-index: 2;
     cursor: pointer;
     justify-content: center;

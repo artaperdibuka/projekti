@@ -77,8 +77,8 @@ const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow')
       boxContainer = document.querySelector('.shop-slider .box-container');
 
 let currentPosition = 0;
-const boxWidth = 25; // 25% për secilin libër
-const visibleBooks = 4; // Numri i librave të dukshëm njëkohësisht
+const boxWidth = 20; // 20% për secilin libër
+const visibleBooks = 5; // Numri i librave të dukshëm njëkohësisht
 let totalBooks;
 let autoSlideInterval;
 
@@ -86,7 +86,7 @@ function setupInfiniteSlider() {
     const originalBoxes = document.querySelectorAll('.shop-slider .box');
     totalBooks = originalBoxes.length;
 
-    // Klono librat në fillim dhe në fund
+    // Klono librat në fillim dhe në fund për të krijuar efektin e pafundësisë
     for (let i = 0; i < visibleBooks; i++) {
         boxContainer.appendChild(originalBoxes[i].cloneNode(true));
         boxContainer.insertBefore(originalBoxes[totalBooks - 1 - i].cloneNode(true), boxContainer.firstChild);
@@ -163,6 +163,7 @@ shopSlider.addEventListener('mouseleave', startAutoSlide);
 // Inicializimi
 setupInfiniteSlider();
 startAutoSlide();
+
 
 //login register
 // Check login status on page load
