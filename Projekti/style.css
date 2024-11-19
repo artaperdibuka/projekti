@@ -588,6 +588,7 @@ header.scrolled {
     flex-direction: column; /* Organizim vertikal */
     align-items: center;
     justify-content: space-between;
+    margin: 0 10px;
 }
 
 .shop-slider .box img {
