@@ -24,19 +24,23 @@ const leftArrow = document.querySelector('.left-arrow .bxs-left-arrow'),
       rightArrow = document.querySelector('.right-arrow .bxs-right-arrow'),
       slider = document.querySelector('.slider');
 
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slider__slider');
+const totalSlides = slides.length;
+
 // Scroll to right
 function scrollRight() {
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    currentIndex++;
 
-    if (slider.scrollLeft >= maxScrollLeft) {
-        // Rikthehu në fillim pa animacion
+    if (currentIndex >= totalSlides) {
+        currentIndex = 0; // Reset to the first slide
         slider.scrollTo({
             left: 0,
-            behavior: "auto"
+            behavior: "auto" // No smooth transition for reset
         });
     } else {
         slider.scrollBy({
-            left: window.innerWidth, // Lëviz madhësinë e një ekrani
+            left: window.innerWidth, // Move by one screen width
             behavior: "smooth"
         });
     }
@@ -44,29 +48,31 @@ function scrollRight() {
 
 // Scroll to left
 function scrollLeft() {
-    if (slider.scrollLeft === 0) {
-        // Shko në fund pa animacion
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 1; // Go to the last slide
         slider.scrollTo({
-            left: slider.scrollWidth,
-            behavior: "auto"
+            left: slider.scrollWidth, // Scroll to the end
+            behavior: "auto" // No smooth transition for reset
         });
     } else {
         slider.scrollBy({
-            left: -window.innerWidth,
+            left: -window.innerWidth, // Move back by one screen width
             behavior: "smooth"
         });
     }
 }
 
-let timerId = setInterval(scrollRight, 7000); // Automatikisht lëviz djathtas
+let timerId = setInterval(scrollRight, 7000); // Automatically scroll right
 
-// Reset timer për scrolling automatik
+// Reset timer for automatic scrolling
 function resetTimer() {
     clearInterval(timerId);
     timerId = setInterval(scrollRight, 7000);
 }
 
-// Event për klikime
+// Event listeners for clicks
 leftArrow.addEventListener('click', () => {
     scrollLeft();
     resetTimer();
@@ -76,7 +82,6 @@ rightArrow.addEventListener('click', () => {
     scrollRight();
     resetTimer();
 });
-
 
 // Shop Slider
 const leftArrowShop = document.querySelector('.shop-left-arrow .bxs-left-arrow'),

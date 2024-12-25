@@ -114,7 +114,9 @@ sup {
 .btn:hover::before {
     width: 100%;
 }
-
+.btn:hover{
+    color: white;
+}
 label {
     text-transform: capitalize;
 }
@@ -238,7 +240,9 @@ header.scrolled {
 .navbar a:hover {
     color: var(--green);
     border-bottom-color: var(--green); /* Ngjyra e vijës gjatë hover-it */
+    text-decoration: none !important;
 }
+
 
 .header .icons {
     display: flex;
@@ -304,16 +308,17 @@ header.scrolled {
     font-family: "Roboto", sans-serif;
     width: 100%;
     display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
+  
     scroll-snap-type: x mandatory; 
     background:radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);
+    transition: transform 0.5s ease;
 }
 
 .slider__slider {
     background: radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);/* Ngjyra e sfondit të slider-it */
     height: 80vh; /* 80% e lartësisë së dritares */
-    min-width: 85vw; /* Gjerësi minimale prej 90% të dritares */
+    min-width: 100%; /* Gjerësi minimale prej 90% të dritares */
     width: 100%; /* Gjerësi 100% */
     scroll-snap-align: start;
     justify-content: space-between;
@@ -321,6 +326,7 @@ header.scrolled {
     background-position: center center;
     position: relative; /* Pozita relative për elementet absolute brenda */
     overflow: hidden; /* Fsheh çdo përmbajtje që del jashtë */
+    transition: transform 0.5s ease;
 }
 
 .slider__slider .slide-detail {
@@ -461,6 +467,26 @@ header.scrolled {
 
 }
 
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #40b298; /* Green color for the arrows */
+    border-radius: 50%; /* Make the background circular */
+    width: 50px; /* Width of the arrows */
+    height: 50px; /* Height of the arrows */
+}
+
+
+.carousel-item img {
+    object-fit: contain; /* Ensure images fit within their container */
+}
+
+.carousel-inner {
+    border-radius: 10px; /* Rounded corners for the carousel */
+    overflow: hidden; /* Hide overflow */
+}
+
+
 .thumb{
     max-width: 1200px;
     box-shadow: var(--box-shadow);
@@ -588,7 +614,7 @@ header.scrolled {
     flex-direction: column; /* Organizim vertikal */
     align-items: center;
     justify-content: space-between;
-    margin: 0 10px;
+    
 }
 
 .shop-slider .box img {
@@ -739,6 +765,7 @@ footer .inner-footer{
 }
 footer .inner-footer .card{
     margin: .5rem;
+    border: none !important;
    
 }
 footer .inner-footer .card li{
