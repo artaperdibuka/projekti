@@ -47,35 +47,40 @@
     <div class="main">
         <section class="home-section">
             <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center align-items-center" style="height: 600px;">
-                            <img src="img/t2.png" alt="Book Image" class="d-block" style="max-height: auto; width: 100%;">
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center" style="height: 600px; justify-content: center">
-                            <div class="col-md-4 text-center">
-                                <img src="img/b1.png" alt="Book Image" style="height: 500px; width: auto;justify-content: center">
-                            </div>
-                            <div class="col-md-6">
-                                <h1 style="font-size: 1.5rem;">The Prince</h1>
-                                <p style="font-size: 0.8rem;">“The lion cannot protect himself from traps, and the fox cannot defend himself from wolves.<br>
-                                    One must therefore be a fox to recognize traps, and a lion to frighten wolves.”<br>
-                                    ― Niccolò Machiavelli, The Prince</p>
-                                <a href="products.html" class="btn ">Shop now</a>
+               
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                                <img src="img/BuzukuBookstore.jpeg" alt="Book Image" class="d-block w-100" style="height: 100%; object-fit: cover;">
+                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                    <p class="text-white bg-dark p-2 rounded" style="opacity: 0.8; max-width: 60%;">Discover amazing books at Buzuku Bookstore and explore our events!</p>
+                                    <a href="events.html" class="btn btn-secondary mt-2">Reserve an Event</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center align-items-center" style="height: 600px;">
-                            <img src="img/recomended1.png" alt="Book Image" class="d-block" style="max-height: auto; width: 100%;">
+                
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                                <img src="img/t2.png" alt="Accessories" class="d-block w-100" style="height: 100%; object-fit: cover;">
+                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                    <a href="accessories.html" class="btn btn-secondary mt-2">Shop Accessories</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                                <img src="img/recomended1.png" alt="Recommended Books" class="d-block w-100" style="height: 100%; object-fit: cover;">
+                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                    <a href="#recommendedBooks" class="btn btn-secondary mt-2">View Recommended Books</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                
         
                 <!-- Arrows -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
@@ -133,12 +138,8 @@
             </div>
         </div>
        </section>
-       <section class="shop">
-        <div class="title">
-                <!-- <img src="img/download.png"> -->
-            <h1>Recommended</h1>
-        </div>
-        <section class="shop">
+      
+        <section id="recommendedBooks" class="shop">
             <div class="title text-center">
                 <h1>Recommended Books</h1>
             </div>
