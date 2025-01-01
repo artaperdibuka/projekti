@@ -543,10 +543,6 @@ header.scrolled {
 }
 
 /* section shop */
-
-
-
-
 .shop .title {
    
     margin-bottom: 2rem; /* Hapësira poshtë titullit */
@@ -572,13 +568,14 @@ header.scrolled {
 
 .shop-slider .box-container {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Animim të smooth gjatë lëvizjes */
-    width: 100%; /* Siguron që të përdoret hapësira e plotë */
+    transition: transform 0.5s ease-in-out;
+    gap: 2%;
 }
 
 .shop-slider .box {
+    flex: 0 0 calc(20% - 2%);
     position: relative;
-    flex: 0 0 20%; /* Siguron që çdo kuti të marrë 20% të gjerëngisë së slider-it */
+     /* Zvogëloni madhësinë e box-it për të përshtatur 5 libra në një rresht */
     box-sizing: border-box;
     padding: 10px;
     background-color: #f9f9f9;
