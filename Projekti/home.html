@@ -283,141 +283,141 @@
     <!-- Add your JavaScript file here -->
      <script>
         const leftArrowShop = document.querySelector('.shop-left-arrow'),
-      rightArrowShop = document.querySelector('.shop-right-arrow'),
-      shopSlider = document.querySelector('.shop-slider'),
-      boxContainer = document.querySelector('.shop-slider .box-container');
+        rightArrowShop = document.querySelector('.shop-right-arrow'),
+        shopSlider = document.querySelector('.shop-slider'),
+        boxContainer = document.querySelector('.shop-slider .box-container');
 
-let currentPosition = 0;
-const boxWidth = 20; // 20% për secilin libër
-const visibleBooks = 5; // Numri i librave të dukshëm njëkohësisht
-let totalBooks;
-let autoSlideInterval;
+        let currentPosition = 0;
+        const boxWidth = 20; // 20% për secilin libër
+        const visibleBooks = 5; // Numri i librave të dukshëm njëkohësisht
+        let totalBooks;
+        let autoSlideInterval;
 
-const gapWidth = 2; // 2% për hapsirën midis box-eve
-const totalWidthPerBox = boxWidth + gapWidth; // Gjerësia totale për secilin box duke përfshirë hapsirën
+        const gapWidth = 2; // 2% për hapsirën midis box-eve
+        const totalWidthPerBox = boxWidth + gapWidth; // Gjerësia totale për secilin box duke përfshirë hapsirën
 
-function updateSliderPosition(animate) {
-    if (animate) {
-        boxContainer.style.transition = 'transform 0.5s ease-in-out';
-    } else {
-        boxContainer.style.transition = 'none';
-    }
+        function updateSliderPosition(animate) {
+            if (animate) {
+                boxContainer.style.transition = 'transform 0.5s ease-in-out';
+            } else {
+                boxContainer.style.transition = 'none';
+            }
 
-    boxContainer.style.transform = `translateX(-${currentPosition * totalWidthPerBox}%)`;
-
-    // Kontrollo për reset
-    if (currentPosition >= totalBooks + visibleBooks) {
-        setTimeout(() => {
-            currentPosition = visibleBooks;
-            boxContainer.style.transition = 'none';
             boxContainer.style.transform = `translateX(-${currentPosition * totalWidthPerBox}%)`;
-        }, 500);
-    } else if (currentPosition < visibleBooks) {
-        setTimeout(() => {
-            currentPosition = totalBooks + visibleBooks - 1;
-            boxContainer.style.transition = 'none';
-            boxContainer.style.transform = `translateX(-${currentPosition * totalWidthPerBox}%)`;
-        }, 500);
-    }
-}
 
-// Funksioni për të inicializuar slider-in
-function setupInfiniteSlider() {
-    const originalBoxes = document.querySelectorAll('.shop-slider .box');
-    totalBooks = originalBoxes.length;
+            // Kontrollo për reset
+            if (currentPosition >= totalBooks + visibleBooks) {
+                setTimeout(() => {
+                    currentPosition = visibleBooks;
+                    boxContainer.style.transition = 'none';
+                    boxContainer.style.transform = `translateX(-${currentPosition * totalWidthPerBox}%)`;
+                }, 500);
+            } else if (currentPosition < visibleBooks) {
+                setTimeout(() => {
+                    currentPosition = totalBooks + visibleBooks - 1;
+                    boxContainer.style.transition = 'none';
+                    boxContainer.style.transform = `translateX(-${currentPosition * totalWidthPerBox}%)`;
+                }, 500);
+            }
+        }
 
-    // Klono librat në fillim dhe në fund për të krijuar efektin e pafundësisë
-    for (let i = 0; i < visibleBooks; i++) {
-        boxContainer.appendChild(originalBoxes[i].cloneNode(true)); // Klono në fund
-        boxContainer.insertBefore(originalBoxes[totalBooks - 1 - i].cloneNode(true), boxContainer.firstChild); // Klono në fillim
-    }
+        // Funksioni për të inicializuar slider-in
+        function setupInfiniteSlider() {
+            const originalBoxes = document.querySelectorAll('.shop-slider .box');
+            totalBooks = originalBoxes.length;
 
-    // Fshi çdo përzierje vizuale gjatë inicializimit
-    boxContainer.style.opacity = '0'; // Fshihni përkohësisht slider-in
+            // Klono librat në fillim dhe në fund për të krijuar efektin e pafundësisë
+            for (let i = 0; i < visibleBooks; i++) {
+                boxContainer.appendChild(originalBoxes[i].cloneNode(true)); // Klono në fund
+                boxContainer.insertBefore(originalBoxes[totalBooks - 1 - i].cloneNode(true), boxContainer.firstChild); // Klono në fillim
+            }
 
-    // Vendos pozicionin fillestar pas përfundimit të klonimit
-    setTimeout(() => {
-        currentPosition = visibleBooks;
-        updateSliderPosition(false); // Përditësoni pozicionin pa animacion
+            // Fshi çdo përzierje vizuale gjatë inicializimit
+            boxContainer.style.opacity = '0'; // Fshihni përkohësisht slider-in
 
-        // Rikthe slider-in me opacity 1 pas përfundimit të klonimit
-        boxContainer.style.opacity = '1';
-    }, 300); // Jepni pak kohë për të përfunduar klonimin dhe rregullimet
-}
+            // Vendos pozicionin fillestar pas përfundimit të klonimit
+            setTimeout(() => {
+                currentPosition = visibleBooks;
+                updateSliderPosition(false); // Përditësoni pozicionin pa animacion
+
+                // Rikthe slider-in me opacity 1 pas përfundimit të klonimit
+                boxContainer.style.opacity = '1';
+            }, 300); // Jepni pak kohë për të përfunduar klonimin dhe rregullimet
+        }
 
 
-// Funksioni për të lëvizur slider-in djathtas
-function scrollRightShop() {
-    currentPosition++;
-    updateSliderPosition(true);
-}
+        // Funksioni për të lëvizur slider-in djathtas
+        function scrollRightShop() {
+            currentPosition++;
+            updateSliderPosition(true);
+        }
 
-// Funksioni për të lëvizur slider-in majtas
-function scrollLeftShop() {
-    currentPosition--;
-    updateSliderPosition(true);
-}
+        // Funksioni për të lëvizur slider-in majtas
+        function scrollLeftShop() {
+            currentPosition--;
+            updateSliderPosition(true);
+        }
 
-// Funksioni për të përditësuar pozicionin e slider-it
-function updateSliderPosition(animate) {
-    if (animate) {
-        boxContainer.style.transition = 'transform 0.5s ease-in-out';
-    } else {
-        boxContainer.style.transition = 'none';
-    }
+        // Funksioni për të përditësuar pozicionin e slider-it
+        function updateSliderPosition(animate) {
+            if (animate) {
+                boxContainer.style.transition = 'transform 0.5s ease-in-out';
+            } else {
+                boxContainer.style.transition = 'none';
+            }
 
-    boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
-
-    // Kontrollo për reset
-    if (currentPosition >= totalBooks + visibleBooks) {
-        setTimeout(() => {
-            currentPosition = visibleBooks;
-            boxContainer.style.transition = 'none';
             boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
-        }, 500);
-    } else if (currentPosition < visibleBooks) {
-        setTimeout(() => {
-            currentPosition = totalBooks + visibleBooks - 1;
-            boxContainer.style.transition = 'none';
-            boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
-        }, 500);
-    }
-}
 
-// Funksioni për të filluar lëvizjen automatike
-function startAutoSlide() {
-    autoSlideInterval = setInterval(scrollRightShop, 7000); // Lëvizje automatike çdo 7 sekonda
-}
+            // Kontrollo për reset
+            if (currentPosition >= totalBooks + visibleBooks) {
+                setTimeout(() => {
+                    currentPosition = visibleBooks;
+                    boxContainer.style.transition = 'none';
+                    boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
+                }, 500);
+            } else if (currentPosition < visibleBooks) {
+                setTimeout(() => {
+                    currentPosition = totalBooks + visibleBooks - 1;
+                    boxContainer.style.transition = 'none';
+                    boxContainer.style.transform = `translateX(-${currentPosition * boxWidth}%)`;
+                }, 500);
+            }
+        }
 
-// Funksioni për të ndaluar lëvizjen automatike
-function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-}
+        // Funksioni për të filluar lëvizjen automatike
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(scrollRightShop, 7000); // Lëvizje automatike çdo 7 sekonda
+        }
 
-// Funksioni për të rivendosur lëvizjen automatike
-function resetAutoSlide() {
-    stopAutoSlide();
-    startAutoSlide();
-}
+        // Funksioni për të ndaluar lëvizjen automatike
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
 
-// Event Listeners për shigjetat
-leftArrowShop.addEventListener('click', () => {
-    scrollLeftShop();
-    resetAutoSlide();
-});
+        // Funksioni për të rivendosur lëvizjen automatike
+        function resetAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
 
-rightArrowShop.addEventListener('click', () => {
-    scrollRightShop();
-    resetAutoSlide();
-});
+        // Event Listeners për shigjetat
+        leftArrowShop.addEventListener('click', () => {
+            scrollLeftShop();
+            resetAutoSlide();
+        });
 
-// Event Listeners për lëvizjen automatike
-shopSlider.addEventListener('mouseenter', stopAutoSlide);
-shopSlider.addEventListener('mouseleave', startAutoSlide);
+        rightArrowShop.addEventListener('click', () => {
+            scrollRightShop();
+            resetAutoSlide();
+        });
 
-// Inicializimi i slider-it
-setupInfiniteSlider();
-startAutoSlide();
+        // Event Listeners për lëvizjen automatike
+        shopSlider.addEventListener('mouseenter', stopAutoSlide);
+        shopSlider.addEventListener('mouseleave', startAutoSlide);
+
+        // Inicializimi i slider-it
+        setupInfiniteSlider();
+        startAutoSlide();
 
   </script>
     <script src="script.js"></script>
