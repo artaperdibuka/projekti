@@ -426,7 +426,7 @@ header.scrolled {
     height: 40px;
     border-radius: 50%;
     background: var(--light-green);
-    box-shadow: 0 0 0 6px rgb(255, 255, 255 / 40%);
+    box-shadow: 0 0 0 6px rgba(181, 240, 186, 0.4);
     z-index: 2;
     cursor: pointer;
     justify-content: center;
@@ -546,13 +546,7 @@ header.scrolled {
 
 
 
-.shop-slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
+
 .shop .title {
    
     margin-bottom: 2rem; /* Hapësira poshtë titullit */
@@ -562,35 +556,67 @@ header.scrolled {
 .shop .title h1 {
     font-size: 1.5rem; /* Madhësia e titullit */
     letter-spacing: 3px; /* Hapësira midis shkronjave */
-    
     font-family: 'Arial', sans-serif; /* Zgjidhni një font të përshtatshëm */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
     text-align: left;
     border-bottom: 1px solid #1b1a1a23;
    
 }
+.shop-slider {
+    position: relative;
+    overflow: hidden; /* Siguron që pjesët e panevojshme të slider-it të mos shfaqen */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 .shop-slider .box-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * (5 / 4));
+    transition: transform 0.5s ease-in-out; /* Animim të smooth gjatë lëvizjes */
+    width: 100%; /* Siguron që të përdoret hapësira e plotë */
 }
 
 .shop-slider .box {
     position: relative;
-    flex: 0 0 20%; /* 5 libra = 20% për secilin libër */
+    flex: 0 0 20%; /* Siguron që çdo kuti të marrë 20% të gjerëngisë së slider-it */
     box-sizing: border-box;
     padding: 10px;
-    background-color: #f9f9f9; /* Ngjyra e kutisë */
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Organizim vertikal */
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 10px;
 }
+
+.shop-left-arrow, .shop-right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem; /* Përshtatni madhësinë për shigjetat */
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.shop-right-arrow {
+    right: 1rem;
+}
+
+.shop-left-arrow {
+    left: 1rem;
+}
+
+
 
 .shop-slider .box img {
     width: 100%;
@@ -617,32 +643,6 @@ header.scrolled {
     background-color: #aad576; /* Ngjyra gjatë hover-it */
 }
 
-.shop-left-arrow,
-.shop-right-arrow{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--light-green);
-    box-shadow: 0 0 0 6px rgb(255, 255, 255 ,0.4);
-    z-index: 2;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #000;
-    display: flex;
-}
-.shop-right-arrow{
-    right: 1rem;
-    z-index: 3;
-}
-.shop-left-arrow{
-    left: 1rem;
-}
 .hero-dec-top,
 .hero-dec-bottom{
     position:absolute;
@@ -1567,4 +1567,39 @@ textarea{
 
 .loyalty-card-section p {
     font-size: 16px; /* Font size for the paragraph */ 
+}
+.custom-carousel-btn {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfond gjysmë-transparent */
+    border: none; /* Pa kufij */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma rrethore */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%; /* Vendos në mes vertikalisht */
+    transform: translateY(-50%); /* Centron vertikalisht */
+    z-index: 10; /* Për t'u shfaqur mbi përmbajtjen */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-carousel-btn:hover {
+    background-color:var(--light-green); /* Errësim gjatë hover */
+    transform: translateY(-50%) scale(1.1); /* Zmadhohet pak */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Afër skajit të majtë */
+}
+
+.carousel-control-next {
+    right: 10px; /* Afër skajit të djathtë */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Bën ikonat të bardha */
+    width: 20px;
+    height: 20px;
 }
