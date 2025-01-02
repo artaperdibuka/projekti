@@ -738,7 +738,7 @@ footer .inner-footer{
 }
 footer .inner-footer .card{
     margin: .5rem;
-   
+   border: none;
 }
 footer .inner-footer .card li{
     cursor: pointer;
