@@ -145,12 +145,20 @@
         </footer>
     </div>
 </div>
-    <script>
+<script>
     // Load cart data from localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
     const cartContainer = document.getElementById('cart-container');
 
+    // Funksioni për të hequr një produkt nga cart
+    function removeFromCart(productId) {
+        const updatedCart = cart.filter(item => item.id !== productId); // Hiq produktin specifik
+        localStorage.setItem('cart', JSON.stringify(updatedCart)); // Përditëso cart-in
+        location.reload(); // Rifresko faqen për të pasqyruar ndryshimet
+        alert('Product removed from cart.');
+    }
+
+    // Shfaq produktet në cart
     if (cart.length > 0) {
         cart.forEach(item => {
             const itemDiv = document.createElement('div');
@@ -163,8 +171,7 @@
                         <h4 class="cart-item-name">${item.name}</h4>
                         <p class="cart-item-author">${item.author || ''}</p>
                         <p class="cart-item-price">${item.price}</p>
-                        <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
-                        <button class="add-to-cart-btn" onclick="buyProduct('${item.name}')">Buy now</button>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
                     </div>
                 </div>
             `;
@@ -175,38 +182,20 @@
         cartContainer.innerHTML = '<p>Your cart is empty.</p>';
     }
 
-    // Function to remove product from the cart
-    function removeFromCart(productName) {
-        // Filter out the product to be removed
-        const updatedCart = cart.filter(item => item.name !== productName);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-
-        // Reload the cart items
-        location.reload();  // Reload the page to reflect changes
-
-        // Alert user that item was removed
-        alert(`${productName} has been removed from your cart.`);
+    // Funksioni për të përditësuar numrat në header
+    function updateCounts() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('wishlist-count').textContent = wishlist.length;
+        document.getElementById('cart-count').textContent = cart.length;
     }
 
-    // Function to buy product (send to order page)
-    function buyProduct(productName) {
-        // Retrieve the item details from the cart
-        const itemToBuy = cart.find(item => item.name === productName);
-
-        // Save the item to the order page (simulating a session or redirecting)
-        localStorage.setItem('order', JSON.stringify(itemToBuy));
-
-        // Redirect to the order page
-        window.location.href = 'order.html';
-
-        // Alert user that item was added to order
-        alert(`${productName} has been added to your order.`);
-    }
-
+    // Përditëso numrat kur faqja ngarkohet
+    updateCounts();
 </script>
-<script>
+
     
-</script>
+
     <script src="script.js"></script>
    
     <script src="count.js"></script>

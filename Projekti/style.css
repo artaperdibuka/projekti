@@ -569,6 +569,7 @@ header.scrolled {
 .shop-slider .box-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
+
     gap: 2%;
 }
 
@@ -820,6 +821,19 @@ footer .bottom-footer{
 
     form {
         width: 100%;
+    }
+    .details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-info {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .image-box {
+        margin-bottom: 20px;
     }
 }                  
 /* produktet */
@@ -1600,3 +1614,63 @@ textarea{
     width: 20px;
     height: 20px;
 }
+/* Book Details Section */
+.book-detail {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vh;
+}
+
+.details {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.book-info {
+    flex: 1;
+    padding-left: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.book-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.book-info strong {
+    font-weight: bold;
+}
+
+.image-box {
+    flex-shrink: 0;
+    width: 200px;
+    height: auto;
+    padding-left: 100px;
+}
+
+#book-image {
+    width: 200%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
