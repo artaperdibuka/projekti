@@ -1593,6 +1593,7 @@ textarea{
     font-size: 16px; /* Font size for the paragraph */ 
 }
 .custom-carousel-btn {
+    color: white;
     background-color: rgba(0, 0, 0, 0.5); /* Sfond gjysmë-transparent */
     border: none; /* Pa kufij */
     width: 50px;
@@ -1609,24 +1610,31 @@ textarea{
 }
 
 .custom-carousel-btn:hover {
-    background-color:var(--light-green); /* Errësim gjatë hover */
+    background-color: var(--light-green); /* Errësim gjatë hover */
     transform: translateY(-50%) scale(1.1); /* Zmadhohet pak */
 }
 
 .carousel-control-prev {
     left: 10px; /* Afër skajit të majtë */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Arrow_left_font_awesome.svg'); /* Shigjeta majtas */
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .carousel-control-next {
     right: 10px; /* Afër skajit të djathtë */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Arrow_right_font_awesome.svg'); /* Shigjeta djathtas */
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(1); /* Bën ikonat të bardha */
     width: 20px;
     height: 20px;
+   
 }
+
 /* Book Details Section */
 .book-detail {
     padding: 40px;
