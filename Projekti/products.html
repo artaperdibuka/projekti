@@ -511,171 +511,134 @@
 <script src="script.js"></script>
 <script src="count.js"></script>
 <script>
-
     
-const searchInput = document.getElementById('searchInput');
-const booksList = document.getElementById('booksList');
-const books = Array.from(booksList.getElementsByClassName('box'));
-const booksPerPage = 6;
-const paginationControls = document.getElementById('paginationControls');
-const prevButton = document.getElementById('prevPage');
-const nextButton = document.getElementById('nextPage');
-const pageNumbers = document.getElementById('pageNumbers');
-
-let currentPage = 1;
-let filteredBooks = books;
-
-function displayPage(page) {
-    const startIndex = (page - 1) * booksPerPage;
-    const endIndex = startIndex + booksPerPage;
+    const searchInput = document.getElementById('searchInput');
+    const booksList = document.getElementById('booksList');
+    const books = Array.from(booksList.getElementsByClassName('box'));
+    const booksPerPage = 6;
+    const paginationControls = document.getElementById('paginationControls');
+    const prevButton = document.getElementById('prevPage');
+    const nextButton = document.getElementById('nextPage');
+    const pageNumbers = document.getElementById('pageNumbers');
     
-    // Hide all books initially
-    books.forEach(book => book.style.display = 'none');
+    let currentPage = 1;
+    let filteredBooks = books;
     
-    // Display only the books in the current filtered list and current page
-    filteredBooks.slice(startIndex, endIndex).forEach(book => book.style.display = 'block');
-}
-
-function updatePagination() {
-    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
-    pageNumbers.innerHTML = ''; // Clear previous page numbers
-
-    for (let i = 1; i <= totalPages; i++) {
-        const pageLink = document.createElement('button');
-        pageLink.classList.add('page-link');
-        pageLink.textContent = i;
-        pageLink.setAttribute('data-page', i);
-        pageLink.addEventListener('click', (e) => {
-            const page = parseInt(e.target.getAttribute('data-page'));
-            if (page !== currentPage) {
-                currentPage = page;
-                displayPage(currentPage);
-                updatePagination();
-            }
-        });
-        pageNumbers.appendChild(pageLink);
+    function displayPage(page) {
+        const startIndex = (page - 1) * booksPerPage;
+        const endIndex = startIndex + booksPerPage;
+        
+        // Hide all books initially
+        books.forEach(book => book.style.display = 'none');
+        
+        // Display only the books in the current filtered list and current page
+        filteredBooks.slice(startIndex, endIndex).forEach(book => book.style.display = 'block');
     }
-
-    prevButton.disabled = currentPage === 1;
-    nextButton.disabled = currentPage === totalPages;
-}
-
-prevButton.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        displayPage(currentPage);
-        updatePagination();
+    
+    function updatePagination() {
+        const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+        pageNumbers.innerHTML = ''; // Clear previous page numbers
+    
+        for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('button');
+            pageLink.classList.add('page-link');
+            pageLink.textContent = i;
+            pageLink.setAttribute('data-page', i);
+            pageLink.addEventListener('click', (e) => {
+                const page = parseInt(e.target.getAttribute('data-page'));
+                if (page !== currentPage) {
+                    currentPage = page;
+                    displayPage(currentPage);
+                    updatePagination();
+                }
+            });
+            pageNumbers.appendChild(pageLink);
+        }
+    
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
     }
-});
-
-nextButton.addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
-    if (currentPage < totalPages) {
-        currentPage++;
-        displayPage(currentPage);
-        updatePagination();
-    }
-});
-
-searchInput.addEventListener('input', function() {
-    const query = searchInput.value.toLowerCase();
-    filteredBooks = books.filter(book => book.querySelector('.name').textContent.toLowerCase().includes(query));
-    currentPage = 1;
-    displayPage(currentPage);
-    updatePagination();
-});
-
-
-//creating local storage
-// Initialize local storage data when the document loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve existing wishlist and cart data or initialize empty arrays if not present
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Funksioni për të shtuar një produkt në cart
-    function addToCart(product) {
-        const uniqueId = Date.now(); // Përdor timestamp si ID unike
-        cart.push({ id: uniqueId, ...product }); // Shto produktin në cart me ID unike
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCounts(); // Update cart count
-        alert(`${product.name} added to cart.`);
-    }
-
-    // Funksioni për të shtuar një produkt në wishlist
-    document.querySelectorAll('.box').forEach(productBox => {
-        const name = productBox.querySelector('.name').textContent;
-        const author = productBox.querySelector('.author').textContent;
-        const price = productBox.querySelector('.price-value').textContent;
-        const imageSrc = productBox.querySelector('img').src;
-
-        const product = { name, author, price, imageSrc };
-
-        productBox.querySelector('[name="add_to_wishlist"]').addEventListener('click', () => {
-            const existsInWishlist = wishlist.some(item => item.name === product.name && item.author === product.author);
-
-            if (!existsInWishlist) {
-                const uniqueId = Date.now();
-                wishlist.push({ id: uniqueId, ...product });
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                updateCounts();
-                alert(`${product.name} added to wishlist.`);
-            } else {
-                alert(`${product.name} is already in your wishlist.`);
-            }
-        });
+    
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayPage(currentPage);
+            updatePagination();
+        }
     });
-
-    // Nëse je në faqen 'products.html'
-    if (document.querySelectorAll('.box').length > 0) {
+    
+    nextButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayPage(currentPage);
+            updatePagination();
+        }
+    });
+    
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase();
+        filteredBooks = books.filter(book => book.querySelector('.name').textContent.toLowerCase().includes(query));
+        currentPage = 1;
+        displayPage(currentPage);
+        updatePagination();
+    });
+    
+    
+    //creating local storage
+    // Initialize local storage data when the document loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Retrieve existing wishlist and cart data or initialize empty arrays if not present
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
         document.querySelectorAll('.box').forEach(productBox => {
             // Extract product details from the product box
             const name = productBox.querySelector('.name').textContent;
             const author = productBox.querySelector('.author').textContent;
             const price = productBox.querySelector('.price-value').textContent;
-            const imageSrc = productBox.querySelector('img').src;
-
-            const product = { name, author, price, imageSrc };
-
+            const imageSrc = productBox.querySelector('img').src; // Get the image source
+    
             // Add to Cart button functionality
             productBox.querySelector('[name="add_to_cart"]').addEventListener('click', () => {
-                addToCart(product);
+                // Check if the product is already in the cart
+                const existsInCart = cart.some(item => item.name === name && item.author === author);
+    
+                
+                    // Add product to cart if it doesn't already exist
+                    cart.push({ name, author, price, imageSrc });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCounts(); // Update cart count
+                    alert(`${name} added to cart.`);
+              
             });
-
+    
             // Add to Wishlist button functionality
             productBox.querySelector('[name="add_to_wishlist"]').addEventListener('click', () => {
-                addToWishlist(product);
+                // Check if the product is already in the wishlist
+                const existsInWishlist = wishlist.some(item => item.name === name && item.author === author);
+    
+                if (!existsInWishlist) {
+                    // Add product to wishlist if it doesn't already exist
+                    wishlist.push({ name, author, price, imageSrc });
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    updateCounts(); // Update wishlist count
+                    alert(`${name} added to wishlist.`);
+                } else {
+                    alert(`${name} is already in your wishlist.`);
+                }
             });
         });
+    });
+    
+    
+    function filterCategory(category) {
+        filteredBooks = books.filter(book => book.querySelector('.category-text').textContent.includes(category));
+        currentPage = 1;
+        displayPage(currentPage);
+        updatePagination();
     }
-
-    // Nëse je në faqen 'view-book-details.html'
-    if (document.getElementById('book-details')) {
-        const bookName = document.getElementById('book-title').textContent;
-        const bookAuthor = document.getElementById('book-author').textContent;
-        const bookPrice = document.getElementById('book-price').textContent;
-        const bookImageSrc = document.getElementById('book-image').src;
-
-        const product = { name: bookName, author: bookAuthor, price: bookPrice, imageSrc: bookImageSrc };
-
-        // Add to Cart button functionality
-        const addToCartButton = document.querySelector('button[name="add_to_cart"]');
-        if (addToCartButton) {
-            addToCartButton.addEventListener('click', () => {
-                addToCart(product);
-            });
-        }
-
-        // Add to Wishlist button functionality
-        const addToWishlistButton = document.querySelector('button[name="add_to_wishlist"]');
-        if (addToWishlistButton) {
-            addToWishlistButton.addEventListener('click', () => {
-                addToWishlist(product);
-            });
-        }
-    }
-
-    // Funksioni për të përditësuar numrat në header
+    
     function updateCounts() {
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -686,18 +649,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Përditëso numrat kur faqja ngarkohet
  
     updateCounts();
-});
-
-
-function filterCategory(category) {
-    filteredBooks = books.filter(book => book.querySelector('.category-text').textContent.includes(category));
-    currentPage = 1;
+    // Initial page load
     displayPage(currentPage);
     updatePagination();
-}
-
-// Initial page load
-displayPage(currentPage);
-updatePagination();
-</script>
+    </script>
 </html> 

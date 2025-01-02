@@ -51,6 +51,9 @@
                 <!-- Cart items will be dynamically inserted here -->
             </div>
         </section>
+        <div style="width: 101%;">
+            <button class="buynow-btn" onclick="window.location.href='order.html'"; >Buy Now</button>
+        </div>
         <section class="services">
                     
             <div class="box-container">
@@ -173,8 +176,8 @@
                         <p class="cart-item-price">${item.price}</p>
                         <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
                     </div>
-                </div>
-            `;
+                    
+                </div>`;
 
             cartContainer.appendChild(itemDiv);
         });

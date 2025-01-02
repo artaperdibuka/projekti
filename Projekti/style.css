@@ -1178,17 +1178,20 @@ footer .bottom-footer{
 .remove-btn:hover{
     background-color: #bd1c00; 
 }
-.add-to-cart-btn{
-    font-size: 14px;
-    background-color: rgb(0, 184, 0);
+.buynow-btn {
+    font-size: 20px;
+    background-color: var(--light-green); /* Ngjyra fillestare e butonit */
     color: white;
-    padding: 7px;
+    margin-left: 50px;
     border-radius: 10px;
-}
-.add-to-cart-btn:hoveR{
-    background-color: rgb(2, 91, 2);
+    width: 90%; /* Rritje e gjerësisë */
+    padding: 10px 0; /* Lartësi dinamike në bazë të përmbajtjes */
+    text-align: center;
 }
 
+.buynow-btn:hover {
+    background-color: rgb(0, 184, 0); /* Ngjyra gjatë hover-it */
+}
 
 
 .order-main {

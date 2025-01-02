@@ -181,6 +181,65 @@
 
         let totalPrice = 0;
 
+        document.addEventListener('DOMContentLoaded', function () {
+    const orders = JSON.parse(localStorage.getItem('cart')) || [];
+    displayOrders(orders);
+});
+function removeFromCart(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== id); // Largo artikullin me ID-në e specifikuar
+    localStorage.setItem('cart', JSON.stringify(cart)); // Përditëso localStorage
+    displayCart(); // Rifresko shportën
+    updateCounts(); // Përditëso numrat në header
+}
+function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderSummary = document.getElementById('cart-summary');
+    orderSummary.innerHTML = ''; // Pastro shportën ekzistuese
+
+    if (cart.length === 0) {
+        orderSummary.innerHTML = '<p>Your cart is empty. Please add items before proceeding to checkout.</p>';
+        return;
+    }
+
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item2');
+
+        itemDiv.innerHTML = `
+            <div class="cart-item-details2">
+                <img src="${item.imageSrc}" alt="${item.name}" class="cart-item-img2">
+                <div>
+                    <h4 class="cart-item-name">${item.name}</h4>
+                    <p class="cart-item-author">${item.author || ''}</p>
+                    <p class="cart-item-price">${item.price}</p>
+                    <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                </div>
+            </div>
+        `;
+
+        orderSummary.appendChild(itemDiv);
+        totalPrice += parseFloat(item.price.replace('€', '')); // Ndrysho '$' në '€' nëse është e nevojshme
+    });
+
+    updateTotalPrice(totalPrice); // Përditëso çmimin total
+}
+
+        function removeOrder(index) {
+            let orders = JSON.parse(localStorage.getItem('cart')) || [];
+            orders.splice(index, 1); // Remove the order at the specified index
+            localStorage.setItem('cart', JSON.stringify(orders)); // Update localStorage
+            displayOrders(orders); // Refresh the order list
+            updateCounts(); // Update the cart count in the header
+        }
+
+        function updateCounts() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
         if (cart.length > 0) {
             cart.forEach(item => {
                 const itemDiv = document.createElement('div');
@@ -193,6 +252,7 @@
                             <h4 class="cart-item-name">${item.name}</h4>
                             <p class="cart-item-author">${item.author || ''}</p>
                             <p class="cart-item-price">${item.price}</p>
+                            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
                         </div>
                     </div>
                 `;
@@ -209,11 +269,11 @@
         // Update total price based on selected transport method
         transportSelect.addEventListener('change', updateTotalPrice);
 
-        function updateTotalPrice() {
-            const transportCost = transportSelect.value === 'express' ? 15.00 : 5.00;
-            const finalTotalPrice = totalPrice + transportCost;
-            totalPriceElement.innerHTML = `<h3>Total: ${finalTotalPrice.toFixed(2)}€</h3>`;
-        }
+        function updateTotalPrice(totalPrice) {
+        const transportCost = transportSelect.value === 'express' ? 15.00 : 5.00;
+        const finalTotalPrice = totalPrice + transportCost;
+        totalPriceElement.innerHTML = `<h3>Total: ${finalTotalPrice.toFixed(2)}€</h3>`;
+    }
 
         // Handle form submission
         const orderForm = document.getElementById('order-form');
@@ -231,7 +291,9 @@
             localStorage.removeItem('order');
             window.location.href = 'home.html';  // Redirect to home page
         });
-        
+        document.addEventListener('DOMContentLoaded', function () {
+        displayCart(); // Shfaq shportën kur faqja ngarkohet
+    });
         </script>
 
 <script src="script.js"></script>
