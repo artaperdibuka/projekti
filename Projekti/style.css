@@ -1818,25 +1818,52 @@ ul{
     padding: 0;
 }
 .play-button {
-    position: absolute; /* Pozicion absolut brenda karuselit */
-    bottom: 20px; /* Vendosni butonin 20px nga fundi */
-    left: 50%; /* Vendosni butonin në mes horizontalisht */
-    transform: translateX(-50%); /* Qendrojeni butonin */
-    z-index: 10; /* Sigurohuni që butoni të jetë mbi elementet e tjera */
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 15px 0 15px 25px; /* Krijo një trekëndësh */
-    border-color: transparent transparent transparent rgba(255, 255, 255, 0.7); /* Ngjyrë e bardhë me transparencë */
-    background: none; /* Hiqni sfondin */
-    cursor: pointer; /* Shfaq kursorin si pointer */
-    padding: 0; /* Hiqni padding */
-    border-radius: 0; /* Hiqni border-radius */
-    transition: opacity 0.3s ease; /* Animacion për hover */
+    position: absolute;
+    bottom: 10px; /* Zhvendos butonin më poshtë */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.3s ease;
 }
 
-.play-button:hover {
-    opacity: 0.8; /* Zvogëlo opacitetin kur hover */
+/* Stilizimi për gjendjen e play (trekëndësh) */
+.play-button.play::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid rgba(255, 255, 255, 0.8); /* Trekëndësh i plotë */
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+/* Stilizimi për gjendjen e pause (dy vija paralele) */
+.play-button.pause::before,
+.play-button.pause::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px; /* Gjerësia e vijave */
+    height: 24px; /* Lartësia e vijave */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.play-button.pause::before {
+    left: 30%; /* Pozicionimi i vijës së majtë */
+}
+
+.play-button.pause::after {
+    right: 30%; /* Pozicionimi i vijës së djathtë */
 }
 
 thead th {
