@@ -44,16 +44,14 @@
     </header>
     <div class="main">
         <section class="home-section">
-            <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="bookCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
-                            <video class="d-block w-100" style="height: 100%; object-fit: cover;" autoplay loop>
+                            <video class="d-block w-100" style="height: 100%; object-fit: cover;" id="promoVideo">
                                 <source src="mp4/LibrariaBuzuku.mp4" type="video/mp4">
                             </video>
-                            
-                            <button onclick="document.querySelector('video').play()">Play Video</button>
-
+                            <button id="videoControlBtn" class="play-button"></button>
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <p class="text-white bg-dark p-2 rounded" style="opacity: 0.8; max-width: 60%;">Watch our promotional video about new arrivals!</p>
                             </div>
@@ -62,7 +60,7 @@
                     <div class="carousel-item">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
                             <img src="img/BuzukuBookstore.jpeg" alt="Book Image" class="d-block w-100" style="height: 100%; object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="carousel-caption d-flex flex -column align-items-center justify-content-center">
                                 <p class="text-white bg-dark p-2 rounded" style="opacity: 0.8; max-width: 60%;">Discover amazing books at Buzuku Bookstore and explore our events!</p>
                                 <a href="events.html" class="btn btn-secondary mt-2">Reserve an Event</a>
                             </div>
@@ -296,6 +294,19 @@
 
     <!-- Add your JavaScript file here -->
      <script>
+   const promoVideo = document.getElementById('promoVideo');
+    const videoControlBtn = document.getElementById('videoControlBtn');
+
+    videoControlBtn.addEventListener('click', () => {
+        if (promoVideo.paused) {
+            promoVideo.play();
+            videoControlBtn.style.borderColor = 'transparent transparent transparent rgba(255, 255, 255, 0.7)'; // Trekëndëshi i play
+        } else {
+            promoVideo.pause();
+            videoControlBtn.style.borderColor = 'transparent transparent transparent rgba(255, 255, 255, 0.7)'; // Trekëndëshi i play
+        }
+    });
+
         const leftArrowShop = document.querySelector('.shop-left-arrow'),
         rightArrowShop = document.querySelector('.shop-right-arrow'),
         shopSlider = document.querySelector('.shop-slider'),

@@ -1817,3 +1817,24 @@ textarea{
 ul{
     padding: 0;
 }
+.play-button {
+    position: absolute; /* Pozicion absolut brenda karuselit */
+    bottom: 20px; /* Vendosni butonin 20px nga fundi */
+    left: 50%; /* Vendosni butonin në mes horizontalisht */
+    transform: translateX(-50%); /* Qendrojeni butonin */
+    z-index: 10; /* Sigurohuni që butoni të jetë mbi elementet e tjera */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 25px; /* Krijo një trekëndësh */
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.7); /* Ngjyrë e bardhë me transparencë */
+    background: none; /* Hiqni sfondin */
+    cursor: pointer; /* Shfaq kursorin si pointer */
+    padding: 0; /* Hiqni padding */
+    border-radius: 0; /* Hiqni border-radius */
+    transition: opacity 0.3s ease; /* Animacion për hover */
+}
+
+.play-button:hover {
+    opacity: 0.8; /* Zvogëlo opacitetin kur hover */
+}
