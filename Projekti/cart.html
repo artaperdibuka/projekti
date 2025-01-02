@@ -150,42 +150,10 @@
 </div>
 <script>
     // Load cart data from localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-container');
 
-    // Funksioni për të hequr një produkt nga cart
-    function removeFromCart(productId) {
-        const updatedCart = cart.filter(item => item.id !== productId); // Hiq produktin specifik
-        localStorage.setItem('cart', JSON.stringify(updatedCart)); // Përditëso cart-in
-        location.reload(); // Rifresko faqen për të pasqyruar ndryshimet
-        alert('Product removed from cart.');
-    }
-
-    // Shfaq produktet në cart
-    if (cart.length > 0) {
-        cart.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('cart-item');
-
-            itemDiv.innerHTML = `
-                <div class="box">
-                    <img src="${item.imageSrc}" alt="${item.name}" class="cart-item-img">
-                    <div class="cart-item-details">
-                        <h4 class="cart-item-name">${item.name}</h4>
-                        <p class="cart-item-author">${item.author || ''}</p>
-                        <p class="cart-item-price">${item.price}</p>
-                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
-                    </div>
-                    
-                </div>`;
-
-            cartContainer.appendChild(itemDiv);
-        });
-    } else {
-        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-    }
-
-    // Funksioni për të përditësuar numrat në header
+    // Function to update counts in header
     function updateCounts() {
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -193,9 +161,56 @@
         document.getElementById('cart-count').textContent = cart.length;
     }
 
-    // Përditëso numrat kur faqja ngarkohet
-    updateCounts();
+    // Function to remove an item from the cart by index
+    function removeFromCart(index) {
+        // Remove the item at the given index
+        cart.splice(index, 1);
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Refresh the cart display
+        renderCart();
+
+        alert('Product removed from cart.');
+    }
+
+    // Function to render the cart items
+    function renderCart() {
+        cartContainer.innerHTML = ''; // Clear existing items
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+
+        // Loop through the cart and render each item
+        cart.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+
+            itemDiv.innerHTML = `
+                <div class="box">
+                    <img src="${item.imageSrc || ''}" alt="${item.name || item.title}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-name">${item.name || item.title}</h4>
+                        <p class="cart-item-author">${item.author || ''}</p>
+                        <p class="cart-item-price">${item.priceValue || item.price}</p>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                </div>`;
+            
+            cartContainer.appendChild(itemDiv);
+        });
+
+        // Update counts in header
+        updateCounts();
+    }
+
+    // Render cart on page load
+    renderCart();
 </script>
+
 
     
 

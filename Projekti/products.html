@@ -601,19 +601,66 @@
         } else {
             filteredBooks = books; // Shfaq të gjithë librat
         }
+        function updateCounts() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('wishlist-count').textContent = wishlist.length;
+        document.getElementById('cart-count').textContent = cart.length;
+    }
     
         // Inicioni pagination dhe shfaqjen fillestare
         updateCounts();
         displayPage(currentPage);
         updatePagination();
     });
-    
-    function updateCounts() {
+    //creating local storage
+    // Initialize local storage data when the document loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Retrieve existing wishlist and cart data or initialize empty arrays if not present
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        document.getElementById('wishlist-count').textContent = wishlist.length;
-        document.getElementById('cart-count').textContent = cart.length;
-    }
+    
+        document.querySelectorAll('.box').forEach(productBox => {
+            // Extract product details from the product box
+            const name = productBox.querySelector('.name').textContent;
+            const author = productBox.querySelector('.author').textContent;
+            const price = productBox.querySelector('.price-value').textContent;
+            const imageSrc = productBox.querySelector('img').src; // Get the image source
+    
+            // Add to Cart button functionality
+            productBox.querySelector('[name="add_to_cart"]').addEventListener('click', () => {
+                // Check if the product is already in the cart
+                const existsInCart = cart.some(item => item.name === name && item.author === author);
+    
+                
+                    // Add product to cart if it doesn't already exist
+                    cart.push({ name, author, price, imageSrc });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCounts(); // Update cart count
+                    alert(`${name} added to cart.`);
+              
+            });
+    
+            // Add to Wishlist button functionality
+            productBox.querySelector('[name="add_to_wishlist"]').addEventListener('click', () => {
+                // Check if the product is already in the wishlist
+                const existsInWishlist = wishlist.some(item => item.name === name && item.author === author);
+    
+                if (!existsInWishlist) {
+                    // Add product to wishlist if it doesn't already exist
+                    wishlist.push({ name, author, price, imageSrc });
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    updateCounts(); // Update wishlist count
+                    alert(`${name} added to wishlist.`);
+                } else {
+                    alert(`${name} is already in your wishlist.`);
+                }
+            });
+        });
+    });
+
+    
+    
     </script>
     
 </html> 

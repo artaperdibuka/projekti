@@ -241,7 +241,8 @@
          
 </body>
 <script>
-    // Initialize local storage data when the document loads
+    
+        // Initialize local storage data when the document loads
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve existing wishlist and cart data or initialize empty arrays if not present
     const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -258,15 +259,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if the product is already in the cart
             const existsInCart = cart.some(item => item.name === name);
 
-            if (!existsInCart) {
+           
                 // Add product to cart if it doesn't already exist
                 cart.push({ name, price, imageSrc });
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCounts(); // Update cart count
                 alert(`${name} added to cart.`);
-            } else {
-                alert(`${name} is already in your cart.`);
-            }
+           
         });
 
         // Add to Wishlist button functionality

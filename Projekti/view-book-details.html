@@ -64,12 +64,10 @@
                         <p id="book-description">Loading...</p>
                         <p id="book-category"> Loading ...</p>
                         <p><strong>Price:</strong> <span id="book-price">Loading...</span></p>
-                        <div class="custom-button-container">
-                            <button type="submit" name="add_to_cart" class="add-to-cart-btn">
-                                <span class="button-text">Add to Cart</span>
-                                <i class="bx bx-cart"></i>
-                            </button>
-                        </div>
+                        <div class="button" style="size: 20px;">
+                            <button type="submit" name="add_to_cart" style="padding: 15px 30px; font-size: 18px; background-color: rgba(43, 188, 149, 0.697); color: white; border: none; border-radius: 5px; display: inline-flex; align-items: center; gap: 10px;">
+                                <i class="bx bx-cart" style="font-size: 24px;"></i></button>
+                            </div>
                         
                     </div>
                 </div>
@@ -414,7 +412,6 @@
 
         // Add to Cart and Wishlist buttons for books
         document.querySelector('.add-accessory-to-cart-btn').addEventListener('click', () => {
-    // kodin tuaj këtu
 
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const uniqueId = Date.now(); // Use timestamp as unique ID
@@ -424,20 +421,17 @@
             alert(`${book.name} added to your cart!`);
         });
 
-        document.querySelector('button[name="add_to_wishlist"]').addEventListener('click', () => {
-            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            const existsInWishlist = wishlist.some(item => item.name === book.name && item.author === book.author);
-
-            if (!existsInWishlist) {
-                const uniqueId = Date.now();
-                wishlist.push({ id: uniqueId, ...book });
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                updateCounts();
-                alert(`${book.name} added to your wishlist!`);
-            } else {
-                alert(`${book.name} is already in your wishlist.`);
+        const addToCartButton = document.querySelector('button[name="add_to_cart"]');
+        if (addToCartButton) {
+                addToCartButton.addEventListener('click', () => {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const uniqueId = Date.now(); // Përdor timestamp si ID unike
+                    cart.push({ id: uniqueId, ...book }); // Shto produktin në cart me ID unike
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCounts();
+                    alert(`${book.name} added to your cart!`);
+                });
             }
-        });
     }
 
     // Display accessory details if accessoryId exists
