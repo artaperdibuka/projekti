@@ -1178,6 +1178,16 @@ footer .bottom-footer{
 .remove-btn:hover{
     background-color: #bd1c00; 
 }
+.add-to-cart-btn{
+    font-size: 14px;
+    background-color:var(--light-green); /* Red color for remove */
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+}
+.add-to-cart-btn:hover{
+    background-color: rgb(109, 215, 109); 
+}
 .buynow-btn {
     font-size: 20px;
     background-color: var(--light-green); /* Ngjyra fillestare e butonit */
@@ -1718,39 +1728,7 @@ textarea{
     border-radius: 8px;
 }
 
-.add-to-cart-btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: rgba(43, 188, 149, 0.697);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-}
 
-.add-to-cart-btn:hover {
-    background-color: rgba(43, 188, 149, 0.9);
-    
-}
-
-.add-to-cart-btn .button-text {
-    transition: opacity 0.3s ease; /* Kalim i lehtë */
-    opacity: 1; /* Teksti shfaqet fillimisht */
-}
-
-.add-to-cart-btn i {
-    font-size: 24px;
-    transition: transform 0.3s ease;
-    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
-}
-
-.add-to-cart-btn:hover i {
-    transform: translateX(0); /* Ikona rikthehet në vend */
-}
 
 .add-to-cart-btn:hover .button-text {
     opacity: 1; /* Teksti shfaqet gjithmonë */
@@ -1790,6 +1768,42 @@ textarea{
 }
 
 .add-accessory-to-cart-btn:hover .button-text {
+    opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
+}
+.custom-cart-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(43, 188, 149, 0.697);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.custom-cart-button:hover {
+    background-color: rgba(43, 188, 149, 0.9); /* Ngjyrë pak më e thellë */
+}
+
+.custom-cart-text {
+    transition: opacity 0.3s ease; /* Kalim i butë */
+    opacity: 1; /* Teksti shfaqet fillimisht */
+}
+
+.custom-cart-button i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
+}
+
+.custom-cart-button:hover i {
+    transform: translateX(0); /* Ikona rikthehet në vend */
+}
+
+.custom-cart-button:hover .custom-cart-text {
     opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
 }
 
