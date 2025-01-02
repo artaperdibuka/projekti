@@ -39,43 +39,56 @@
         <div class="tittle2">
             <a href="home.html">Home</a><span>events</span>
         </div>
-        <div class="box-container">
+        <div class="box-container" >
             <div class="box">
                 <div class="centere-content">
                     <h1>Experience the Magic of Events - Reserve Your Date</h1>
-                    <div class="event-description" style="background-color: rgb(153, 225, 201);">
+                    <div class="event-description">
                         <p>Come and be part of the unforgettable moments at BookstoreBuzuku! Get ready for the newest book launches, passionate readings, inspiring discussions with acclaimed authors and in-depth conversations that spark the imagination. Discover new worlds through creative workshops and unique experiences we bring just for you. Reserve your date and join us on this passionate literary journey – an experience you won't want to miss!</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        
-        <section class="home-section">
-            <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+        <section class="home-section" style="margin-top: 70px;">
+            <div id="bookCarousel" class="carousel slide">
                 <div class="carousel-inner">
+                    <!-- Slide 1: Video -->
                     <div class="carousel-item active">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
+                            <video class="d-block w-100" style="height: 100%; object-fit: cover;" id="promoVideo">
+                                <source src="mp4/LibrariaBuzuku1.mp4" type="video/mp4">
+                            </video>
+                            <button id="videoControlBtn" class="play-button"></button>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
                             <img src="img/6.jpg" alt="Slide 6" class="d-block w-100" style="height: 100%; object-fit: cover;">
                         </div>
                     </div>
+                    <!-- Slide 3 -->
                     <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
                             <img src="img/7.jpg" alt="Slide 7" class="d-block w-100" style="height: 100%; object-fit: cover;">
                         </div>
                     </div>
+                    <!-- Slide 4 -->
                     <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
                             <img src="img/8.jpg" alt="Slide 8" class="d-block w-100" style="height: 100%; object-fit: cover;">
                         </div>
                     </div>
+                    <!-- Slide 5 -->
                     <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
                             <img src="img/9.jpg" alt="Slide 9" class="d-block w-100" style="height: 100%; object-fit: cover;">
                         </div>
                     </div>
+                    <!-- Slide 6 -->
                     <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
                             <img src="img/10.jpg" alt="Slide 10" class="d-block w-100" style="height: 100%; object-fit: cover;">
                         </div>
                     </div>
@@ -287,6 +300,33 @@
             </footer>
         
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const promoVideo = document.getElementById('promoVideo');
+        const videoControlBtn = document.getElementById('videoControlBtn');
+
+        // Event listener për butonin Play/Pause
+        videoControlBtn.addEventListener('click', () => {
+            if (promoVideo.paused) {
+                promoVideo.play();
+                videoControlBtn.classList.remove('play');
+                videoControlBtn.classList.add('pause');
+            } else {
+                promoVideo.pause();
+                videoControlBtn.classList.remove('pause');
+                videoControlBtn.classList.add('play');
+            }
+        });
+
+        // Vendos klasën fillestare bazuar në gjendjen e videos
+        if (promoVideo.paused) {
+            videoControlBtn.classList.add('play');
+        } else {
+            videoControlBtn.classList.add('pause');
+        }
+    });
+
+    </script>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
