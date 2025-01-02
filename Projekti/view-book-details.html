@@ -321,9 +321,9 @@
             // Update the book details on the page
             document.getElementById('book-title').textContent = book.name;
             document.getElementById('book-author').textContent = `By: ${book.author}`;
-            document.getElementById('book-description').textContent = book.description;
-            document.getElementById('book-category').textContent = book.category;
-            document.getElementById('book-price').textContent = book.price;
+            document.getElementById('book-description').textContent =`Description: ${book.description}`;
+            document.getElementById('book-category').textContent =`Category: ${book.category}`;
+            document.getElementById('book-price').textContent =`Price ${book.price}`;
             document.getElementById('book-image').src = book.imageSrc;
 
             // Add event listeners for Add to Cart and Wishlist buttons
