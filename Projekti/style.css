@@ -1675,5 +1675,121 @@ textarea{
     height: auto;
     border-radius: 8px;
 }
+.accessory-detail {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vh;
+}
 
+.accessory-info {
+    flex: 1;
+    padding-left: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accessory-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.accessory-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.accessory-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.accessory-info strong {
+    font-weight: bold;
+}
+
+
+#accessory-image {
+    width: 200%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.add-to-cart-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(43, 188, 149, 0.697);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: rgba(43, 188, 149, 0.9);
+    
+}
+
+.add-to-cart-btn .button-text {
+    transition: opacity 0.3s ease; /* Kalim i lehtë */
+    opacity: 1; /* Teksti shfaqet fillimisht */
+}
+
+.add-to-cart-btn i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
+}
+
+.add-to-cart-btn:hover i {
+    transform: translateX(0); /* Ikona rikthehet në vend */
+}
+
+.add-to-cart-btn:hover .button-text {
+    opacity: 1; /* Teksti shfaqet gjithmonë */
+}
+.add-accessory-to-cart-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(43, 188, 149, 0.697);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.add-accessory-to-cart-btn:hover {
+    background-color: rgba(43, 188, 149, 0.9); /* Ngjyrë pak më e thellë */
+    
+}
+
+.add-accessory-to-cart-btn .button-text {
+    transition: opacity 0.3s ease; /* Kalim i butë */
+    opacity: 1; /* Teksti shfaqet fillimisht */
+}
+
+.add-accessory-to-cart-btn i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
+}
+
+.add-accessory-to-cart-btn:hover i {
+    transform: translateX(0); /* Ikona rikthehet në vend */
+}
+
+.add-accessory-to-cart-btn:hover .button-text {
+    opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
+}
 

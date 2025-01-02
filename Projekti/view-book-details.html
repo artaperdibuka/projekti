@@ -43,9 +43,12 @@
   
 
     <div class="main">
-            <div class="tittle2">
-                <a href="home.html" style="padding: 0 10px; " >Home / </a><a href="products.html" ">Products</a> <span> Book details</span>
-            </div>
+        <div class="tittle2">
+            <a href="home.html" style="padding: 0 10px;">Home / </a>
+            <a href="products.html">Products</a>
+            <span id="breadcrumb-category"></span>
+            <span id="breadcrumb-detail"></span>
+        </div>
             <section id="book-details" class="book-detail">
                 <!-- The book details container -->
                 <div class="details">
@@ -61,16 +64,35 @@
                         <p id="book-description">Loading...</p>
                         <p id="book-category"> Loading ...</p>
                         <p><strong>Price:</strong> <span id="book-price">Loading...</span></p>
-                        <div class="button" style="size: 20px;">
-                            <button type="submit" name="add_to_cart" style="padding: 15px 30px; font-size: 18px; background-color: rgba(43, 188, 149, 0.697); color: white; border: none; border-radius: 5px; display: inline-flex; align-items: center; gap: 10px;">
-                                <i class="bx bx-cart" style="font-size: 24px;"></i></button>
-                            </div>
+                        <div class="custom-button-container">
+                            <button type="submit" name="add_to_cart" class="add-to-cart-btn">
+                                <span class="button-text">Add to Cart</span>
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                        
                     </div>
                 </div>
             </section>
-            
-            
-            
+
+            <section id="accessory-details" class="accessory-detail">
+                <div class="details">
+                    <div class="image-box">
+                        <img id="accessory-image" src="" alt="Accessory Image">
+                    </div>
+                    <div class="accessory-info">
+                        <h1 id="accessory-title">Loading...</h1>
+                        <p><strong>Price:</strong> <span id="accessory-price">Loading...</span></p>
+                        <div class="custom-button-container">
+                            <button type="submit" name="add_accessory_to_cart" class="add-accessory-to-cart-btn">
+                                <span class="button-text">Add to Cart</span>
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+  
             <section class="services">
                     
                 <div class="box-container">
@@ -171,6 +193,13 @@
     document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
         const bookId = urlParams.get('book');
+        const category = urlParams.get('category');
+        const accessoryId = urlParams.get('accessory');
+
+        const breadcrumbCategory = document.getElementById('breadcrumb-category');
+        const breadcrumbDetail = document.getElementById('breadcrumb-detail');
+        
+
 
         // Book data (mund të jetë i njëjti si në faqen e mëparshme)
         const booksData = {
@@ -313,54 +342,140 @@
 
         // ... (other books data)
     };
+    const accessoriesData = {
+    'WoodenPageHolders': {
+        name: 'Wooden Page Holders',
+        price: '4€',
+        imageSrc: 'img/book_a1.png',
+    },
+    'WoodenBookmark': {
+        name: 'Wooden Bookmark',
+        price: '2€',
+        imageSrc: 'img/book_a2.webp',
+    },
+    'BookThumbHolder': {
+        name: 'Book Thumb Holder',
+        price: '6€',
+        imageSrc: 'img/book_a3.webp',
+    },
+    'ReadingAid': {
+        name: 'Reading Aid',
+        price: '14€',
+        imageSrc: 'img/book_a4.webp',
+    },
+    'BookStand': {
+        name: 'Book Stand',
+        price: '7€',
+        imageSrc: 'img/book_a5.jpg',
+    },
+    'CornerPageBookmarks': {
+        name: 'Corner Page Bookmarks',
+        price: '1€',
+        imageSrc: 'img/book_a6.jpg',
+    },
+    'HandsFreeBookReading': {
+        name: 'Hands-Free Book Reading',
+        price: '21€',
+        imageSrc: 'img/book_a7.webp',
+    },
+    'BookOrganizer': {
+        name: 'Book Organizer',
+        price: '8€',
+        imageSrc: 'img/book_a8.jpg',
+    },
+};
 
-        // Check if bookId exists and display the corresponding book details
-        if (bookId && booksData[bookId]) {
-            const book = booksData[bookId];
+    if (category) {
+        breadcrumbCategory.innerHTML = ` <a href="products.html?category=${category}">${category}</a>`;
+    } else {
+        breadcrumbCategory.innerHTML = ` <a href="products.html">All Books</a>`;
+    }
 
-            // Update the book details on the page
-            document.getElementById('book-title').textContent = book.name;
-            document.getElementById('book-author').textContent = `By: ${book.author}`;
-            document.getElementById('book-description').textContent =`Description: ${book.description}`;
-            document.getElementById('book-category').textContent =`Category: ${book.category}`;
-            document.getElementById('book-price').textContent =`Price ${book.price}`;
-            document.getElementById('book-image').src = book.imageSrc;
+    // Përditëso breadcrumb me emrin e librit
+    if (bookId) {
+        breadcrumbDetail.innerHTML = ` Book Details`;
+    } else if (accessoryId && accessoriesData[accessoryId]) {
+        const accessory = accessoriesData[accessoryId];
+        breadcrumbCategory.innerHTML = ' <a href="accessories.html">Accessories</a>'; // Accessories si link
+        breadcrumbDetail.innerHTML = ` Accessory Details`; // Emri i aksesorit
+    }
+        // Display book details if bookId exists
+    if (bookId && booksData[bookId]) {
+        const book = booksData[bookId];
+        document.getElementById('book-title').textContent = book.name;
+        document.getElementById('book-author').textContent = `By: ${book.author}`;
+        document.getElementById('book-description').textContent = `Description: ${book.description}`;
+        document.getElementById('book-category').textContent = `Category: ${book.category}`;
+        document.getElementById('book-price').textContent = `Price: ${book.price}`;
+        document.getElementById('book-image').src = book.imageSrc;
 
-            // Add event listeners for Add to Cart and Wishlist buttons
-            const addToCartButton = document.querySelector('button[name="add_to_cart"]');
-            const addToWishlistButton = document.querySelector('button[name="add_to_wishlist"]');
+        // Hide accessory section
+        document.getElementById('accessory-details').style.display = 'none';
 
-            if (addToCartButton) {
-                addToCartButton.addEventListener('click', () => {
-                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                    const uniqueId = Date.now(); // Përdor timestamp si ID unike
-                    cart.push({ id: uniqueId, ...book }); // Shto produktin në cart me ID unike
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    updateCounts();
-                    alert(`${book.name} added to your cart!`);
-                });
+        // Add to Cart and Wishlist buttons for books
+        document.querySelector('.add-accessory-to-cart-btn').addEventListener('click', () => {
+    // kodin tuaj këtu
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const uniqueId = Date.now(); // Use timestamp as unique ID
+            cart.push({ id: uniqueId, ...book });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCounts();
+            alert(`${book.name} added to your cart!`);
+        });
+
+        document.querySelector('button[name="add_to_wishlist"]').addEventListener('click', () => {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const existsInWishlist = wishlist.some(item => item.name === book.name && item.author === book.author);
+
+            if (!existsInWishlist) {
+                const uniqueId = Date.now();
+                wishlist.push({ id: uniqueId, ...book });
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateCounts();
+                alert(`${book.name} added to your wishlist!`);
+            } else {
+                alert(`${book.name} is already in your wishlist.`);
             }
-            if (addToWishlistButton) {
-            addToWishlistButton.addEventListener('click', () => {
-                const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-                const existsInWishlist = wishlist.some(item => item.name === book.name && item.author === book.author);
+        });
+    }
 
-                if (!existsInWishlist) {
-                    const uniqueId = Date.now();
-                    wishlist.push({ id: uniqueId, ...book });
-                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                    updateCounts();
-                    alert(`${book.name} added to your wishlist!`);
-                } else {
-                    alert(`${book.name} is already in your wishlist.`);
-                }
-            });
-        }
+    // Display accessory details if accessoryId exists
+    if (accessoryId && accessoriesData[accessoryId]) {
+        const accessory = accessoriesData[accessoryId];
+        document.getElementById('accessory-title').textContent = accessory.name;
+        document.getElementById('accessory-price').textContent = `Price: ${accessory.price}`;
+        document.getElementById('accessory-image').src = accessory.imageSrc;
 
-            
-        } else {
-            document.getElementById('book-details').innerHTML = '<p>Book not found.</p>';
-        }
+        // Hide book section
+        document.getElementById('book-details').style.display = 'none';
+
+        // Add to Cart and Wishlist buttons for accessories
+        document.querySelector('button[name="add_accessory_to_cart"]').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const uniqueId = Date.now(); // Use timestamp as unique ID
+            cart.push({ id: uniqueId, ...accessory });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCounts();
+            alert(`${accessory.name} added to your cart!`);
+        });
+
+        document.querySelector('button[name="add_accessory_to_wishlist"]').addEventListener('click', () => {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const existsInWishlist = wishlist.some(item => item.name === accessory.name);
+
+            if (!existsInWishlist) {
+                const uniqueId = Date.now();
+                wishlist.push({ id: uniqueId, ...accessory });
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateCounts();
+                alert(`${accessory.name} added to your wishlist!`);
+            } else {
+                alert(`${accessory.name} is already in your wishlist.`);
+            }
+        });
+    }
+        
     });
 
     // Funksioni për të përditësuar numrat në header
@@ -373,6 +488,7 @@
 
     // Përditëso numrat kur faqja ngarkohet
     updateCounts();
+
 </script>
 <script src="script.js"></script>
 <script src="count.js"></script>
