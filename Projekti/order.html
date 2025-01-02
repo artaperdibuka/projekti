@@ -174,9 +174,12 @@
     </div>
 </div>
 <script>
+    let baseCartPrice = 0; // Global variable to hold the base cart price
+    let transportCost = 5.00; // Default transport cost for standard delivery
+
     document.addEventListener('DOMContentLoaded', function () {
         displayCart();
-        document.getElementById('transport').addEventListener('change', updateTotalPrice);
+        document.getElementById('transport').addEventListener('change', handleTransportChange);
 
         const orderForm = document.getElementById('order-form');
         orderForm.addEventListener('submit', confirmOrder);
@@ -189,11 +192,12 @@
 
         if (cart.length === 0) {
             orderSummary.innerHTML = '<p>Your cart is empty. Please add items before proceeding to checkout.</p>';
-            updateTotalPrice(0);
+            baseCartPrice = 0;
+            updateTotalPrice();
             return;
         }
 
-        let totalPrice = 0;
+        baseCartPrice = 0; // Reset base cart price
         cart.forEach((item, index) => {
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('cart-item2');
@@ -211,10 +215,10 @@
             `;
 
             orderSummary.appendChild(itemDiv);
-            totalPrice += parseFloat(item.price.replace('€', ''));
+            baseCartPrice += parseFloat(item.price.replace('€', ''));
         });
 
-        updateTotalPrice(totalPrice);
+        updateTotalPrice(); // Update total price with the initial cart value
     }
 
     function removeFromCart(index) {
@@ -225,10 +229,14 @@
         Swal.fire('Item removed from cart!', '', 'success');
     }
 
-    function updateTotalPrice(basePrice = 0) {
+    function handleTransportChange() {
         const transport = document.getElementById('transport').value;
-        const transportCost = transport === 'express' ? 15.00 : 5.00;
-        const finalPrice = basePrice + transportCost;
+        transportCost = transport === 'express' ? 15.00 : 5.00;
+        updateTotalPrice(); // Update the total price when transport changes
+    }
+
+    function updateTotalPrice() {
+        const finalPrice = baseCartPrice + transportCost;
         document.getElementById('total-price').innerHTML = `Total: ${finalPrice.toFixed(2)}€`;
     }
 
