@@ -1806,4 +1806,6 @@ textarea{
 .custom-cart-button:hover .custom-cart-text {
     opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
 }
-
+ul{
+    padding: 0;
+}
