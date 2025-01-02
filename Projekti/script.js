@@ -63,3 +63,4 @@ function subscribeNewsletter() {
         Swal.fire("Error!", "Please enter a valid email address!", "error");
     }
 }
+
