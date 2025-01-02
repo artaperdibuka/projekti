@@ -147,69 +147,92 @@
     </div>
     <script>
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
-const wishlistContainer = document.getElementById('wishlist-container');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const wishlistContainer = document.getElementById('wishlist-container');
 
-function updateLocalStorage() {
-    localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
+        function updateLocalStorage() {
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
 
-if (wishlist.length > 0) {
-    wishlist.forEach((item, index) => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('wishlist-item');
+        if (wishlist.length > 0) {
+            wishlist.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('wishlist-item');
 
-        itemDiv.innerHTML = `
-            <div class="box">
-                <img src="${item.imageSrc}" alt="${item.name}" class="wishlist-item-img">
-                <div class="wishlist-item-details">
-                    <h4 class="wishlist-item-name">${item.name}</h4>
-                    <p class="wishlist-item-author">${item.author || ''}</p>
-                    <p class="wishlist-item-price">${item.price}</p>
-                    <button class="remove-btn" data-index="${index}">Remove</button>
-                    <button class="add-to-cart-btn" data-index="${index}">Add to cart</button>
-                </div>
-            </div>
-        `;
+                itemDiv.innerHTML = `
+                    <div class="box">
+                        <img src="${item.imageSrc}" alt="${item.name}" class="wishlist-item-img">
+                        <div class="wishlist-item-details">
+                            <h4 class="wishlist-item-name">${item.name}</h4>
+                            <p class="wishlist-item-author">${item.author || ''}</p>
+                            <p class="wishlist-item-price">${item.price}</p>
+                            <button class="remove-btn" data-index="${index}">Remove</button>
+                            <button class="add-to-cart-btn" data-index="${index}">Add to cart</button>
+                        </div>
+                    </div>
+                `;
 
-        wishlistContainer.appendChild(itemDiv);
-    });
+                wishlistContainer.appendChild(itemDiv);
+            });
 
-    // Add event listeners to the buttons
-    const removeButtons = document.querySelectorAll('.remove-btn');
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            // Add event listeners to the buttons
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
-    removeButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const index = e.target.getAttribute('data-index');
-            wishlist.splice(index, 1); // Remove the item from the wishlist array
-            updateLocalStorage(); // Update localStorage
-            e.target.closest('.wishlist-item').remove(); // Remove the item from the DOM
-            alert('Item removed from wishlist');
-            updateCounts();
+            removeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    wishlist.splice(index, 1); // Remove the item from the wishlist array
+                    updateLocalStorage(); // Update localStorage
+                    e.target.closest('.wishlist-item').remove(); // Remove the item from the DOM
+                    alert('Item removed from wishlist');
+                    updateCounts();
+                });
+            });
+
+            addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                const itemToAdd = wishlist[index];
+
+                // Check if item is already in the cart
+                const itemExistsInCart = cart.some(item => item.name === itemToAdd.name && item.author === itemToAdd.author);
+                if (!itemExistsInCart) {
+                    cart.push(itemToAdd); // Add item to cart array
+                    wishlist.splice(index, 1); // Remove item from wishlist array
+                    updateLocalStorage(); // Update localStorage
+                    alert('Item added to cart');
+                    updateCounts();
+
+                    // Remove item from the DOM
+                    e.target.closest('.wishlist-item').remove();
+                } else {
+                    alert('Item is already in the cart');
+                }
+            });
         });
-    });
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const index = e.target.getAttribute('data-index');
-            const itemToAdd = wishlist[index];
+        } else {
+            wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+        }
+        function updateCounts() {
+            const wishlistCount = wishlist.length;
+            const cartCount = cart.length;
 
-            // Check if item is already in the cart
-            const itemExistsInCart = cart.some(item => item.name === itemToAdd.name && item.author === itemToAdd.author);
-           
-                cart.push(itemToAdd); // Add item to cart array
-                updateLocalStorage(); // Update localStorage
-                alert('Item added to cart');
-                updateCounts();
-           
-        });
-    });
-} else {
-    wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
-}
+            // Përshtatni këtu për të reflektuar numrin në elementet tuaj HTML
+            const wishlistCountElement = document.getElementById('wishlist-count'); // Elementi ku do të shfaqet numri i produkteve në wishlist
+            const cartCountElement = document.getElementById('cart-count'); // Elementi ku do të shfaqet numri i produkteve në cart
 
+            if (wishlistCountElement) {
+                wishlistCountElement.textContent = wishlistCount;
+            }
+            if (cartCountElement) {
+                cartCountElement.textContent = cartCount;
+            }
+        }
+
+    updateCounts();
     </script>
     <script src="script.js"></script>
     <script src="count.js"></script>
