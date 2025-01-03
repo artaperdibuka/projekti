@@ -441,7 +441,7 @@
             if (accessoryId && accessoriesData[accessoryId]) {
                 const accessory = accessoriesData[accessoryId];
                 document.getElementById('accessory-title').textContent = accessory.name;
-                document.getElementById('accessory-price').textContent = `Price: ${accessory.price}`;
+                document.getElementById('accessory-price').textContent =  accessory.price;
                 document.getElementById('accessory-image').src = accessory.imageSrc;
 
                 // Hide book section
