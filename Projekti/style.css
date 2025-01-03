@@ -2193,33 +2193,40 @@ td {
         margin-bottom: 20px;
     }
 }
+
 @media (max-width: 768px) {
     .about .row {
-        flex-direction: column; /* Kolonë për ekranet e vogla */
+        flex-direction: column;
+        /* Kolonë për ekranet e vogla */
         text-align: center;
     }
 
     .about .row .img-box,
     .about .row .detail {
-        width: 100%; /* Zgjeroni elementët në 100% */
+        width: 100%;
+        /* Zgjeroni elementët në 100% */
     }
 
     .about .row .img-box img {
-        margin-bottom: 20px; /* Hapësirë mes imazhit dhe përshkrimit */
+        margin-bottom: 20px;
+        /* Hapësirë mes imazhit dhe përshkrimit */
     }
 
     .about .row .detail h1 {
-        font-size: 22px; /* Zvogëloni madhësinë e fontit */
+        font-size: 22px;
+        /* Zvogëloni madhësinë e fontit */
     }
 
     .about .row .detail p {
-        font-size: 16px; /* Për font më të vogël në ekranet e vogla */
+        font-size: 16px;
+        /* Për font më të vogël në ekranet e vogla */
     }
 }
 
 @media (max-width: 480px) {
     .about {
-        padding: 2rem 1rem; /* Zvogëloni padding për pajisje shumë të vogla */
+        padding: 2rem 1rem;
+        /* Zvogëloni padding për pajisje shumë të vogla */
     }
 
     .about .row .detail h1 {

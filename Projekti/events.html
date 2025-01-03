@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Events Page</title>
 </head>
+
 <body>
     <header class="header" style="height: 100px;">
         <div class="flex">
@@ -44,13 +46,17 @@
                 <div class="centere-content">
                     <h1>Experience the Magic of Events - Reserve Your Date</h1>
                     <div class="event-description">
-                        <p>Come and be part of the unforgettable moments at BookstoreBuzuku! Get ready for the newest book launches, passionate readings, inspiring discussions with acclaimed authors and in-depth conversations that spark the imagination. Discover new worlds through creative workshops and unique experiences we bring just for you. Reserve your date and join us on this passionate literary journey – an experience you won't want to miss!</p>
+                        <p>Come and be part of the unforgettable moments at BookstoreBuzuku! Get ready for the newest
+                            book launches, passionate readings, inspiring discussions with acclaimed authors and
+                            in-depth conversations that spark the imagination. Discover new worlds through creative
+                            workshops and unique experiences we bring just for you. Reserve your date and join us on
+                            this passionate literary journey – an experience you won't want to miss!</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        
+
         <section class="home-section" style="margin-top: 70px;">
             <div id="bookCarousel" class="carousel slide">
                 <div class="carousel-inner">
@@ -117,8 +123,8 @@
                 </button>
             </div>
         </section>
-        
-            
+
+
         <div class="form-container">
             <form id="contactForm" onsubmit="reserveEvent(event)" class="container mt-5">
                 <h1 class="text-center mb-4">Reserve an Event Date</h1>
@@ -130,22 +136,26 @@
 
                 <div class="form-group">
                     <label for="name">Your Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="name" required placeholder="Enter your name" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                    <input type="text" class="form-control" name="name" required placeholder="Enter your name"
+                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
 
                 <div class="form-group">
                     <label for="surname">Your Surname <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="surname" required placeholder="Enter your surname" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                    <input type="text" class="form-control" name="surname" required placeholder="Enter your surname"
+                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Your Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="email" required placeholder="Enter your email" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                    <input type="email" class="form-control" name="email" required placeholder="Enter your email"
+                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
 
                 <div class="form-group">
                     <label for="number">Your Phone Number <span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control" name="number" required placeholder="Enter your phone number" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                    <input type="tel" class="form-control" name="number" required placeholder="Enter your phone number"
+                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
 
                 <button type="submit" name="submit" value="reserve event" class="btn">Reserve Event</button>
@@ -252,66 +262,66 @@
             </div>
         </section>
 
-            
-            <div class="top-footer">
-                <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                    <div class="input-field-subscribe">
-                        <input type="email" id="emailInput" name="" placeholder="email address...">
-                        <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+
+        <div class="top-footer">
+            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+            <div class="input-field-subscribe">
+                <input type="email" id="emailInput" name="" placeholder="email address...">
+                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+        <footer>
+            <div class="overlay"></div>
+            <div class="footer-content">
+                <div class="img-box">
+                    <img src="img/logoo.png">
+                </div>
+                <div class="inner-footer">
+                    <div class="card">
+                        <h3>about us</h3>
+                        <ul>
+                            <li>about us</li>
+                            <li>our difference</li>
+                            <li>community matters</li>
+                            <li>press</li>
+                            <li>blog</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>services</h3>
+                        <ul>
+                            <li>order</li>
+                            <li>help center</li>
+                            <li>shipping</li>
+                            <li>term of use</li>
+                            <li>account detail</li>
+                            <li>my account</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>local</h3>
+                        <ul>
+                            <li>Sheshi "Nënë Tereza"</li>
+                            <li>Albi Mall</li>
+                            <li>Prishtina Mall</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>newsletter</h3>
+                        <p>Sign Up For Newsletter</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/librariabuzuku/"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.facebook.com/librariabuzuku"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://wa.me/38348238738"><i class="bx bxl-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
-            <footer>
-                <div class="overlay"></div>
-                <div class="footer-content">
-                    <div class="img-box">
-                        <img src="img/logoo.png">
-                    </div>
-                    <div class="inner-footer">
-                        <div class="card">
-                            <h3>about us</h3>
-                            <ul>
-                                <li>about us</li>
-                                <li>our difference</li>
-                                <li>community matters</li>
-                                <li>press</li>
-                                <li>blog</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h3>services</h3>
-                            <ul>
-                                <li>order</li>
-                                <li>help center</li>
-                                <li>shipping</li>
-                                <li>term of use</li>
-                                <li>account detail</li>
-                                <li>my account</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h3>local</h3>
-                            <ul>
-                                <li>Sheshi "Nënë Tereza"</li>
-                                <li>Albi Mall</li>
-                                <li>Prishtina Mall</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h3>newsletter</h3>
-                            <p>Sign Up For Newsletter</p>
-                            <div class="social-links">
-                                <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
-                                <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-footer">
-                        <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
-                    </div>
+                <div class="bottom-footer">
+                    <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
                 </div>
-            </footer>
-        
+            </div>
+        </footer>
+
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -346,11 +356,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="reservation.js"></script>
     <script src="script.js"></script>
     <script src="count.js"></script>
 </body>
+
 </html>
