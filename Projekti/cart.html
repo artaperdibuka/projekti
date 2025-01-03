@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,24 @@
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Cart</title>
 </head>
+
 <body>
     <header class="header">
         <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
             <nav class="navbar">
                 <a href="home.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="order.html"> Order</a>
                 <a href="events.html">Events</a>
                 <a href="about.html">About us</a>
-                <a href="contact.html">Contact us</a>
-    
+                <a href="contact.html">Contact</a>
+
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
@@ -34,12 +36,12 @@
                 <a href="register.html" class="btn">Register</a>
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
-    
+
                 </form>
             </div>
         </div>
     </header>
-   </div>
+    </div>
 
     <div class="main">
         <div class="tittle2">
@@ -52,10 +54,10 @@
             </div>
         </section>
         <div style="width: 101%;">
-            <button class="buynow-btn" onclick="window.location.href='order.html'"; >Buy Now</button>
+            <button class="buynow-btn" onclick="window.location.href='order.html'" ;>Buy Now</button>
         </div>
         <section class="services">
-                    
+
             <div class="box-container">
                 <div class="box">
                     <img src="img/icon2.png">
@@ -86,9 +88,9 @@
                     </div>
                 </div>
             </div>
-       </section>
-       <div class="top-footer">
-        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+        </section>
+        <div class="top-footer">
+            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
             <div class="input-field-subscribe">
                 <input type="email" id="emailInput" name="" placeholder="email address...">
                 <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
@@ -96,7 +98,7 @@
         </div>
 
         <footer>
-            <div  class="overlay"></div>
+            <div class="overlay"></div>
             <div class="footer-content">
                 <div class="img-box">
                     <img src="img/logoo.png">
@@ -111,7 +113,7 @@
                             <li>press</li>
                             <li>blog</li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="card">
                         <h3>services</h3>
                         <ul>
@@ -133,63 +135,63 @@
                     </div>
                     <div class="card">
                         <h3>newsletter</h3>
-                         <p>Sign Up For Newsletter</p>
-                         <div class="social-links">
+                        <p>Sign Up For Newsletter</p>
+                        <div class="social-links">
                             <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                         </div>
                         </div>
                     </div>
+                </div>
                 <div class="bottom-footer">
                     <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
     </div>
-</div>
-<script>
-    // Load cart data from localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartContainer = document.getElementById('cart-container');
+    </div>
+    <script>
+        // Load cart data from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cart-container');
 
-    // Function to update counts in header
-    function updateCounts() {
-        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        document.getElementById('wishlist-count').textContent = wishlist.length;
-        document.getElementById('cart-count').textContent = cart.length;
-    }
-
-    // Function to remove an item from the cart by index
-    function removeFromCart(index) {
-        // Remove the item at the given index
-        cart.splice(index, 1);
-
-        // Save updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Refresh the cart display
-        renderCart();
-
-        alert('Product removed from cart.');
-    }
-
-    // Function to render the cart items
-    function renderCart() {
-        cartContainer.innerHTML = ''; // Clear existing items
-
-        if (cart.length === 0) {
-            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-            return;
+        // Function to update counts in header
+        function updateCounts() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('wishlist-count').textContent = wishlist.length;
+            document.getElementById('cart-count').textContent = cart.length;
         }
 
-        // Loop through the cart and render each item
-        cart.forEach((item, index) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('cart-item');
+        // Function to remove an item from the cart by index
+        function removeFromCart(index) {
+            // Remove the item at the given index
+            cart.splice(index, 1);
 
-            itemDiv.innerHTML = `
+            // Save updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Refresh the cart display
+            renderCart();
+
+            alert('Product removed from cart.');
+        }
+
+        // Function to render the cart items
+        function renderCart() {
+            cartContainer.innerHTML = ''; // Clear existing items
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            // Loop through the cart and render each item
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+
+                itemDiv.innerHTML = `
                 <div class="box">
                     <img src="${item.imageSrc || ''}" alt="${item.name || item.title}" class="cart-item-img">
                     <div class="cart-item-details">
@@ -199,23 +201,24 @@
                         <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
                     </div>
                 </div>`;
-            
-            cartContainer.appendChild(itemDiv);
-        });
 
-        // Update counts in header
-        updateCounts();
-    }
+                cartContainer.appendChild(itemDiv);
+            });
 
-    // Render cart on page load
-    renderCart();
-</script>
+            // Update counts in header
+            updateCounts();
+        }
+
+        // Render cart on page load
+        renderCart();
+    </script>
 
 
-    
+
 
     <script src="script.js"></script>
-   
+
     <script src="count.js"></script>
 </body>
+
 </html>

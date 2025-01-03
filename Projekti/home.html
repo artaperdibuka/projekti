@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Home Page</title>
 </head>
-
 <body>
     <!-- Header do të vendoset këtu -->
-    <header class="header" style="height: 100px">
+    <header class="header" style="height: 100px;">
         <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230" /></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
             <nav class="navbar">
-                <a href="home.html" style="font-size: 17px; font-family: sans-serif">Home</a>
-                <a href="products.html" style="font-size: 17px; font-family: sans-serif">Products</a>
-                <a href="order.html" style="font-size: 17px; font-family: sans-serif">
-                    Order</a>
-                <a href="events.html" style="font-size: 17px; font-family: sans-serif">Events</a>
-                <a href="about.html" style="font-size: 17px; font-family: sans-serif">About us</a>
-                <a href="contact.html" style="font-size: 17px; font-family: sans-serif">Contact us</a>
+                <a href="home.html" style="font-size: 17px; font-family: sans-serif;">Home</a>
+                <a href="products.html" style="font-size: 17px; font-family: sans-serif;">Products</a>
+                <a href="order.html" style="font-size: 17px; font-family: sans-serif;"> Order</a>
+                <a href="events.html" style="font-size: 17px; font-family: sans-serif;">Events</a>
+                <a href="about.html" style="font-size: 17px; font-family: sans-serif;">About us</a>
+                <a href="contact.html" style="font-size: 17px; font-family: sans-serif;">Contact</a>
+
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
                 <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
-                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem"></i>
-            </div>
-            <div class="user-box">
-                <p>Username: <span></span></p>
-                <p>Email: <span></span></p>
-                <a href="login.html" class="btn">Login</a>
-                <a href="register.html" class="btn">Register</a>
-                <form method="post">
-                    <button type="submit" name="logout" class="logout-btn">
-                        Log out
-                    </button>
-                </form>
+                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
         </div>
     </header>
+   
     <div class="main">
         <section class="home-section">
             <div id="bookCarousel" class="carousel slide">
@@ -64,7 +52,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px">
-                            <!-- Zvogëlo lartësinë në 400px -->
+                            
                             <img src="img/BuzukuBookstore.jpeg" alt="Book Image" class="d-block w-100"
                                 style="height: 100%; object-fit: cover" />
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -78,7 +66,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px">
-                            <!-- Zvogëlo lartësinë në 400px -->
+                         
                             <img src="img/t2.png" alt="Accessories" class="d-block w-100"
                                 style="height: 100%; object-fit: cover" />
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -88,7 +76,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="height: 500px">
-                            <!-- Zvogëlo lartësinë në 400px -->
+                           
                             <img src="img/recomended1.png" alt="Recommended Books" class="d-block w-100"
                                 style="height: 100%; object-fit: cover" />
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -110,146 +98,143 @@
             </div>
         </section>
 
-        <!-- home slider end -->
-        <section class="thumb">
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/thumb11.png" />
-                    <h3 style="font-size: 22px">Biography</h3>
-
-                    <a href="products.html"><i class="bx bx-chevron-right"></i></a>
-                </div>
-                <div class="box">
-                    <img src="img/thumb12.png" />
-                    <h3 style="font-size: 22px">Fantasy</h3>
-
-                    <a href="products.html"><i class="bx bx-chevron-right"></i></a>
-                </div>
-                <div class="box">
-                    <img src="img/thumb13.png" />
-                    <h3 style="font-size: 22px">Novel</h3>
-
-                    <a href="products.html"><i class="bx bx-chevron-right"></i></a>
-                </div>
-                <div class="box">
-                    <img src="img/thumb14.png" />
-                    <h3 style="font-size: 22px">Poetry</h3>
-
-                    <a href="products.html"><i class="bx bx-chevron-right"></i></a>
-                </div>
+      <!-- home slider end -->
+      <section class="thumb">
+        <div class="box-container">
+            <div class="box">
+                <img src="img/thumb11.png">
+                <h3>Biography</h3>
+               
+                <a href="products.html"><i class="bx bx-chevron-right"></i></a>
+                
             </div>
-        </section>
-        <section class="container">
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/about-us.png" id="sale-image" />
-                </div>
-                <div class="box">
-                    <img src="img/sale.png" />
-                    <span>Hurry!</span>
-                    <h1>Discount up to 50%</h1>
-                    <p>
-                        for many types of books, from the best sellers to the newest
-                        ones...
-                    </p>
-                </div>
+            <div class="box">
+                <img src="img/thumb12.png">
+                <h3>Fantasy</h3>
+               
+                <a href="products.html"><i class="bx bx-chevron-right"></i></a>
             </div>
-        </section>
-        <section id="recommendedBooks" class="shop">
-            <div class="title">
+            <div class="box">
+                <img src="img/thumb13.png">
+                <h3>Novel</h3>
+               
+                <a href="products.html"><i class="bx bx-chevron-right"></i></a>
+            </div>
+            <div class="box">
+                <img src="img/thumb14.png">
+                <h3>Poetry</h3>
+               
+                <a href="products.html"><i class="bx bx-chevron-right"></i></a>
+            </div>
+
+        </div>
+       </section>
+       <section class="container">
+        <div class="box-container">
+            <div class="box">
+                <img src="img/about-us.png"  id="sale-image" >
+            </div>
+            <div class="box">
+                <img src="img/sale.png" >
+                <span>Hurry!</span>
+                <h1>Discount up to 50%</h1>
+                <p> for many types of books, from the best sellers to the newest ones...</p>
+            </div>
+        </div>
+       </section>
+       <section id="recommendedBooks" class="shop">
+        <div class="title">
                 <!-- <img src="img/download.png"> -->
-                <h1>Recommended</h1>
-            </div>
-            <div class="shop-slider">
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/book11.jpg" alt="book1" />
-                        <a href="view-book-details.html?book=ANGEL'S TRIBUTE" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book1.jpg" alt="book2" />
-                        <a href="view-book-details.html?book=SOUL" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book2.webp" alt="book3" />
-                        <a href="view-book-details.html?book=WALK INTO THE SHADOW" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book3.webp" alt="book4" />
-                        <a href="view-book-details.html?book=HIDE AND SEEK" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book4.jpg" alt="book5" />
-                        <a href="view-book-details.html?book=THE REGENERATION OF STELLA YIN" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book5.jpg" alt="book6" />
-                        <a href="view-book-details.html?book=OMNI" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book6.jpg" alt="book7" />
-                        <a href="view-book-details.html?book=EISIGES LAND" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book7.jpg" alt="book8" />
-                        <a href="view-book-details.html?book=THE LONGEST REVOLUTION" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book8.jpg" alt="book9" />
-                        <a href="view-book-details.html?book=BEIEANG" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book9.jpg" alt="book10" />
-                        <a href="view-book-details.html?book=GENIE UND REBELL" class="btn">Shop now</a>
-                    </div>
-                    <div class="box">
-                        <img src="img/book10.jpg" alt="book11" />
-                        <a href="view-book-details.html?book=KEEP THE MEMORIES" class="btn">Shop now</a>
-                    </div>
+            <h1>Recommended</h1>
+        </div>
+        <div class="shop-slider">
+            <div  class="box-container">
+                <div class="box">
+                    <img src="img/book11.jpg" alt="book1">
+                    <a href="view-book-details.html?book=ANGEL'S TRIBUTE" class="btn">Shop now</a>
                 </div>
+                <div class="box">
+                    <img src="img/book1.jpg" alt="book2">
+                    <a href="view-book-details.html?book=SOUL" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book2.webp" alt="book3">
+                    <a href="view-book-details.html?book=WALK INTO THE SHADOW" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book3.webp" alt="book4">
+                    <a href="view-book-details.html?book=HIDE AND SEEK" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book4.jpg" alt="book5">
+                    <a href="view-book-details.html?book=THE REGENERATION OF STELLA YIN" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book5.jpg" alt="book6">
+                    <a href="view-book-details.html?book=OMNI" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book6.jpg" alt="book7">
+                    <a href="view-book-details.html?book=EISIGES LAND" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book7.jpg" alt="book8">
+                    <a href="view-book-details.html?book=THE LONGEST REVOLUTION" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book8.jpg" alt="book9">
+                    <a href="view-book-details.html?book=BEIEANG" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book9.jpg" alt="book10">
+                    <a href="view-book-details.html?book=GENIE UND REBELL" class="btn">Shop now</a>
+                </div>
+                <div class="box">
+                    <img src="img/book10.jpg" alt="book11">
+                    <a href="view-book-details.html?book=KEEP THE MEMORIES" class="btn">Shop now</a>
+                </div>
+            </div>
+        
+            <div class="shop-left-arrow"><i class="bx bxs-left-arrow"></i></div>
+            <div class="shop-right-arrow"><i class="bx bxs-right-arrow"></i></div> </div>
 
-                <div class="shop-left-arrow"><i class="bx bxs-left-arrow"></i></div>
-                <div class="shop-right-arrow"><i class="bx bxs-right-arrow"></i></div>
+   </section>
+   <section class="services">
+    <div class="box-container">
+        <div class="box">
+            <img src="img/icon2.png">
+            <div class="detail">
+                <h3>great savings</h3>
+                <p>save big every order</p>
             </div>
-        </section>
-        <section class="services">
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/icon2.png" />
-                    <div class="detail">
-                        <h3 style="font-size: 22px">great savings</h3>
-                        <p>save big every order</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon1.png" />
-                    <div class="detail">
-                        <h3 style="font-size: 22px">24*7</h3>
-                        <p>one-on-one support</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon.png" />
-                    <div class="detail">
-                        <h3 style="font-size: 22px">gift vouchers</h3>
-                        <p>vouchers on every festivals</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon.png" />
-                    <div class="detail">
-                        <h3 style="font-size: 22px">worlwide delivery</h3>
-                        <p>dropship worldwide</p>
-                    </div>
-                </div>
+        </div>
+        <div class="box">
+            <img src="img/icon1.png">
+            <div class="detail">
+                <h3>24*7</h3>
+                <p>one-on-one support</p>
             </div>
-        </section>
-        <div class="top-footer">
-            <h2 style="font-size: 28px; font-weight: bold">
-                <i class="bx bx-envelope"></i> Sign Up For Newsletter
-            </h2>
+        </div>
+        <div class="box">
+            <img src="img/icon.png">
+            <div class="detail">
+                <h3>gift vouchers</h3>
+                <p>vouchers on every festivals</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="img/icon.png">
+            <div class="detail">
+                <h3>worlwide delivery</h3>
+                <p>dropship worldwide</p>
+            </div>
+        </div>
+    </div>
+   </section>
+       <div class="top-footer">
+        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
             <div class="input-field-subscribe">
-                <input type="email" id="emailInput" name="" placeholder="email address..." style="height: 38px" />
+                <input type="email" id="emailInput" name="" placeholder="email address...">
                 <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
             </div>
         </div>
@@ -257,13 +242,11 @@
             <div class="overlay"></div>
             <div class="footer-content">
                 <div class="img-box">
-                    <img src="img/logoo.png" />
+                    <img src="img/logoo.png">
                 </div>
                 <div class="inner-footer">
                     <div class="card">
-                        <h3 style="font-size: 18px; color: black; text-align: center">
-                            about us
-                        </h3>
+                        <h3>about us</h3>
                         <ul>
                             <li>about us</li>
                             <li>our difference</li>
@@ -271,11 +254,9 @@
                             <li>press</li>
                             <li>blog</li>
                         </ul>
-                    </div>
+                    </div> 
                     <div class="card">
-                        <h3 style="font-size: 18px; color: black; text-align: center">
-                            services
-                        </h3>
+                        <h3>services</h3>
                         <ul>
                             <li>order</li>
                             <li>help center</li>
@@ -286,9 +267,7 @@
                         </ul>
                     </div>
                     <div class="card">
-                        <h3 style="font-size: 18px; color: black; text-align: center">
-                            local
-                        </h3>
+                        <h3>local</h3>
                         <ul>
                             <li>Sheshi "Nënë Tereza"</li>
                             <li>Albi Mall</li>
@@ -296,14 +275,13 @@
                         </ul>
                     </div>
                     <div class="card">
-                        <h3 style="font-size: 18px; color: black; text-align: center">
-                            newsletter
-                        </h3>
+                        <h3>newsletter</h3>
                         <p>Sign Up For Newsletter</p>
                         <div class="social-links">
                             <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+        
                         </div>
                     </div>
                 </div>
@@ -314,9 +292,8 @@
         </footer>
     </div>
 
-    <!-- Footer Section -->
 
-    <!-- Add your JavaScript file here -->
+    <!-- Footer Section -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const promoVideo = document.getElementById("promoVideo");
