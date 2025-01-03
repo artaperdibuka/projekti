@@ -180,6 +180,8 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             displayCart();
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('transport').addEventListener('change', handleTransportChange);
 
             const orderForm = document.getElementById('order-form');
@@ -227,6 +229,8 @@
             cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cart));
             displayCart();
+
+            document.getElementById('cart-count').textContent = cart.length;
             Swal.fire('Item removed from cart!', '', 'success');
         }
 

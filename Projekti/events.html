@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - Events Page</title>
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <!-- Bootstrap CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="style.css">
+        <title>BookstoreBuzuku - Events Page</title>
+    </head>
 <body>
-    <header class="header" style="height: 100px;">
+ 
+    <header class="header">
         <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
             <nav class="navbar">
-                <a href="home.html" style="font-size: 17px; font-family: sans-serif;">Home</a>
-                <a href="products.html" style="font-size: 17px; font-family: sans-serif;">Products</a>
-                <a href="order.html" style="font-size: 17px; font-family: sans-serif;"> Order</a>
-                <a href="events.html" style="font-size: 17px; font-family: sans-serif;">Events</a>
-                <a href="about.html" style="font-size: 17px; font-family: sans-serif;">About us</a>
-                <a href="contact.html" style="font-size: 17px; font-family: sans-serif;">Contact</a>
-
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="order.html"> Order</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact us</a>
+    
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+            </div>
+            <div class="user-box">
+                <p>Username: <span></span></p>
+                <p>Email: <span></span></p>
+                <a href="login.html" class="btn">Login</a>
+                <a href="register.html" class="btn">Register</a>
+                <form method="post">
+                    <button type="submit" name="logout" class="logout-btn">Log out</button>
+    
+                </form>
             </div>
         </div>
     </header>
+   </div>
 
     <div class="main">
         <div class="tittle2">
@@ -44,122 +54,127 @@
         <div class="box-container">
             <div class="box">
                 <div class="centere-content">
-                    <h1>Experience the Magic of Events - Reserve Your Date</h1>
+                    <h1>Përjetoni Magjinë e Eventeve – Rezervoni Datën Tuaj</h1>
                     <div class="event-description">
-                        <p>Come and be part of the unforgettable moments at BookstoreBuzuku! Get ready for the newest
-                            book launches, passionate readings, inspiring discussions with acclaimed authors and
-                            in-depth conversations that spark the imagination. Discover new worlds through creative
-                            workshops and unique experiences we bring just for you. Reserve your date and join us on
-                            this passionate literary journey – an experience you won't want to miss!</p>
+                        
+                        <p>Ejani dhe bëhuni pjesë e momenteve të paharrueshme në "BookstoreBuzuku"! 
+                            Përgatituni për lançime të librave më të rinj, lexime pasionante, diskutime frymëzuese me autorë të mirënjohur dhe biseda të thelluara që zgjojnë imagjinatën. 
+                            Zbuloni botë të reja përmes punëtorive krijuese dhe përvojave unike që sjellim vetëm për ju.
+                            Rezervoni datën tuaj dhe bashkohuni me ne në këtë udhëtim të pasionuar letrar – një eksperiencë që nuk do të dëshironi ta humbisni!
+                        </p>
                     </div>
                 </div>
             </div>
+     
+    </div> 
+
+    
+    <section class="home-section" style="margin-top: 70px;">
+        <div id="bookCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <!-- Slide 1: Video -->
+                <div class="carousel-item active">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <video class="d-block w-100" style="height: 100%; object-fit: cover;" id="promoVideo">
+                            <source src="mp4/LibrariaBuzuku1.mp4" type="video/mp4">
+                        </video>
+                        <button id="videoControlBtn" class="play-button"></button>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <img src="img/6.jpg" alt="Slide 6" class="d-block w-100"
+                            style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <img src="img/7.jpg" alt="Slide 7" class="d-block w-100"
+                            style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <img src="img/8.jpg" alt="Slide 8" class="d-block w-100"
+                            style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-item">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <img src="img/9.jpg" alt="Slide 9" class="d-block w-100"
+                            style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-item">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="height: 500px;">
+                        <img src="img/10.jpg" alt="Slide 10" class="d-block w-100"
+                            style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#bookCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#bookCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </section>
 
-
-        <section class="home-section" style="margin-top: 70px;">
-            <div id="bookCarousel" class="carousel slide">
-                <div class="carousel-inner">
-                    <!-- Slide 1: Video -->
-                    <div class="carousel-item active">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <video class="d-block w-100" style="height: 100%; object-fit: cover;" id="promoVideo">
-                                <source src="mp4/LibrariaBuzuku1.mp4" type="video/mp4">
-                            </video>
-                            <button id="videoControlBtn" class="play-button"></button>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <img src="img/6.jpg" alt="Slide 6" class="d-block w-100"
-                                style="height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <img src="img/7.jpg" alt="Slide 7" class="d-block w-100"
-                                style="height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <img src="img/8.jpg" alt="Slide 8" class="d-block w-100"
-                                style="height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <img src="img/9.jpg" alt="Slide 9" class="d-block w-100"
-                                style="height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                    <!-- Slide 6 -->
-                    <div class="carousel-item">
-                        <div class="d-flex flex-column justify-content-center align-items-center"
-                            style="height: 500px;">
-                            <img src="img/10.jpg" alt="Slide 10" class="d-block w-100"
-                                style="height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#bookCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#bookCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-
-
+        
         <div class="form-container">
-            <form id="contactForm" onsubmit="reserveEvent(event)" class="container mt-5">
-                <h1 class="text-center mb-4">Reserve an Event Date</h1>
-
-                <div class="form-group">
-                    <label for="eventDate">Choose Date <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" name="date" id="eventDate" required>
+            <form id="contactForm" onsubmit="reserveEvent(event)">
+                <div >
+                    <h1 class="title reserve">Reserve an Event Date</h1>
                 </div>
-
-                <div class="form-group">
-                    <label for="name">Your Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="name" required placeholder="Enter your name"
-                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                <div class="input-field">
+                    <p>CHOOSE DATE<span class="required-star">*</span></p>
+                    <input type="date" name="date" id="eventDate" required placeholder="choose a date">
                 </div>
-
-                <div class="form-group">
-                    <label for="surname">Your Surname <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="surname" required placeholder="Enter your surname"
-                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                
+                <div class="input-field">
+                    <p>YOUR NAME<span class="required-star">*</span></p>
+                    <input type="text" name="name"  required placeholder=" Enter your name" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
-
-                <div class="form-group">
-                    <label for="email">Your Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="email" required placeholder="Enter your email"
-                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+        
+                <div class="input-field">
+                    <p>YOUR SURNAME<span class="required-star">*</span></p>
+                    <input type="text" name="surname"  required placeholder=" Enter your surname" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
-
-                <div class="form-group">
-                    <label for="number">Your Phone Number <span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control" name="number" required placeholder="Enter your phone number"
-                        maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                <div class="input-field">
+                    <p>YOUR EMAIL<span class="required-star">*</span></p>
+                    <input type="email" name="email"  required placeholder=" Enter your email" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
-
+                <div class="input-field">
+                    <p>YOUR PHONE NUMBER<span class="required-star">*</span></p>
+                    <input type="tel" name="number"  required placeholder=" Enter your phone number" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
+        
                 <button type="submit" name="submit" value="reserve event" class="btn">Reserve Event</button>
+
+                
             </form>
+            
+
         </div>
         <div class="container my-5">
             <h2 class="text-center mb-4">Event Organizer Details</h2>
@@ -229,139 +244,146 @@
         </div>
 
 
-        <section class="services">
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/icon2.png">
-                    <div class="detail">
-                        <h3>great savings</h3>
-                        <p>save big every order</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon1.png">
-                    <div class="detail">
-                        <h3>24*7</h3>
-                        <p>one-on-one support</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon0.png">
-                    <div class="detail">
-                        <h3>gift vouchers</h3>
-                        <p>vouchers on every festivals</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/icon.png">
-                    <div class="detail">
-                        <h3>worlwide delivery</h3>
-                        <p>dropship worldwide</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <div class="top-footer">
-            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-            <div class="input-field-subscribe">
-                <input type="email" id="emailInput" name="" placeholder="email address...">
-                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
-            </div>
-        </div>
-        <footer>
-            <div class="overlay"></div>
-            <div class="footer-content">
-                <div class="img-box">
-                    <img src="img/logoo.png">
-                </div>
-                <div class="inner-footer">
-                    <div class="card">
-                        <h3>about us</h3>
-                        <ul>
-                            <li>about us</li>
-                            <li>our difference</li>
-                            <li>community matters</li>
-                            <li>press</li>
-                            <li>blog</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>services</h3>
-                        <ul>
-                            <li>order</li>
-                            <li>help center</li>
-                            <li>shipping</li>
-                            <li>term of use</li>
-                            <li>account detail</li>
-                            <li>my account</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>local</h3>
-                        <ul>
-                            <li>Sheshi "Nënë Tereza"</li>
-                            <li>Albi Mall</li>
-                            <li>Prishtina Mall</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>newsletter</h3>
-                        <p>Sign Up For Newsletter</p>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/librariabuzuku/"><i class="bx bxl-instagram"></i></a>
-                            <a href="https://www.facebook.com/librariabuzuku"><i class="bx bxl-facebook"></i></a>
-                            <a href="https://wa.me/38348238738"><i class="bx bxl-whatsapp"></i></a>
+        
+               
+                <section class="services">
+                    
+                    <div class="box-container">
+                        <div class="box">
+                            <img src="img/icon2.png">
+                            <div class="detail">
+                                <h3>great savings</h3>
+                                <p>save big every order</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon1.png">
+                            <div class="detail">
+                                <h3>24*7</h3>
+                                <p>one-on-one support</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon0.png">
+                            <div class="detail">
+                                <h3>gift vouchers</h3>
+                                <p>vouchers on every festivals</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="img/icon.png">
+                            <div class="detail">
+                                <h3>worlwide delivery</h3>
+                                <p>dropship worldwide</p>
+                            </div>
                         </div>
                     </div>
+               </section>
+               
+                <div>
+                    <div class="top-footer">
+                        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+                        <div class="input-field">
+                            <input type="text" name="" placeholder="email address...">
+                            <button class="btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <footer>
+                        <div  class="overlay"></div>
+                        <div class="footer-content">
+                            <div class="img-box">
+                            <img src="img/logoo.png">
+                        </div>
+                        <div class="inner-footer">
+                            <div class="card">
+                                <h3>about us</h3>
+                                <ul>
+                                    <li>about us</li>
+                                    <li>our difference</li>
+                                    <li>community matters</li>
+                                    <li>press</li>
+                                    <li>blog</li>
+                                </ul>
+                            </div> 
+                            <div class="card">
+                                <h3>services</h3>
+                                <ul>
+                                    <li>order</li>
+                                    <li>help center</li>
+                                    <li>shipping</li>
+                                    <li>term of use</li>
+                                    <li>account detail</li>
+                                    <li>my account</li>
+                                </ul>
+                            </div>
+                            <div class="card">
+                                <h3>local</h3>
+                                <ul>
+                                    <li>Sheshi Skenderbeu</li>
+                                    <li>Albi Mall</li>
+                                    <li>Prishtina Mall</li>
+                                </ul>
+                            </div>
+                            <div class="card">
+                                <h3>newsletter</h3>
+                                <p>Sign Up For Newsletter</p>
+                                <div class="social-links">
+                                    <i class="bx bxl-instagram"></i>
+                                    <i class="bx bxl-facebook"></i>
+                                    <i class="bx bxl-whatsapp"></i>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="bottom-footer">
+                                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+                    
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-                <div class="bottom-footer">
-                    <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
                 </div>
-            </div>
-        </footer>
-
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const promoVideo = document.getElementById('promoVideo');
-            const videoControlBtn = document.getElementById('videoControlBtn');
-
-            // Event listener për butonin Play/Pause
-            videoControlBtn.addEventListener('click', () => {
+        
+            <!-- Vendosim footer-in këtu -->
+        </div>  
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const promoVideo = document.getElementById('promoVideo');
+                const videoControlBtn = document.getElementById('videoControlBtn');
+    
+                // Event listener për butonin Play/Pause
+                videoControlBtn.addEventListener('click', () => {
+                    if (promoVideo.paused) {
+                        promoVideo.play();
+                        videoControlBtn.classList.remove('play');
+                        videoControlBtn.classList.add('pause');
+                    } else {
+                        promoVideo.pause();
+                        videoControlBtn.classList.remove('pause');
+                        videoControlBtn.classList.add('play');
+                    }
+                });
+    
+                // Vendos klasën fillestare bazuar në gjendjen e videos
                 if (promoVideo.paused) {
-                    promoVideo.play();
-                    videoControlBtn.classList.remove('play');
-                    videoControlBtn.classList.add('pause');
-                } else {
-                    promoVideo.pause();
-                    videoControlBtn.classList.remove('pause');
                     videoControlBtn.classList.add('play');
+                } else {
+                    videoControlBtn.classList.add('pause');
                 }
             });
-
-            // Vendos klasën fillestare bazuar në gjendjen e videos
-            if (promoVideo.paused) {
-                videoControlBtn.classList.add('play');
-            } else {
-                videoControlBtn.classList.add('pause');
-            }
-        });
-
-    </script>
-
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="reservation.js"></script>
-    <script src="script.js"></script>
-    <script src="count.js"></script>
+    
+        </script>
+    
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="reservation.js"></script>
+        <script src="script.js"></script>
+        <script src="count.js"></script>
+    
 </body>
-
-</html>
+</html> 
