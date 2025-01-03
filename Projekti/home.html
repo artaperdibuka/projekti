@@ -295,29 +295,29 @@
     <!-- Add your JavaScript file here -->
      <script>
        document.addEventListener('DOMContentLoaded', () => {
-    const promoVideo = document.getElementById('promoVideo');
-    const videoControlBtn = document.getElementById('videoControlBtn');
+        const promoVideo = document.getElementById('promoVideo');
+        const videoControlBtn = document.getElementById('videoControlBtn');
 
-    // Event listener për butonin Play/Pause
-    videoControlBtn.addEventListener('click', () => {
+        // Event listener për butonin Play/Pause
+        videoControlBtn.addEventListener('click', () => {
+            if (promoVideo.paused) {
+                promoVideo.play();
+                videoControlBtn.classList.remove('play');
+                videoControlBtn.classList.add('pause');
+            } else {
+                promoVideo.pause();
+                videoControlBtn.classList.remove('pause');
+                videoControlBtn.classList.add('play');
+            }
+        });
+
+        // Vendos klasën fillestare bazuar në gjendjen e videos
         if (promoVideo.paused) {
-            promoVideo.play();
-            videoControlBtn.classList.remove('play');
-            videoControlBtn.classList.add('pause');
-        } else {
-            promoVideo.pause();
-            videoControlBtn.classList.remove('pause');
             videoControlBtn.classList.add('play');
+        } else {
+            videoControlBtn.classList.add('pause');
         }
     });
-
-    // Vendos klasën fillestare bazuar në gjendjen e videos
-    if (promoVideo.paused) {
-        videoControlBtn.classList.add('play');
-    } else {
-        videoControlBtn.classList.add('pause');
-    }
-});
 
 
         const leftArrowShop = document.querySelector('.shop-left-arrow'),

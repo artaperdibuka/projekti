@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Character set for proper encoding -->
     <meta charset="UTF-8">
+
+    <!-- Viewport for responsive design on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to Boxicons for adding icons to buttons or other elements -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Link to external CSS for styling the page -->
     <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - login Now</title>
+
+    <!-- Title of the page -->
+    <title>BookstoreBuzuku - Login Now</title>
 </head>
+
 <body>
-   
-   <div class="main-container">
-    <section class="form-container">
-        <div class="title">
-            <h1 class="log-title">LOGIN Now</h1>
-            <p class="log-paragraph">Please login to your account!</p>
-        </div>
-        <form id="loginForm" onsubmit="login(event)">
-           
-            <div class="input-field">
-                <p>Your email<span class="required-star">*</span></p>
-                <input type="email" name="email"  required placeholder=" Enter your email" maxlength="50"
-                oninput="this.value=this.value.replace(/\s/g, '')">
+
+    <div class="main-container">
+        <!-- Main container for the form -->
+        <section class="form-container">
+            <!-- Section title and description -->
+            <div class="title">
+                <h1 class="log-title">LOGIN Now</h1>
+                <p class="log-paragraph">Please login to your account!</p>
             </div>
-            <div class="input-field">
-                <p>Your password<span class="required-star">*</span></p>
-                <input type="password" name="pass"  required placeholder=" Enter your password" maxlength="50"
-                oninput="this.value=this.value.replace(/\s/g, '')">
-            </div>
-            <input type="submit" name="submit" value="login now" class="btn">
-            <p>Don't have an account? <a href="register.html"> Register now</a></p>
 
-        </form>
+            <!-- Form for user login -->
+            <form id="loginForm" onsubmit="login(event)">
+                <!-- Input for the user's email -->
+                <div class="input-field">
+                    <p>Your email<span class="required-star">*</span></p>
+                    <input type="email" name="email" required placeholder=" Enter your email" maxlength="50"
+                        oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
 
-    </section>
+                <!-- Input for the user's password -->
+                <div class="input-field">
+                    <p>Your password<span class="required-star">*</span></p>
+                    <input type="password" name="pass" required placeholder=" Enter your password" maxlength="50"
+                        oninput="this.value=this.value.replace(/\s/g, '')">
+                </div>
 
-</div>
-    
-        </body>
-   <script src="account.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+                <!-- Submit button for the form -->
+                <input type="submit" name="submit" value="login now" class="btn">
+
+                <!-- Link to register page for users who don't have an account -->
+                <p>Don't have an account? <a href="register.html">Register now</a></p>
+            </form>
+
+        </section>
+    </div>
 
 </body>
-</html> 
+
+<!-- External script for handling login logic -->
+<script src="account.js"></script>
+
+<!-- External script for SweetAlert to display alerts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
+
+<!-- External script for SweetAlert2 (newer version of SweetAlert) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

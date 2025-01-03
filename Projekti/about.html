@@ -3,202 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Boxicons for icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Link to SweetAlert for alert popups -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    <!-- Link to external CSS for styling -->
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - About us Page</title>
 </head>
 <body>
  
+    <!-- Header Section -->
     <header class="header">
         <div class="flex">
+            <!-- Logo and Navigation Links -->
             <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
             <nav class="navbar">
                 <a href="home.html">Home</a>
                 <a href="products.html">Products</a>
-                <a href="order.html"> Order</a>
+                <a href="order.html">Order</a>
                 <a href="events.html">Events</a>
                 <a href="about.html">About us</a>
                 <a href="contact.html">Contact us</a>
-    
             </nav>
             <div class="icons">
+                <!-- User and Cart Icons -->
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
+                <!-- User Info Display -->
                 <p>Username: <span></span></p>
                 <p>Email: <span></span></p>
                 <a href="login.html" class="btn">Login</a>
                 <a href="register.html" class="btn">Register</a>
+                <!-- Log out form -->
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
-    
                 </form>
             </div>
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <div class="main">
-                <div class="tittle2">
-                    <a href="home.html">Home</a><span>about us</span>
-                </div>
-                <div class="about-category">
-                    <div class="box">
-                        <img src="img/2.png">
-                        <div class="detail">
-                            <span>Books</span>
-                            <h1> Books</h1>
-                            <a href="products.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/1.png">
-                        <div class="detail">
-                            <span>Accessories</span>
-                            <h1> Accessories</h1>
-                            <a href="accessories.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/5.png">
-                        <div class="detail">
-                            <span>Cards</span>
-                            <h1>Loyalty Card</h1>
-                            <a href="loyalty-card.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/6.png">
-                        <div class="detail">
-                            <span>Cards</span>
-                            <h1> E-Gift Card</h1>
-                            <a href="gift-card.html" class="btn">shop now</a>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="about">
-                        <div class="row">
-                            <div class="img-box">
-                                <img src="img/events1.jpg">
-                            </div>
-                            <div class="detail">
-                                <h1>
-                                    Come and hold your events with us</h1>
-                                <div class="event-description" style="background-color:rgb(236, 236, 235);">
-                                    <p>Looking for a special place to hold your next event? Here you will find the perfect environment for any type of activity: whether it's a seminar, a book launch, or a literary meeting. With modern and comfortable spaces, we offer everything you need to make your event unforgettable. Contact us and let's create together a special experience for you and your guests!</p>
-                                    <a href="events.html" class="btn">Reserve event</a>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                <section class="services">
-                    <div>
-                        <h1 class="title1"><a href="dokumentacioni.html" style="text-decoration:underline;">Why us?</a></h1>
-                        <p class="paragraph1">Our bookstore: where stories spark curiosity and worlds await.</p>
+        <div class="tittle2">
+            <!-- Breadcrumb Navigation -->
+            <a href="home.html">Home</a><span>about us</span>
+        </div>
         
-                    </div>
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/icon2.png">
-                        <div class="detail">
-                            <h3>great savings</h3>
-                            <p>save big every order</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon1.png">
-                        <div class="detail">
-                            <h3>24*7</h3>
-                            <p>one-on-one support</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon0.png">
-                        <div class="detail">
-                            <h3>gift vouchers</h3>
-                            <p>vouchers on every festivals</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon.png">
-                        <div class="detail">
-                            <h3>worlwide delivery</h3>
-                            <p>dropship worldwide</p>
-                        </div>
-                    </div>
+        <!-- About Category Boxes (Books, Accessories, Cards) -->
+        <div class="about-category">
+            <div class="box">
+                <img src="img/2.png">
+                <div class="detail">
+                    <span>Books</span>
+                    <h1>Books</h1>
+                    <a href="products.html" class="btn">Shop now</a>
                 </div>
-               </section>
-               
-                <div>
-                    <div class="top-footer">
-                        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                            <div class="input-field-subscribe">
-                                <input type="email" id="emailInput" name="" placeholder="email address...">
-                                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
-                            </div>
-                        </div>
-                    <footer>
-                        <div  class="overlay"></div>
-                        <div class="footer-content">
-                            <div class="img-box">
-                            <img src="img/logoo.png">
-                        </div>
-                        <div class="inner-footer">
-                            <div class="card">
-                                <h3>about us</h3>
-                                <ul>
-                                    <li>about us</li>
-                                    <li>our difference</li>
-                                    <li>community matters</li>
-                                    <li>press</li>
-                                    <li>blog</li>
-                                </ul>
-                            </div> 
-                            <div class="card">
-                                <h3>services</h3>
-                                <ul>
-                                    <li>order</li>
-                                    <li>help center</li>
-                                    <li>shipping</li>
-                                    <li>term of use</li>
-                                    <li>account detail</li>
-                                    <li>my account</li>
-                                </ul>
-                            </div>
-                            <div class="card">
-                                <h3>local</h3>
-                                <ul>
-                                    <li>Sheshi "Nënë Tereza"</li>
-                                    <li>Albi Mall</li>
-                                    <li>Prishtina Mall</li>
-                                </ul>
-                            </div>
-                            <div class="card">
-                                <h3>newsletter</h3>
-                                <p>Sign Up For Newsletter</p>
-                                <div class="social-links">
-                                    <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
-                                    <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="bottom-footer">
-                                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
-                    
-                            </div>
-                        </div>
-                    </footer>
+            </div>
+            <div class="box">
+                <img src="img/1.png">
+                <div class="detail">
+                    <span>Accessories</span>
+                    <h1>Accessories</h1>
+                    <a href="accessories.html" class="btn">Shop now</a>
                 </div>
+            </div>
+            <div class="box">
+                <img src="img/5.png">
+                <div class="detail">
+                    <span>Cards</span>
+                    <h1>Loyalty Card</h1>
+                    <a href="loyalty-card.html" class="btn">Shop now</a>
                 </div>
+            </div>
+            <div class="box">
+                <img src="img/6.png">
+                <div class="detail">
+                    <span>Cards</span>
+                    <h1>E-Gift Card</h1>
+                    <a href="gift-card.html" class="btn">Shop now</a>
+                </div>
+            </div>
+        </div>
         
-            <!-- Vendosim footer-in këtu -->
-                 
-        </body>
-   <script src="script.js"></script>
-   <script src="count.js"></script>
+        <!-- Event Section with Image and Description -->
+        <div class="about">
+            <div class="row">
+                <div class="img-box">
+                    <img src="img/events1.jpg">
+                </div>
+                <div class="detail">
+                    <h1>Come and hold your events with us</h1>
+                    <div class="event-description" style="background-color:rgb(236, 236, 235);">
+                        <p>Looking for a special place to hold your next event? Here you will find the perfect environment for any type of activity...</p>
+                        <a href="events.html" class="btn">Reserve event</a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Us Section with Key Features -->
+        <section class="services">
+            <div>
+                <h1 class="title1"><a href="dokumentacioni.html" style="text-decoration:underline;">Why us?</a></h1>
+                <p class="paragraph1">Our bookstore: where stories spark curiosity and worlds await.</p>
+            </div>
+            
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/icon2.png">
+                    <div class="detail">
+                        <h3>Great savings</h3>
+                        <p>Save big every order</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon1.png">
+                    <div class="detail">
+                        <h3>24/7</h3>
+                        <p>One-on-one support</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon0.png">
+                    <div class="detail">
+                        <h3>Gift vouchers</h3>
+                        <p>Vouchers on every festival</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon.png">
+                    <div class="detail">
+                        <h3>Worldwide delivery</h3>
+                        <p>Drop ship worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <div>
+            <div class="top-footer">
+                <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+                <div class="input-field-subscribe">
+                    <input type="email" id="emailInput" placeholder="email address...">
+                    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+            
+            <!-- Footer Section with Links and Social Media -->
+            <footer>
+                <div class="overlay"></div>
+                <div class="footer-content">
+                    <div class="img-box">
+                        <img src="img/logoo.png">
+                    </div>
+                    <div class="inner-footer">
+                        <div class="card">
+                            <h3>About us</h3>
+                            <ul>
+                                <li>About us</li>
+                                <li>Our difference</li>
+                                <li>Community matters</li>
+                                <li>Press</li>
+                                <li>Blog</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Services</h3>
+                            <ul>
+                                <li>Order</li>
+                                <li>Help center</li>
+                                <li>Shipping</li>
+                                <li>Terms of use</li>
+                                <li>Account details</li>
+                                <li>My account</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Local</h3>
+                            <ul>
+                                <li>Sheshi "Nënë Tereza"</li>
+                                <li>Albi Mall</li>
+                                <li>Prishtina Mall</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Newsletter</h3>
+                            <p>Sign Up For Newsletter</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
+                                <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-footer">
+                        <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- External JavaScript Files -->
+    <script src="script.js"></script>
+    <script src="count.js"></script>
 </body>
-</html> 
+</html>

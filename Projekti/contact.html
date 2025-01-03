@@ -1,212 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>BookstoreBuzuku - About us Page</title>
-</head>
-<body>
-   <div>
-    <header class="header">
-        <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
-            <nav class="navbar">
-                <a href="home.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="order.html"> Order</a>
-                <a href="events.html">Events</a>
-                <a href="about.html">About us</a>
-                <a href="contact.html">Contact us</a>
-    
-            </nav>
-            <div class="icons">
-                <i class="bx bxs-user" id="user-btn"></i>
-                <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
-                <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
-            </div>
-            <div class="user-box">
-                <p>Username: <span></span></p>
-                <p>Email: <span></span></p>
-                <a href="login.html" class="btn">Login</a>
-                <a href="register.html" class="btn">Register</a>
-                <form method="post">
-                    <button type="submit" name="logout" class="logout-btn">Log out</button>
-    
-                </form>
-            </div>
-        </div>
-    </header>
-   </div>
 
-    <div class="main">
-            <div class="tittle2">
-                <a href="home.html">Home</a><span>Contact</span>
+<head>
+    <!-- Character set for proper encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to Boxicons for adding icons to buttons or other elements -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Link to external CSS for styling the page -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Title of the page -->
+    <title>BookstoreBuzuku - About Us Page</title>
+</head>
+
+<body>
+    <div>
+        <!-- Header section with logo and navigation links -->
+        <header class="header">
+            <div class="flex">
+                <a href="home.html" class="logo">
+                    <img src="img/logoo.png" height="65" width="230" alt="Bookstore Buzuku Logo">
+                </a>
+                <nav class="navbar">
+                    <a href="home.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="order.html">Order</a>
+                    <a href="events.html">Events</a>
+                    <a href="about.html">About us</a>
+                    <a href="contact.html">Contact us</a>
+                </nav>
+                <div class="icons">
+                    <!-- User icon for account management -->
+                    <i class="bx bxs-user" id="user-btn"></i>
+                    <!-- Wishlist button with a heart icon -->
+                    <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
+                    <!-- Cart button with a cart icon -->
+                    <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
+                    <!-- Hamburger menu for mobile devices -->
+                    <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
+                </div>
+                <div class="user-box">
+                    <!-- Display user information if logged in -->
+                    <p>Username: <span></span></p>
+                    <p>Email: <span></span></p>
+                    <!-- Links for login, register, and logout -->
+                    <a href="login.html" class="btn">Login</a>
+                    <a href="register.html" class="btn">Register</a>
+                    <form method="post">
+                        <button type="submit" name="logout" class="logout-btn">Log out</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-container">
+        </header>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main">
+        <!-- Breadcrumb navigation to help users know their location -->
+        <div class="tittle2">
+            <a href="home.html">Home</a><span>Contact</span>
+        </div>
+
+        <!-- Contact form section -->
+        <div class="form-container">
             <form id="contactForm" method="post">
                 <div>
-                    <h1 class="title">leave a message</h1>
+                    <h1 class="title">Leave a message</h1>
                 </div>
-                    <div class="input-field">
-                        <p>Your name<span class="required-star">*</span></p>
-                        <input type="text" name="name" id="name">
-                        <div id="nameError" class="error-message"></div>
+                <!-- Name input field -->
+                <div class="input-field">
+                    <p>Your name<span class="required-star">*</span></p>
+                    <input type="text" name="name" id="name">
+                    <div id="nameError" class="error-message"></div>
+                </div>
+                <!-- Email input field -->
+                <div class="input-field">
+                    <p>Your email<span class="required-star">*</span></p>
+                    <input type="email" name="email" id="email">
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                <!-- Phone number input field -->
+                <div class="input-field">
+                    <p>Your number<span class="required-star">*</span></p>
+                    <input type="text" name="number" id="number">
+                    <div id="numberError" class="error-message"></div>
+                </div>
+                <!-- Message input field -->
+                <div class="input-field">
+                    <p>Your message<span class="required-star">*</span></p>
+                    <textarea name="message" id="message"></textarea>
+                    <div id="messageError" class="error-message"></div>
+                </div>
+                <!-- Submit button for the form -->
+                <button type="submit" class="btn">Send message</button>
+            </form>
+        </div>
+
+        <!-- Contact details section -->
+        <div class="address">
+            <div>
+                <h1 class="title">Contact Details</h1>
+                <p class="paragraph1">Contact us for any questions, book recommendations, or event info—we’re here to help!</p>
+            </div>
+            <div class="box-container">
+                <!-- Address box with map pin icon -->
+                <div class="box">
+                    <i class="bx bx-map-pin"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Prishtina Mall, Floor 1</p>
                     </div>
-                    <div class="input-field">
-                        <p>Your email<span class="required-star">*</span></p>
-                        <input type="email" name="email" id="email">
-                        <div id="emailError" class="error-message"></div>
+                </div>
+                <!-- Phone number box with phone icon -->
+                <div class="box">
+                    <i class="bx bxs-phone-call"></i>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p>+383 93 903 949</p>
                     </div>
-                    <div class="input-field">
-                        <p>Your number<span class="required-star">*</span></p>
-                        <input type="text" name="number" id="number">
-                        <div id="numberError" class="error-message"></div>
+                </div>
+                <!-- Email box with envelope icon -->
+                <div class="box">
+                    <i class="bx bxs-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@bookstoreuzuku.com</p>
                     </div>
-                    <div class="input-field">
-                        <p>Your message<span class="required-star">*</span></p>
-                        <textarea name="message" id="message"></textarea>
-                        <div id="messageError" class="error-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services section showcasing different offerings -->
+        <section class="services">
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/icon2.png" alt="Great Savings Icon">
+                    <div class="detail">
+                        <h3>Great Savings</h3>
+                        <p>Save big on every order</p>
                     </div>
-                    <button type="submit" class="btn">Send message</button>
-                </form>
+                </div>
+                <div class="box">
+                    <img src="img/icon1.png" alt="24/7 Support Icon">
+                    <div class="detail">
+                        <h3>24*7</h3>
+                        <p>One-on-one support</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon0.png" alt="Gift Vouchers Icon">
+                    <div class="detail">
+                        <h3>Gift Vouchers</h3>
+                        <p>Vouchers on every festival</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon.png" alt="Worldwide Delivery Icon">
+                    <div class="detail">
+                        <h3>Worldwide Delivery</h3>
+                        <p>Dropship worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter subscription section -->
+        <div>
+            <div class="top-footer">
+                <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+                <div class="input-field-subscribe">
+                    <input type="email" id="emailInput" name="" placeholder="Email address...">
+                    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
             </div>
 
-            <div class="address">
-                <div>
-                    <h1 class="title">Contact Details</h1>
-                    <p class="paragraph1">Contact us for any questions, book recommendations, or event info—we’re here to help!</p>
+            <!-- Footer section with various links and social media icons -->
+            <footer>
+                <div class="overlay"></div>
+                <div class="footer-content">
+                    <div class="img-box">
+                        <img src="img/logoo.png" alt="Bookstore Buzuku Logo">
+                    </div>
+                    <div class="inner-footer">
+                        <div class="card">
+                            <h3>About Us</h3>
+                            <ul>
+                                <li>About us</li>
+                                <li>Our Difference</li>
+                                <li>Community Matters</li>
+                                <li>Press</li>
+                                <li>Blog</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Services</h3>
+                            <ul>
+                                <li>Order</li>
+                                <li>Help Center</li>
+                                <li>Shipping</li>
+                                <li>Terms of Use</li>
+                                <li>Account Details</li>
+                                <li>My Account</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Local</h3>
+                            <ul>
+                                <li>Sheshi "Nënë Tereza"</li>
+                                <li>Albi Mall</li>
+                                <li>Prishtina Mall</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Newsletter</h3>
+                            <p>Sign Up For Newsletter</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
+                                <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-footer">
+                        <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
+                    </div>
                 </div>
-                <div class="box-container">
-                    <div class="box">
-                        <i class="bx bx-map-pin"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Prishtina Mall, Floor 1</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <i class="bx bxs-phone-call"></i>
-                        <div>
-                            <h4>Phone Number</h4>
-                            <p>+383 93 903 949</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <i class="bx bxs-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contact@bookstoreuzuku.com</p>
-                        </div>
-                    </div>
-                </div>
+            </footer>
         </div>
-                <section class="services">
-                    
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/icon2.png">
-                        <div class="detail">
-                            <h3>great savings</h3>
-                            <p>save big every order</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon1.png">
-                        <div class="detail">
-                            <h3>24*7</h3>
-                            <p>one-on-one support</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon0.png">
-                        <div class="detail">
-                            <h3>gift vouchers</h3>
-                            <p>vouchers on every festivals</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon.png">
-                        <div class="detail">
-                            <h3>worlwide delivery</h3>
-                            <p>dropship worldwide</p>
-                        </div>
-                    </div>
-                </div>
-               </section>
-               
-                <div>
-                    <div class="top-footer">
-                        <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                            <div class="input-field-subscribe">
-                                <input type="email" id="emailInput" name="" placeholder="email address...">
-                                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
-                            </div>
-                        </div>
-                    <footer>
-                        <div  class="overlay"></div>
-                        <div class="footer-content">
-                            <div class="img-box">
-                            <img src="img/logoo.png">
-                        </div>
-                        <div class="inner-footer">
-                            <div class="card">
-                                <h3>about us</h3>
-                                <ul>
-                                    <li>about us</li>
-                                    <li>our difference</li>
-                                    <li>community matters</li>
-                                    <li>press</li>
-                                    <li>blog</li>
-                                </ul>
-                            </div> 
-                            <div class="card">
-                                <h3>services</h3>
-                                <ul>
-                                    <li>order</li>
-                                    <li>help center</li>
-                                    <li>shipping</li>
-                                    <li>term of use</li>
-                                    <li>account detail</li>
-                                    <li>my account</li>
-                                </ul>
-                            </div>
-                            <div class="card">
-                                <h3>local</h3>
-                                <ul>
-                                    <li>Sheshi "Nënë Tereza"</li>
-                                    <li>Albi Mall</li>
-                                    <li>Prishtina Mall </li>
-                                </ul>
-                            </div>
-                            <div class="card">
-                                <h3>newsletter</h3>
-                                <p>Sign Up For Newsletter</p>
-                                <div class="social-links">
-                                    <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
-                                    <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="bottom-footer">
-                                <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
-                    
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-                </div>
-        
-            <!-- Vendosim footer-in këtu -->
-            </div>         
-        </body>
-        <script src="contact-validation.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="script.js"></script>
-        <script src="count.js"></script>
+    </div>
+
+    <!-- External JavaScript files for validation and interaction -->
+    <script src="contact-validation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script src="count.js"></script>
 </body>
-</html> 
+
+</html>
