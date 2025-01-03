@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,13 @@
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Loyalty Card Page</title>
 </head>
+
 <body>
- 
+
     <header class="header">
         <div class="flex">
             <!-- Logo dhe linku i faqes kryesore -->
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
             <nav class="navbar">
                 <!-- Navigimi i faqeve të ndryshme -->
                 <a href="home.html">Home</a>
@@ -30,7 +32,7 @@
                 <!-- Ikonat për përdoruesin dhe karrocën -->
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
@@ -62,29 +64,33 @@
                     <!-- Input për emrin e përdoruesit -->
                     <div class="input-field">
                         <p>YOUR NAME<span class="required-star">*</span></p>
-                        <input type="text" id="first-name" required placeholder="Enter your name" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                        <input type="text" id="first-name" required placeholder="Enter your name" maxlength="50"
+                            oninput="this.value=this.value.replace(/\s/g, '')">
                     </div>
                     <!-- Input për mbiemrin e përdoruesit -->
                     <div class="input-field">
                         <p>YOUR SURNAME<span class="required-star">*</span></p>
-                        <input type="text" id="last-name" required placeholder="Enter your surname" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                        <input type="text" id="last-name" required placeholder="Enter your surname" maxlength="50"
+                            oninput="this.value=this.value.replace(/\s/g, '')">
                     </div>
                     <!-- Input për emailin e përdoruesit -->
                     <div class="input-field">
                         <p>YOUR EMAIL<span class="required-star">*</span></p>
-                        <input type="email" id="email" required placeholder="Enter your email" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                        <input type="email" id="email" required placeholder="Enter your email" maxlength="50"
+                            oninput="this.value=this.value.replace(/\s/g, '')">
                     </div>
                     <!-- Input për numrin e telefonit të përdoruesit -->
                     <div class="input-field">
                         <p>YOUR PHONE NUMBER<span class="required-star">*</span></p>
-                        <input type="tel" id="phone" required placeholder="Enter your phone number" maxlength="50" oninput="this.value=this.value.replace(/\s/g, '')">
+                        <input type="tel" id="phone" required placeholder="Enter your phone number" maxlength="50"
+                            oninput="this.value=this.value.replace(/\s/g, '')">
                     </div>
                     <!-- Butoni për regjistrim -->
                     <button type="submit" class="btn">Register now</button>
                 </form>
             </div>
         </div>
-        
+
         <!-- Seksioni për regjistrimin në buletinin e lajmeve -->
         <div class="top-footer">
             <h2 style="font-size: 25px; font-weight:bold;"><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
@@ -93,7 +99,7 @@
                 <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
             </div>
         </div>
-        
+
         <!-- Footer-i -->
         <footer>
             <div class="overlay"></div>
@@ -112,7 +118,7 @@
                             <li>press</li>
                             <li>blog</li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="card">
                         <h3>services</h3>
                         <ul>
@@ -151,43 +157,43 @@
 
     <!-- Scripti për regjistrimin e përdoruesit -->
     <script>
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Parandaloni dërgimin e formularit
-        const firstName = document.getElementById('first-name').value;
-        const lastName = document.getElementById('last-name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Parandaloni dërgimin e formularit
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
 
-        // Kontrolloni nëse përdoruesi është regjistruar tashmë
-        const existingUser = JSON.parse(localStorage.getItem('user'));
-        if (existingUser && existingUser.email === email) {
-            Swal.fire({
-                icon: 'info',
-                title: 'Registration Failed',
-                text: 'This email is already registered!',
-            });
-        } else {
-            registerUser(firstName, lastName, email, phone);
-            Swal.fire({
-                icon: 'success',
-                title: 'Registration Successful!',
-                text: 'Welcome to our loyalty program! You can now pick up your loyalty card at one of our stores and use it to earn discounts.',
-            });
+            // Kontrolloni nëse përdoruesi është regjistruar tashmë
+            const existingUser = JSON.parse(localStorage.getItem('user'));
+            if (existingUser && existingUser.email === email) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Registration Failed',
+                    text: 'This email is already registered!',
+                });
+            } else {
+                registerUser(firstName, lastName, email, phone);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful!',
+                    text: 'Welcome to our loyalty program! You can now pick up your loyalty card at one of our stores and use it to earn discounts.',
+                });
+            }
+        });
+
+        function registerUser(firstName, lastName, email, phone) {
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone,
+                purchases: 0 // Numri i përdorimeve të email-it
+            };
+
+            localStorage.setItem('user', JSON.stringify(user)); // Ruaj përdoruesin në localStorage
+            console.log('Përdoruesi është regjistruar:', user);
         }
-    });
-
-    function registerUser(firstName, lastName, email, phone) {
-        const user = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            phone: phone,
-            purchases: 0 // Numri i përdorimeve të email-it
-        };
-
-        localStorage.setItem('user', JSON.stringify(user)); // Ruaj përdoruesin në localStorage
-        console.log('Përdoruesi është regjistruar:', user);
-    }
     </script>
 
     <!-- Lidhjet për skedarët e jashtëm JavaScript -->
@@ -195,4 +201,5 @@
     <script src="gift-card.js" defer></script>
     <script src="count.js"></script>
 </body>
+
 </html>

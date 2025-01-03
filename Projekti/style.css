@@ -20,7 +20,8 @@ html {
 }
 
 body {
-    background-image: url(); /* Shto një URL të vlefshme nëse ke */
+    background-image: url();
+    /* Shto një URL të vlefshme nëse ke */
     width: 100%;
 }
 
@@ -42,13 +43,13 @@ a {
     text-transform: uppercase;
     font-size: 1rem;
     margin: 1rem 0;
-    line-height: 1.5; /* Rregullim i lartësisë së linjës */
+    line-height: 1.5;
+    /* Rregullim i lartësisë së linjës */
 }
 
 .title p {
     text-transform: none;
 }
-
 
 ul {
     list-style: none;
@@ -64,7 +65,7 @@ sup {
     height: 20px;
     line-height: 15px;
     text-align: center;
-    padding: .1rem;
+    padding: 0.1rem;
 }
 
 .empty {
@@ -73,7 +74,7 @@ sup {
     margin: 0 auto;
     margin-bottom: 2rem;
     width: 59%;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 5px;
     background: var(--light-green);
     color: var(--green);
@@ -101,7 +102,7 @@ sup {
 
 .btn::before {
     position: absolute;
-    content: '';
+    content: "";
     left: 0;
     top: 0;
     background: var(--green);
@@ -124,9 +125,9 @@ textarea {
     background: #fff;
     border: none;
     outline: none;
-    padding: .6rem;
+    padding: 0.6rem;
     box-shadow: var(--box-shadow);
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     border: 1px solid var(--green);
     width: 100%;
 }
@@ -186,7 +187,7 @@ button {
 }
 
 .tittle2 span::before {
-    content: '/';
+    content: "/";
     position: absolute;
     left: 0;
     color: #999;
@@ -203,7 +204,8 @@ header {
     z-index: 101;
     transition: 0.3s;
     box-shadow: var(--box-shadow);
-    background-color: #fff; /* Shto një ngjyrë për sfond */
+    background-color: #fff;
+    /* Shto një ngjyrë për sfond */
 }
 
 header.scrolled {
@@ -229,15 +231,18 @@ header.scrolled {
     font-size: 1rem;
     color: #000;
     text-transform: uppercase;
-    padding: 0.5rem; /* Shto padding për të balancuar */
+    padding: 0.5rem;
+    /* Shto padding për të balancuar */
     display: inline-block;
-    border-bottom: 2px solid transparent; /* Vija transparente */
+    border-bottom: 2px solid transparent;
+    /* Vija transparente */
     transition: border-color 0.3s ease;
 }
 
 .navbar a:hover {
     color: var(--green);
-    border-bottom-color: var(--green); /* Ngjyra e vijës gjatë hover-it */
+    border-bottom-color: var(--green);
+    /* Ngjyra e vijës gjatë hover-it */
 }
 
 .header .icons {
@@ -273,12 +278,15 @@ header.scrolled {
     border-radius: 0.5rem;
     padding: 0 1.5rem;
 }
-.log-title{
+
+.log-title {
     font-size: 36px;
 }
-.log-paragraph{
+
+.log-paragraph {
     font-size: 20px;
 }
+
 .logout-btn {
     background: #000;
     color: #fff;
@@ -290,90 +298,122 @@ header.scrolled {
 }
 
 .header .user-box.active {
-    transform: scale(1.0);
+    transform: scale(1);
     transition: 0.2s linear;
 }
 
-     
 /* home slide            */
-.home-section{
+.home-section {
     position: relative;
-    margin-bottom:2rem ;
+    margin-bottom: 2rem;
 }
+
 .slider {
     font-family: "Roboto", sans-serif;
     width: 100%;
     display: flex;
     overflow-x: hidden;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory; 
-    background:radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);
+    scroll-snap-type: x mandatory;
+    background: radial-gradient(circle,
+            rgba(189, 241, 180, 1) 0%,
+            rgba(231, 104, 104, 1) 100%);
 }
 
 .slider__slider {
-    background: radial-gradient(circle, rgba(189,241,180,1) 0%, rgba(231,104,104,1) 100%);/* Ngjyra e sfondit të slider-it */
-    height: 80vh; /* 80% e lartësisë së dritares */
-    min-width: 85vw; /* Gjerësi minimale prej 90% të dritares */
-    width: 100%; /* Gjerësi 100% */
+    background: radial-gradient(circle,
+            rgba(189, 241, 180, 1) 0%,
+            rgba(231, 104, 104, 1) 100%);
+    /* Ngjyra e sfondit të slider-it */
+    height: 80vh;
+    /* 80% e lartësisë së dritares */
+    min-width: 85vw;
+    /* Gjerësi minimale prej 90% të dritares */
+    width: 100%;
+    /* Gjerësi 100% */
     scroll-snap-align: start;
     justify-content: space-between;
     display: block;
     background-position: center center;
-    position: relative; /* Pozita relative për elementet absolute brenda */
-    overflow: hidden; /* Fsheh çdo përmbajtje që del jashtë */
+    position: relative;
+    /* Pozita relative për elementet absolute brenda */
+    overflow: hidden;
+    /* Fsheh çdo përmbajtje që del jashtë */
 }
 
 .slider__slider .slide-detail {
-    position: relative; /* Pozita relative për të lejuar pozicionimin absolute të imazhit */
-    width: 100%; /* Gjerësi 100% */
-    height: 100%; /* Lartësi 100% */
+    position: relative;
+    /* Pozita relative për të lejuar pozicionimin absolute të imazhit */
+    width: 100%;
+    /* Gjerësi 100% */
+    height: 100%;
+    /* Lartësi 100% */
 }
 
 .slider__slider .slide-detail img {
-    position: absolute; /* Pozicionimi absolute për të mbushur plotësisht slider-in */
-    top: 50%; /* Qendro në qendër vertikalisht */
-    left: 50%; /* Qendro në qendër horizontalisht */
-    width: 100%; /* Mbush gjerësinë e slider-it */
-    height: 100%; /* Mbush lartësinë e slider-it */
-    object-fit: cover; /* Siguron që imazhi të mbulojë plotësisht hapësirën pa deformim */
-    transform: translate(-50%, -50%); /* Qendro imazhin në qendër */
+    position: absolute;
+    /* Pozicionimi absolute për të mbushur plotësisht slider-in */
+    top: 50%;
+    /* Qendro në qendër vertikalisht */
+    left: 50%;
+    /* Qendro në qendër horizontalisht */
+    width: 100%;
+    /* Mbush gjerësinë e slider-it */
+    height: 100%;
+    /* Mbush lartësinë e slider-it */
+    object-fit: cover;
+    /* Siguron që imazhi të mbulojë plotësisht hapësirën pa deformim */
+    transform: translate(-50%, -50%);
+    /* Qendro imazhin në qendër */
 }
 
-.slider__slider .slide-detail1 img{
+.slider__slider .slide-detail1 img {
     position: absolute;
     top: 15%;
     left: 10%;
     width: 250px;
     text-align: left;
-    
 }
-.slider__slider .slide-detail2{
+
+.slider__slider .slide-detail2 {
     position: absolute;
     top: 30%;
     left: 35%;
     text-align: center;
-    
-    color: #fff; /* Text color */
+
+    color: #fff;
+    /* Text color */
     margin-left: 20px;
 }
+
 .slider__slider .slide-detail2 .text-detail2 p {
-    font-size: 14px; /* Madhësia e tekstit të paragrafit */
-    margin-bottom: 60px; /* Hapësira poshtë paragrafit */
+    font-size: 14px;
+    /* Madhësia e tekstit të paragrafit */
+    margin-bottom: 60px;
+    /* Hapësira poshtë paragrafit */
     margin-left: 10px;
-    line-height: 1.6; /* Lartësia e rreshtit për lehtësim të leximit */
-    color: #fff; /* Ngjyra e tekstit të paragrafit */
-    background-color: rgba(0, 0, 0, 0.5); /* Sfond gjysmëtransparent për të përmirësuar kontrastin */
-    padding: 10px; /* Hapësira brenda paragrafit */
-    border-radius: 5px; /* Këndet e rrumbullakosura për një pamje më të butë */
-    text-align: justify; /* Rreshtimi i tekstit në mënyrë të rregullt */
+    line-height: 1.6;
+    /* Lartësia e rreshtit për lehtësim të leximit */
+    color: #fff;
+    /* Ngjyra e tekstit të paragrafit */
+    background-color: rgba(0,
+            0,
+            0,
+            0.5);
+    /* Sfond gjysmëtransparent për të përmirësuar kontrastin */
+    padding: 10px;
+    /* Hapësira brenda paragrafit */
+    border-radius: 5px;
+    /* Këndet e rrumbullakosura për një pamje më të butë */
+    text-align: justify;
+    /* Rreshtimi i tekstit në mënyrë të rregullt */
 }
-.slider__slider .slide-detail2 .text-detail .btn{
+
+.slider__slider .slide-detail2 .text-detail .btn {
     margin-top: 10px;
 }
 
-
-
-.slider__slider .slide-detail2 h1{
+.slider__slider .slide-detail2 h1 {
     font-size: 30px;
     color: #fff;
     text-transform: uppercase;
@@ -381,43 +421,53 @@ header.scrolled {
     text-align: center;
     margin-bottom: 10px;
 }
-.slider__slider .slide-detail2 .text-detail{
+
+.slider__slider .slide-detail2 .text-detail {
     width: 100%;
 }
 
+.slide1 {
+    background-image: url("img/1.jpg");
+}
 
-.slide1{
-    background-image: url('img/1.jpg');
+.slide2 {
+    background-image: url("img/2.jpg");
 }
-.slide2{
-    background-image: url('img/2.jpg');
+
+.slide3 {
+    background-image: url("img/3.jpg");
 }
-.slide3{
-    background-image: url('img/3.jpg');
+
+.slide4 {
+    background-image: url("img/4.jpg");
 }
-.slide4{
-    background-image: url('img/4.jpg');
+
+.slide5 {
+    background-image: url("img/5.jpg");
 }
-.slide5{
-    background-image: url('img/5.jpg');
+
+.slide10 {
+    background-image: url("img/10.jpg");
 }
-.slide10{
-    background-image: url('img/10.jpg');
+
+.slide9 {
+    background-image: url("img/9.jpg");
 }
-.slide9{
-    background-image: url('img/9.jpg');
+
+.slide8 {
+    background-image: url("img/8.jpg");
 }
-.slide8{
-    background-image: url('img/8.jpg');
+
+.slide7 {
+    background-image: url("img/7.jpg");
 }
-.slide7{
-    background-image: url('img/7.jpg');
+
+.slide6 {
+    background-image: url("img/6.jpg");
 }
-.slide6{
-    background-image: url('img/6.jpg');
-}
+
 .left-arrow,
-.right-arrow{
+.right-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -435,43 +485,48 @@ header.scrolled {
     color: #000;
     display: flex;
 }
-.right-arrow{
+
+.right-arrow {
     right: 1rem;
 }
-.left-arrow{
+
+.left-arrow {
     left: 1rem;
 }
+
 .hero-dec-top,
-.hero-dec-bottom{
-    position:absolute;
+.hero-dec-bottom {
+    position: absolute;
     left: 5%;
     width: 100px;
     height: 100px;
 }
-.hero-dec-top{
+
+.hero-dec-top {
     top: 4%;
     border-left: 2px solid #e2e2e255;
     border-top: 2px solid #e2e2e255;
-
 }
-.hero-dec-top{
+
+.hero-dec-top {
     top: 4%;
     border-left: 2px solid #e2e2e255;
     border-bottom: 2px solid #e2e2e255;
-
 }
 
-.thumb{
+.thumb {
     max-width: 1200px;
     box-shadow: var(--box-shadow);
     margin: 2rem auto;
     padding: 2%;
 }
-.box-container{
+
+.box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
-.thumb .box-container .box{
+
+.thumb .box-container .box {
     text-align: center;
     margin: 1rem;
     line-height: 1.5;
@@ -479,23 +534,26 @@ header.scrolled {
     padding-bottom: 1rem;
     color: gray;
 }
-.thumb .box-container .box .img{
+
+.thumb .box-container .box .img {
     transition: all 800ms ease-in-out;
 }
-.thumb .box-container .box:hover img{
-    transform: rotateY(180deg);
 
+.thumb .box-container .box:hover img {
+    transform: rotateY(180deg);
 }
-.thumb .box-container .box h3{
+
+.thumb .box-container .box h3 {
     text-transform: capitalize;
     color: var(--green);
 }
-.box-container .box p{
-    color: #555;
-    margin: .5rem;
 
+.box-container .box p {
+    color: #555;
+    margin: 0.5rem;
 }
-.thumb .box-container .box i{
+
+.thumb .box-container .box i {
     color: var(--green);
     font-size: 40px;
     line-height: 40px;
@@ -503,64 +561,73 @@ header.scrolled {
     height: 40px;
     border-radius: 50%;
     text-align: center;
-    border:  2px solid var(--green);
+    border: 2px solid var(--green);
     cursor: pointer;
-
 }
-.container .box{
+
+.container .box {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
-.container .box span{
+
+.container .box span {
     color: var(--green);
     font-size: 2rem;
     margin: 1rem 0;
     text-transform: capitalize;
     font-style: italic;
     font-weight: bold;
-
 }
-.container .box h1{
+
+.container .box h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-
 }
+
 .container .box img {
-    max-width: 100%; 
-    height: auto; 
-    margin-left: 10px; 
+    max-width: 100%;
+    height: auto;
+    margin-left: 10px;
     margin: 0;
 }
 
-.container .box #sale-image { /* Përdorimi i selektorit të saktë */
-    max-width: 100%; /* Përcaktoni madhësinë e imazhit */
-    height: auto; /* Ruajtja e raportit të lartësisë */
-    margin: 20px 0 5px 35px; /* Shtimi i margjinës sipër për të lëvizur imazhin poshtë */
+.container .box #sale-image {
+    /* Përdorimi i selektorit të saktë */
+    max-width: 100%;
+    /* Përcaktoni madhësinë e imazhit */
+    height: auto;
+    /* Ruajtja e raportit të lartësisë */
+    margin: 20px 0 5px 35px;
+    /* Shtimi i margjinës sipër për të lëvizur imazhin poshtë */
 }
 
 /* section shop */
 .shop .title {
-   
-    margin-bottom: 2rem; /* Hapësira poshtë titullit */
-    padding: 1.5rem; /* Hapësira brenda titullit */
-  
+    margin-bottom: 2rem;
+    /* Hapësira poshtë titullit */
+    padding: 1.5rem;
+    /* Hapësira brenda titullit */
 }
+
 .shop .title h1 {
-    font-size: 1.5rem; /* Madhësia e titullit */
-    letter-spacing: 3px; /* Hapësira midis shkronjave */
-    font-family: 'Arial', sans-serif; /* Zgjidhni një font të përshtatshëm */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+    font-size: 1.5rem;
+    /* Madhësia e titullit */
+    letter-spacing: 3px;
+    /* Hapësira midis shkronjave */
+    font-family: "Arial", sans-serif;
+    /* Zgjidhni një font të përshtatshëm */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     text-align: left;
     border-bottom: 1px solid #1b1a1a23;
-   
 }
+
 .shop-slider {
     position: relative;
-    overflow: hidden; /* Siguron që pjesët e panevojshme të slider-it të mos shfaqen */
+    overflow: hidden;
+    /* Siguron që pjesët e panevojshme të slider-it të mos shfaqen */
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -576,7 +643,7 @@ header.scrolled {
 .shop-slider .box {
     flex: 0 0 calc(20% - 2%);
     position: relative;
-     /* Zvogëloni madhësinë e box-it për të përshtatur 5 libra në një rresht */
+    /* Zvogëloni madhësinë e box-it për të përshtatur 5 libra në një rresht */
     box-sizing: border-box;
     padding: 10px;
     background-color: #f9f9f9;
@@ -590,11 +657,13 @@ header.scrolled {
     justify-content: space-between;
 }
 
-.shop-left-arrow, .shop-right-arrow {
+.shop-left-arrow,
+.shop-right-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.5rem; /* Përshtatni madhësinë për shigjetat */
+    font-size: 1.5rem;
+    /* Përshtatni madhësinë për shigjetat */
     width: 40px;
     height: 40px;
     background-color: var(--light-green);
@@ -614,14 +683,15 @@ header.scrolled {
     left: 1rem;
 }
 
-
-
 .shop-slider .box img {
     width: 100%;
-    height: 250px; /* Madhësia e reduktuar */
-    object-fit: contain; /* Siguron që e gjithë fotografia të duket */
+    height: 250px;
+    /* Madhësia e reduktuar */
+    object-fit: contain;
+    /* Siguron që e gjithë fotografia të duket */
     border-radius: 5px;
-    margin-bottom: 10px; /* Hapësirë poshtë fotos */
+    margin-bottom: 10px;
+    /* Hapësirë poshtë fotos */
 }
 
 .shop-slider .box .btn {
@@ -634,31 +704,35 @@ header.scrolled {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    align-self: center; /* Qendërzimi horizontal */
+    align-self: center;
+    /* Qendërzimi horizontal */
 }
 
 .shop-slider .box .btn:hover {
-    background-color: #aad576; /* Ngjyra gjatë hover-it */
+    background-color: #aad576;
+    /* Ngjyra gjatë hover-it */
 }
 
 .hero-dec-top,
-.hero-dec-bottom{
-    position:absolute;
+.hero-dec-bottom {
+    position: absolute;
     left: 5%;
     width: 100px;
     height: 100px;
 }
-.hero-dec-top{
+
+.hero-dec-top {
     top: 4%;
     border-left: 2px solid #e2e2e255;
     border-top: 2px solid #e2e2e255;
-
 }
-.hero-dec-top{
+
+.hero-dec-top {
     top: 4%;
     border-left: 2px solid #e2e2e255;
     border-bottom: 2px solid #e2e2e255;
 }
+
 /* events */
 
 .reserved-data {
@@ -672,12 +746,16 @@ header.scrolled {
 .reserved-data h3 {
     margin: 0 0 10px;
 }
-.title.reserve{
-    text-align: center; /* Vendos titullin në të djathtë */
-    margin-bottom: 20px; /* Shtoni pak hapësirë poshtë titullit */
+
+.title.reserve {
+    text-align: center;
+    /* Vendos titullin në të djathtë */
+    margin-bottom: 20px;
+    /* Shtoni pak hapësirë poshtë titullit */
 }
+
 /* footer*/
-.top-footer{
+.top-footer {
     width: 100%;
     background: #fff;
     padding: 1rem;
@@ -687,13 +765,16 @@ header.scrolled {
     color: #000;
     align-items: center;
 }
+
 .top-footer h2 i {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 }
-.top-footer input{
+
+.top-footer input {
     width: 40vw;
 }
-footer{
+
+footer {
     /* background-image: url('img/0.webp'); */
     width: 100%;
     min-height: 63vh;
@@ -704,19 +785,20 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
-footer .overlay{
+
+footer .overlay {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;    
+    bottom: 0;
     /* background: #000; */
     /* opacity: 0.5; */
 }
-.footer-content{
+
+.footer-content {
     position: relative;
     width: 100%;
     max-width: 1200px;
@@ -724,11 +806,13 @@ footer .overlay{
     flex-direction: column;
     align-items: center;
 }
-.footer-content .img-box{
+
+.footer-content .img-box {
     text-align: center;
     margin-bottom: 30px;
 }
-footer .inner-footer{
+
+footer .inner-footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     justify-content: center;
@@ -736,31 +820,38 @@ footer .inner-footer{
     width: 100%;
     color: #000;
 }
-footer .inner-footer .card{
-    margin: .5rem;
-   border: none;
+
+footer .inner-footer .card {
+    margin: 0.5rem;
+    border: none;
 }
-footer .inner-footer .card li{
+
+footer .inner-footer .card li {
     cursor: pointer;
     line-height: 1.5rem;
     text-transform: capitalize;
     font-size: 16px;
 }
+
 footer .inner-footer .card li:nth-child(1),
-footer .inner-footer .card p{
+footer .inner-footer .card p {
     margin-top: 1rem;
 }
-footer .inner-footer .card h3{
+
+footer .inner-footer .card h3 {
     text-transform: uppercase;
 }
-footer .inner-footer .card p{
-    margin-bottom:1rem ;
+
+footer .inner-footer .card p {
+    margin-bottom: 1rem;
     font-size: 16px;
 }
-footer .inner-footer .card .social-links{
+
+footer .inner-footer .card .social-links {
     margin-top: 1rem;
 }
-footer .inner-footer .card .social-links i{
+
+footer .inner-footer .card .social-links i {
     width: 50px;
     height: 50px;
     line-height: 30px;
@@ -770,14 +861,16 @@ footer .inner-footer .card .social-links i{
     text-align: center;
     color: var(--light-green);
     cursor: pointer;
-    padding: .6rem;
+    padding: 0.6rem;
     font-size: 1.3rem;
 }
-footer .inner-footer .card .social-links i:hover{
+
+footer .inner-footer .card .social-links i:hover {
     background: var(--light-green);
     color: #fff;
 }
-footer .bottom-footer{
+
+footer .bottom-footer {
     text-transform: capitalize;
     text-align: center;
     padding-top: 50px;
@@ -785,67 +878,17 @@ footer .bottom-footer{
 }
 
 
-/* Media Queries */
-@media (max-width: 991px) {
-    #menu-btn {
-        display: block;
-    }
 
-    .header .flex .navbar {
-        position: absolute;
-        width: 100%;
-        padding: 0 2rem;
-        top: 130%;
-        left: 0;
-        display: block;
-        right: 0;
-        border-top: 1px solid var(--green);
-        background: #fff;
-        transition: 0.3s ease, transform .3s ease;
-        clip-path: polygon(0 0, 100% 0, 0 0);
-    }
-
-    .header .flex .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .header .flex .navbar a {
-        display: block;
-        margin: 2rem;
-        border-top: 1px solid var(--green);
-    }
-
-    .form-container {
-        width: 100%;
-    }
-
-    form {
-        width: 100%;
-    }
-    .details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .book-info {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .image-box {
-        margin-bottom: 20px;
-    }
-}                  
 /* produktet */
 
-.search-box{
-    width:100%;
+.search-box {
+    width: 100%;
     height: 40px;
     border-radius: 30px;
     text-align: center;
     font-size: 16px;
-    
 }
+
 .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -870,7 +913,7 @@ footer .bottom-footer{
     width: 60%;
     height: auto;
     margin-bottom: 1rem;
-    padding: 0.5rem; 
+    padding: 0.5rem;
     border-radius: 5px;
 }
 
@@ -880,6 +923,7 @@ footer .bottom-footer{
     margin-top: 0.5rem;
     text-transform: capitalize;
 }
+
 .products .box .author {
     font-size: 1rem;
     color: #7a7a7a;
@@ -900,7 +944,6 @@ footer .bottom-footer{
     text-align: center;
 }
 
-
 .products .box .button {
     display: flex;
     gap: 0.5rem;
@@ -912,7 +955,7 @@ footer .bottom-footer{
 .products .box .button a {
     font-size: 1.2rem;
     color: #000;
-}    
+}
 
 .pagination {
     display: flex;
@@ -974,70 +1017,79 @@ footer .bottom-footer{
     text-align: center;
     vertical-align: middle;
 }
+
 /* services */
-.services{
+.services {
     padding: 3rem 0;
     text-align: center;
     line-height: 2;
     margin: 3rem 0;
-    background-color: #fff; /* Ngjyra e bardhë për sfondin */
-   
+    background-color: #fff;
+    /* Ngjyra e bardhë për sfondin */
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hije për theksim të seksionit */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Hije për theksim të seksionit */
     position: relative;
-
 }
-.services h3{
+
+.services h3 {
     text-transform: capitalize;
     color: var(--green);
-
 }
-.services img{
+
+.services img {
     width: 30%;
 }
-.paragraph1{
+
+.paragraph1 {
     padding-bottom: 20px;
     text-align: center;
 }
-.title1{
+
+.title1 {
     font-size: 30px;
     margin: 0;
     padding: 0;
 }
+
 /* about */
-.about-category{
+.about-category {
     max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     margin: 2rem auto;
 }
-.about-category .box{
+
+.about-category .box {
     position: relative;
     margin: 1rem;
     box-shadow: var(--box-shadow);
 }
-.about-category .box img{
+
+.about-category .box img {
     width: 60%;
 }
 
-.about-category .box .detail{
+.about-category .box .detail {
     position: absolute;
     top: 30%;
     right: 10%;
 }
 
-.about-category .box .detail h1{
+.about-category .box .detail h1 {
     margin-bottom: 1.5rem;
-
 }
-.about-category .box .detail span{
+
+.about-category .box .detail span {
     text-transform: uppercase;
     font-size: 20px;
     color: #555;
 }
-.about-category .box .detail .btn{
-    opacity: .6;
+
+.about-category .box .detail .btn {
+    opacity: 0.6;
 }
+
 .about {
     background-color: #fff;
     padding: 4rem 2rem;
@@ -1045,12 +1097,17 @@ footer .bottom-footer{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.about .row{
-    display: flex; /* Aktivizo flexbox */
-    justify-content: space-between; /* Lejon që elementët të jenë në skajet e kundërta */
-    align-items: center; /* Qendro elementët vertikalisht */
+
+.about .row {
+    display: flex;
+    /* Aktivizo flexbox */
+    justify-content: space-between;
+    /* Lejon që elementët të jenë në skajet e kundërta */
+    align-items: center;
+    /* Qendro elementët vertikalisht */
     margin: 20px 0;
 }
+
 .about .row .detail h1 {
     font-family: inherit;
     font-size: 26px;
@@ -1058,8 +1115,9 @@ footer .bottom-footer{
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 10px;
-    font-weight: 400; /* Më pak e trashë se default */
-    letter-spacing: 0.5px; 
+    font-weight: 400;
+    /* Më pak e trashë se default */
+    letter-spacing: 0.5px;
 }
 
 .about .row .detail p {
@@ -1070,40 +1128,46 @@ footer .bottom-footer{
     color: #555;
     line-height: 1.5;
 }
-.about .row .detail{
+
+.about .row .detail {
     width: 50%;
     margin: 1rem;
     line-height: 1.5;
     text-align: center;
 }
-.about .row .detail p{
+
+.about .row .detail p {
     margin-bottom: 2rem;
 }
-.about .row .img-box{
-    width: 50%;
-    flex: 1; /* Merrni hapësirë të barabartë */
-    margin-right: 20px;
 
+.about .row .img-box {
+    width: 50%;
+    flex: 1;
+    /* Merrni hapësirë të barabartë */
+    margin-right: 20px;
 }
-.about .row .detail h1{
+
+.about .row .detail h1 {
     text-align: center;
     margin: 1rem 0;
     font-size: 24px;
 }
+
 /* <<<<<<<head */
 
 .wishlist-item-img {
     width: 60%;
     height: auto;
     margin-bottom: 1rem;
-    padding: 0.5rem; 
-    border-radius: 5px; 
+    padding: 0.5rem;
+    border-radius: 5px;
 }
-.cart-item-img{
+
+.cart-item-img {
     width: 60%;
     height: auto;
     margin-bottom: 1rem;
-    padding: 0.5rem; 
+    padding: 0.5rem;
     border-radius: 5px;
 }
 
@@ -1113,19 +1177,23 @@ footer .bottom-footer{
     justify-content: center;
     padding: 2rem;
 }
-#cart-container{
+
+#cart-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     padding: 2rem;
 }
+
 .wishlist-item {
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
+
 .cart-item {
     box-sizing: border-box;
 }
-#wishlist-container .box{
+
+#wishlist-container .box {
     box-shadow: var(--box-shadow);
     border-radius: 0.5rem;
     padding: 1rem;
@@ -1138,7 +1206,7 @@ footer .bottom-footer{
     margin: 20px auto;
 }
 
-#cart-container .box{
+#cart-container .box {
     box-shadow: var(--box-shadow);
     border-radius: 0.5rem;
     padding: 1rem;
@@ -1151,58 +1219,72 @@ footer .bottom-footer{
     margin: 20px auto;
 }
 
-.wishlist-item-name, .cart-item-name{
+.wishlist-item-name,
+.cart-item-name {
     font-size: 1.1rem;
     color: #3b3b3b;
     margin-top: 0.5rem;
     text-transform: capitalize;
 }
 
-.wishlist-item-author, .cart-item-author{
+.wishlist-item-author,
+.cart-item-author {
     font-size: 1rem;
     color: #7a7a7a;
     margin-top: 0.5rem;
 }
-.wishlist-item-price, .cart-item-price{
+
+.wishlist-item-price,
+.cart-item-price {
     font-size: 1rem;
     color: var(--green);
     margin: 0.5rem 0;
 }
-.remove-btn{
+
+.remove-btn {
     font-size: 14px;
-    background-color: #f62500; /* Red color for remove */
+    background-color: #f62500;
+    /* Red color for remove */
     color: white;
     padding: 7px;
     border-radius: 10px;
 }
-.remove-btn:hover{
-    background-color: #bd1c00; 
+
+.remove-btn:hover {
+    background-color: #bd1c00;
 }
-.add-to-cart-btn{
+
+.add-to-cart-btn {
     font-size: 14px;
-    background-color:var(--light-green); /* Red color for remove */
+    background-color: var(--light-green);
+    /* Red color for remove */
     color: white;
     padding: 7px;
     border-radius: 10px;
 }
-.add-to-cart-btn:hover{
-    background-color: rgb(109, 215, 109); 
+
+.add-to-cart-btn:hover {
+    background-color: rgb(109, 215, 109);
 }
+
 .buynow-btn {
     font-size: 20px;
-    background-color: var(--light-green); /* Ngjyra fillestare e butonit */
+    background-color: var(--light-green);
+    /* Ngjyra fillestare e butonit */
     color: white;
     margin-left: 50px;
     border-radius: 10px;
-    width: 90%; /* Rritje e gjerësisë */
-    padding: 10px 0; /* Lartësi dinamike në bazë të përmbajtjes */
+    width: 90%;
+    /* Rritje e gjerësisë */
+    padding: 10px 0;
+    /* Lartësi dinamike në bazë të përmbajtjes */
     text-align: center;
 }
 
 .buynow-btn:hover {
-    background-color: rgb(0, 184, 0); /* Ngjyra gjatë hover-it */
+    background-color: rgb(0, 184, 0);
+    /* Ngjyra gjatë hover-it */
 }
-
 
 .order-main {
     background-color: white;
@@ -1221,8 +1303,7 @@ footer .bottom-footer{
     margin-bottom: 20px;
 }
 
-
-#total-price{
+#total-price {
     color: red;
     text-align: right;
     font-size: 1.2rem;
@@ -1256,11 +1337,13 @@ footer .bottom-footer{
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
-    width:100%;
+    width: 100%;
 }
-.order-form button:hover{
+
+.order-form button:hover {
     color: white;
 }
+
 .cart-item2 {
     display: flex;
     justify-content: space-between;
@@ -1283,85 +1366,128 @@ footer .bottom-footer{
     font-size: 1.2rem;
     margin: 0;
 }
-.heading2{
+
+.heading2 {
     margin-bottom: 10px;
 }
 
 /* contact */
 .main-container {
-    background: #fff; /* Ngjyra e sfondit */
-    width: 60vw; /* Gjerësia e kontejnerit */
-    min-height: 80vh; /* Lartësia minimale e kontejnerit */
-    box-shadow: var(--box-shadow); /* Hija e kontejnerit */
-    margin: 2rem auto; /* Margjina automatikisht në majtas dhe djathtas */
-    padding: 1rem; /* Hapësira brenda kontejnerit */
-    position: relative; /* Aktivizoni pozicionimin relativ për elementët brenda */
+    background: #fff;
+    /* Ngjyra e sfondit */
+    width: 60vw;
+    /* Gjerësia e kontejnerit */
+    min-height: 80vh;
+    /* Lartësia minimale e kontejnerit */
+    box-shadow: var(--box-shadow);
+    /* Hija e kontejnerit */
+    margin: 2rem auto;
+    /* Margjina automatikisht në majtas dhe djathtas */
+    padding: 1rem;
+    /* Hapësira brenda kontejnerit */
+    position: relative;
+    /* Aktivizoni pozicionimin relativ për elementët brenda */
 }
 
 .form-container {
     width: 70%;
-    min-height: 300px; /* Gjerësia e formës */
-    margin: 0 auto; /* Qendro formën në qendër */
-    background-color: rgb(255, 255, 255 / 80%); /* Ngjyra e sfondit të formës */
-    padding: 2rem; /* Hapësira brenda formës */
-    border-radius: 5px; /* Rrumbullakoni skajet */
-    text-align: left 10px; 
-   
+    min-height: 300px;
+    /* Gjerësia e formës */
+    margin: 0 auto;
+    /* Qendro formën në qendër */
+    background-color: rgb(255, 255, 255 / 80%);
+    /* Ngjyra e sfondit të formës */
+    padding: 2rem;
+    /* Hapësira brenda formës */
+    border-radius: 5px;
+    /* Rrumbullakoni skajet */
+    text-align: left 10px;
+
     /* Qendro përmbajtjen e formës */
 }
+
 .box-container .box .centere-content h1 {
-    font-size: 32px; /* Rrit madhësinë e shkronjave të titullit */
-    text-align: center; /* Rreshto titullin në qendër */
-     /* Ngjyra e titullit */
-    margin-bottom: 20px; /* Hapësira poshtë titullit */
-    font-weight: bold; /* Bëni titullin të jetë me peshë të theksuar */
-    text-transform: uppercase; /* Shkruani titullin me shkronja të mëdha */
+    font-size: 32px;
+    /* Rrit madhësinë e shkronjave të titullit */
+    text-align: center;
+    /* Rreshto titullin në qendër */
+    /* Ngjyra e titullit */
+    margin-bottom: 20px;
+    /* Hapësira poshtë titullit */
+    font-weight: bold;
+    /* Bëni titullin të jetë me peshë të theksuar */
+    text-transform: uppercase;
+    /* Shkruani titullin me shkronja të mëdha */
 }
 
 .box-container .box .centere-content p {
-    font-size: 17px; /* Rrit madhësinë e shkronjave të paragrafit */
+    font-size: 17px;
+    /* Rrit madhësinë e shkronjave të paragrafit */
     /* Justifikoni përmbajtjen e paragrafit */
-    line-height: 1.4; /* Rritni hapësirën midis rreshtave për lehtësim të leximit (mund ta zvogëloni) */
-    color: #555; /* Ngjyra e paragrafit */
-    margin: 0; /* Hiqni hapësirën e parazgjedhur */
-    padding: 10px 0; /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
-    margin: 0 auto; 
+    line-height: 1.4;
+    /* Rritni hapësirën midis rreshtave për lehtësim të leximit (mund ta zvogëloni) */
+    color: #555;
+    /* Ngjyra e paragrafit */
+    margin: 0;
+    /* Hiqni hapësirën e parazgjedhur */
+    padding: 10px 0;
+    /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
+    margin: 0 auto;
     /* Shtoni hapësirë për të bërë përmbajtjen më të lehtë për t'u lexuar */
 }
+
 .event-description {
-    border: .5px solid #ddd; /* Kufiri i kutisë */
-    border-radius: 6px; /* Rrumbullakosja e skajeve */
-    padding: 20px; /* Hapësira brenda kutisë */
-    box-shadow: var(--box-shadow); /* Hija për theksim të kutisë */
-    margin: 20px 0; /* Hapësira lart dhe poshtë kutisë */
+    border: 0.5px solid #ddd;
+    /* Kufiri i kutisë */
+    border-radius: 6px;
+    /* Rrumbullakosja e skajeve */
+    padding: 20px;
+    /* Hapësira brenda kutisë */
+    box-shadow: var(--box-shadow);
+    /* Hija për theksim të kutisë */
+    margin: 20px 0;
+    /* Hapësira lart dhe poshtë kutisë */
 }
+
 .form-container input,
- textarea{
-    width: 80%; /* Gjerësia e input field-it */
-    margin: 1rem auto; /* Qendro input field-in në qendër */
-    display: block; /* Ngjyra e kufirit */
+textarea {
+    width: 80%;
+    /* Gjerësia e input field-it */
+    margin: 1rem auto;
+    /* Qendro input field-in në qendër */
+    display: block;
+    /* Ngjyra e kufirit */
 }
-textarea{
+
+textarea {
     height: 200px;
 }
-.main-container p{
+
+.main-container p {
     color: var(--green);
 }
 
 .required-star {
-    color: red; /* Ngjyra e yllit */
-    margin-left: 3px; /* Hapësira majtas */
-    font-weight: bold; /* E theksuar */
+    color: red;
+    /* Ngjyra e yllit */
+    margin-left: 3px;
+    /* Hapësira majtas */
+    font-weight: bold;
+    /* E theksuar */
     /* Hiqni çdo stil tjetër që mund të ndikojë */
-    background: none; /* Hiqni çdo sfond */
-    border-radius: 0; /* Hiqni rrethin */
-    padding: 0; /* Hiqni çdo padding */
+    background: none;
+    /* Hiqni çdo sfond */
+    border-radius: 0;
+    /* Hiqni rrethin */
+    padding: 0;
+    /* Hiqni çdo padding */
 }
 
-.main-container input[type=submit]{
+.main-container input[type="submit"] {
     color: #000 !important;
     cursor: pointer;
 }
+
 .form-container form {
     margin: 1rem auto;
     background-color: rgb(255, 255, 255 / 80%);
@@ -1369,31 +1495,40 @@ textarea{
     padding: 2rem;
     position: relative;
     border-radius: 5px;
-   /* Aktivizo flexbox */
-    flex-direction: column; /* Vendos elementët në një kolone */
-    justify-content: center; /* Qendro elementët vertikalisht */
-    align-items: center; /* Qendro elementët horizontalisht */
+    /* Aktivizo flexbox */
+    flex-direction: column;
+    /* Vendos elementët në një kolone */
+    justify-content: center;
+    /* Qendro elementët vertikalisht */
+    align-items: center;
+    /* Qendro elementët horizontalisht */
 }
-.form-container form p{
+
+.form-container form p {
     text-transform: uppercase;
 }
-.form-container form input{
+
+.form-container form input {
     width: 85%;
 }
-.form-container form button{
+
+.form-container form button {
     width: 100%;
     border-radius: 10px;
     outline: none;
 }
-.address{
+
+.address {
     padding: 4rem 0;
     min-height: 50vh;
 }
-.address .box-container{
+
+.address .box-container {
     justify-content: center;
     align-items: center;
 }
-.address .box-container .box{
+
+.address .box-container .box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1402,11 +1537,13 @@ textarea{
     line-height: 2;
     padding: 1rem 0;
 }
-.address .box-container .box h4{
+
+.address .box-container .box h4 {
     text-transform: uppercase;
     color: var(--green);
 }
-.address .box-container .box i{
+
+.address .box-container .box i {
     font-size: 1.5rem;
     margin-right: 1rem;
     width: 70px;
@@ -1418,11 +1555,13 @@ textarea{
     background: var(--green);
     color: #fff;
 }
+
 .error-message {
     color: red;
     font-size: 0.8em;
     margin-top: 5px;
 }
+
 /* >>>>>>> 5543517de53cac41da9371e5bf3f172e5338ec1c */
 /* Dropdown container styling */
 .dropdown {
@@ -1457,173 +1596,253 @@ textarea{
 
 /* Hover effect on items */
 .dropdown-menu a:hover {
-    background-color: #f0f0f0;}
-.reserved-date {
-    background-color: rgba(255, 0, 0, 0.5); /* Ngjyrë e kuqe me transparencë */
-    color: white; /* Ngjyra e bardhë për tekstin */
-    pointer-events: none; /* Përdoret për të parandaluar se si mund të klikohen këto data */
+    background-color: #f0f0f0;
 }
-.category-text{
+
+.reserved-date {
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Ngjyrë e kuqe me transparencë */
+    color: white;
+    /* Ngjyra e bardhë për tekstin */
+    pointer-events: none;
+    /* Përdoret për të parandaluar se si mund të klikohen këto data */
+}
+
+.category-text {
     padding-top: 5px;
     color: #686868;
 }
+
 .form-layout {
-    display: flex; /* Përdorimi i Flexbox për të krijuar dy kolona */
-    justify-content: center; /* Qendro elementët horizontalisht */
-    align-items: flex-start; /* Qendro elementët vertikalisht në fillim */
-    margin-top: 20px; /* Hapësira nga titulli ose elementi i sipërm */
-    gap: 20px; /* Hapësira midis box1 dhe box2 */
+    display: flex;
+    /* Përdorimi i Flexbox për të krijuar dy kolona */
+    justify-content: center;
+    /* Qendro elementët horizontalisht */
+    align-items: flex-start;
+    /* Qendro elementët vertikalisht në fillim */
+    margin-top: 20px;
+    /* Hapësira nga titulli ose elementi i sipërm */
+    gap: 20px;
+    /* Hapësira midis box1 dhe box2 */
 }
 
-.box1, .box2 {
-    flex: 1; /* Lejon që box1 dhe box2 të ndajnë hapësirën e disponueshme */
-    max-width: 400px; /* Limito hapësirën maksimale për secilin box */
+.box1,
+.box2 {
+    flex: 1;
+    /* Lejon që box1 dhe box2 të ndajnë hapësirën e disponueshme */
+    max-width: 400px;
+    /* Limito hapësirën maksimale për secilin box */
 }
+
 .box1 {
     flex-grow: 1;
-    max-width: 300px; 
-   /* Box1 do të rritet sa më shumë të jetë e mundur */
+    max-width: 300px;
+    /* Box1 do të rritet sa më shumë të jetë e mundur */
 }
 
 .box2 {
-    flex-grow: 1; /* Box2 do të rritet më shumë se box1 */
-    min-height: 100px; /* Ju mund të vendosni një lartësi minimale për box2 */
+    flex-grow: 1;
+    /* Box2 do të rritet më shumë se box1 */
+    min-height: 100px;
+    /* Ju mund të vendosni një lartësi minimale për box2 */
 }
 
 .card-selection {
-    text-align: center; 
+    text-align: center;
     align-items: center;
     justify-content: center;
     /* Gjerësia e seksionit të kartave */
-    padding-right: 20px; /* Hapësira midis kartave dhe formës */
+    padding-right: 20px;
+    /* Hapësira midis kartave dhe formës */
 }
 
 .options {
-    display: flex; /* Përdorimi i Flexbox për opsionet */
-    flex-wrap: wrap; /* Lejon që opsionet të rreshtohen në rreshta */
-    gap: 10px; /* Hapësira midis opsioneve */
-    justify-content: space-between; /* Sigurohuni që opsionet të mbushin hapësirën */
-    width: 100%; /* Sigurohuni që të mbushin hapësirën e disponueshme */
+    display: flex;
+    /* Përdorimi i Flexbox për opsionet */
+    flex-wrap: wrap;
+    /* Lejon që opsionet të rreshtohen në rreshta */
+    gap: 10px;
+    /* Hapësira midis opsioneve */
+    justify-content: space-between;
+    /* Sigurohuni që opsionet të mbushin hapësirën */
+    width: 100%;
+    /* Sigurohuni që të mbushin hapësirën e disponueshme */
 }
 
 .option {
-    flex: 1; /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
-    padding: 10px; /* Hapësira brenda opsionit */
-    border: 2px solid #ccc; /* Kufiri i opsioneve */
-    border-radius: 5px; /* Rrafshtimi i skajeve */
-    cursor: pointer; /* Tregon se opsioni është klikuar */
-    transition: background-color 0.3s ease; /* Efekti i kalimit */
-    text-align: center; /* Qendro tekstin në qendër */
-    min-width: 70px; /* Gjerësia minimale e opsioneve */
+    flex: 1;
+    /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
+    padding: 10px;
+    /* Hapësira brenda opsionit */
+    border: 2px solid #ccc;
+    /* Kufiri i opsioneve */
+    border-radius: 5px;
+    /* Rrafshtimi i skajeve */
+    cursor: pointer;
+    /* Tregon se opsioni është klikuar */
+    transition: background-color 0.3s ease;
+    /* Efekti i kalimit */
+    text-align: center;
+    /* Qendro tekstin në qendër */
+    min-width: 70px;
+    /* Gjerësia minimale e opsioneve */
 }
-.option1{
-    flex: 1; /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
-    padding: 10px; /* Hapësira brenda opsionit */
-    border: 2px solid #ccc; /* Kufiri i opsioneve */
-    border-radius: 5px; /* Rrafshtimi i skajeve */
-    cursor: pointer; /* Tregon se opsioni është klikuar */
-    transition: background-color 0.3s ease; /* Efekti i kalimit */
-    text-align: center; /* Qendro tekstin në qendër */
-    min-width: 100px; /* Gjerësia minimale e opsioneve */
+
+.option1 {
+    flex: 1;
+    /* Lejon që opsionet të ndajnë hapësirën e disponueshme */
+    padding: 10px;
+    /* Hapësira brenda opsionit */
+    border: 2px solid #ccc;
+    /* Kufiri i opsioneve */
+    border-radius: 5px;
+    /* Rrafshtimi i skajeve */
+    cursor: pointer;
+    /* Tregon se opsioni është klikuar */
+    transition: background-color 0.3s ease;
+    /* Efekti i kalimit */
+    text-align: center;
+    /* Qendro tekstin në qendër */
+    min-width: 100px;
+    /* Gjerësia minimale e opsioneve */
 }
 
 .option1 img {
-    width: 50px; /* Gjerësia e imazhit */
-    height: 47px; /* Lartësia e imazhit */
+    width: 50px;
+    /* Gjerësia e imazhit */
+    height: 47px;
+    /* Lartësia e imazhit */
 }
 
 .large-image-container {
-    margin-top: 20px; /* Hapësira nga opsionet e kartave */
-    text-align: center; /* Qendrimi i imazhit të madh */
-    display: none; /* Fillimisht e fshehur */
+    margin-top: 20px;
+    /* Hapësira nga opsionet e kartave */
+    text-align: center;
+    /* Qendrimi i imazhit të madh */
+    display: none;
+    /* Fillimisht e fshehur */
     border-radius: 10px;
     width: 100%;
 }
 
 .large-image-container img {
-    width: 100%; /* Gjerësia e imazhit të madh */
-    max-width: 300px; /* Gjerësia maksimale e imazhit të madh */
-    height: auto; /* Ruajtja e proporcioneve të imazhit */
+    width: 100%;
+    /* Gjerësia e imazhit të madh */
+    max-width: 300px;
+    /* Gjerësia maksimale e imazhit të madh */
+    height: auto;
+    /* Ruajtja e proporcioneve të imazhit */
     border-radius: 10px;
 }
 
 .form-section {
-    width: 100%; /* Gjerësia e seksionit të formës */
+    width: 100%;
+    /* Gjerësia e seksionit të formës */
 }
+
 .gift-card-section {
     background-color: #fff;
     padding: 20px;
-    margin:auto;
+    margin: auto;
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 900px;
 }
+
 .input-field {
-    width: 100%; /* Sigurohuni që input field-at të mbushin hapësirën */
+    width: 100%;
+    /* Sigurohuni që input field-at të mbushin hapësirën */
     /* Hapësira poshtë secilit input */
 }
 
 .input-field input,
 .input-field textarea {
-    width: 100%; /* Gjerësia 100% për input field-at dhe textarea */
-    padding: 10px; /* Hapësira brenda input field-it */
-    border: 1px solid #ccc; /* Kufiri i input field-it */
-    border-radius: 5px; /* Rrafshtimi i skajeve */
+    width: 100%;
+    /* Gjerësia 100% për input field-at dhe textarea */
+    padding: 10px;
+    /* Hapësira brenda input field-it */
+    border: 1px solid #ccc;
+    /* Kufiri i input field-it */
+    border-radius: 5px;
+    /* Rrafshtimi i skajeve */
 }
-.description{
+
+.description {
     font-size: 13px;
     padding-top: 10px;
 }
+
 .selected {
-    border-color: blue; /* Vendos kufi për kartën e zgjedhur */}
-.acc-paragraph{
+    border-color: blue;
+    /* Vendos kufi për kartën e zgjedhur */
+}
+
+.acc-paragraph {
     text-align: center;
 }
+
 .loyalty-card-section {
-    padding: 20px; /* Padding inside the section */    
+    padding: 20px;
+    /* Padding inside the section */
 }
 
 .loyalty-card-section h2 {
-    font-size: 24px; /* Font size for the heading */
-    margin-bottom: 10px; /* Space below the heading */
+    font-size: 24px;
+    /* Font size for the heading */
+    margin-bottom: 10px;
+    /* Space below the heading */
 }
 
 .loyalty-card-section p {
-    font-size: 16px; /* Font size for the paragraph */ 
+    font-size: 16px;
+    /* Font size for the paragraph */
 }
+
 .custom-carousel-btn {
     color: white;
-    background-color: rgba(0, 0, 0, 0.5); /* Sfond gjysmë-transparent */
-    border: none; /* Pa kufij */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Sfond gjysmë-transparent */
+    border: none;
+    /* Pa kufij */
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Forma rrethore */
+    border-radius: 50%;
+    /* Forma rrethore */
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 50%; /* Vendos në mes vertikalisht */
-    transform: translateY(-50%); /* Centron vertikalisht */
-    z-index: 10; /* Për t'u shfaqur mbi përmbajtjen */
+    top: 50%;
+    /* Vendos në mes vertikalisht */
+    transform: translateY(-50%);
+    /* Centron vertikalisht */
+    z-index: 10;
+    /* Për t'u shfaqur mbi përmbajtjen */
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .custom-carousel-btn:hover {
-    background-color: var(--light-green); /* Errësim gjatë hover */
-    transform: translateY(-50%) scale(1.1); /* Zmadhohet pak */
+    background-color: var(--light-green);
+    /* Errësim gjatë hover */
+    transform: translateY(-50%) scale(1.1);
+    /* Zmadhohet pak */
 }
 
 .carousel-control-prev {
-    left: 10px; /* Afër skajit të majtë */
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Arrow_left_font_awesome.svg'); /* Shigjeta majtas */
+    left: 10px;
+    /* Afër skajit të majtë */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a1/Arrow_left_font_awesome.svg");
+    /* Shigjeta majtas */
     background-size: 100%;
     background-repeat: no-repeat;
 }
 
 .carousel-control-next {
-    right: 10px; /* Afër skajit të djathtë */
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Arrow_right_font_awesome.svg'); /* Shigjeta djathtas */
+    right: 10px;
+    /* Afër skajit të djathtë */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/Arrow_right_font_awesome.svg");
+    /* Shigjeta djathtas */
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -1632,7 +1851,6 @@ textarea{
 .carousel-control-next-icon {
     width: 20px;
     height: 20px;
-   
 }
 
 /* Book Details Section */
@@ -1693,6 +1911,7 @@ textarea{
     height: auto;
     border-radius: 8px;
 }
+
 .accessory-detail {
     padding: 40px;
     display: flex;
@@ -1729,18 +1948,17 @@ textarea{
     font-weight: bold;
 }
 
-
 #accessory-image {
     width: 200%;
     height: auto;
     border-radius: 8px;
 }
 
-
-
 .add-to-cart-btn:hover .button-text {
-    opacity: 1; /* Teksti shfaqet gjithmonë */
+    opacity: 1;
+    /* Teksti shfaqet gjithmonë */
 }
+
 .add-accessory-to-cart-btn {
     padding: 15px 30px;
     font-size: 18px;
@@ -1756,28 +1974,34 @@ textarea{
 }
 
 .add-accessory-to-cart-btn:hover {
-    background-color: rgba(43, 188, 149, 0.9); /* Ngjyrë pak më e thellë */
-    
+    background-color: rgba(43, 188, 149, 0.9);
+    /* Ngjyrë pak më e thellë */
 }
 
 .add-accessory-to-cart-btn .button-text {
-    transition: opacity 0.3s ease; /* Kalim i butë */
-    opacity: 1; /* Teksti shfaqet fillimisht */
+    transition: opacity 0.3s ease;
+    /* Kalim i butë */
+    opacity: 1;
+    /* Teksti shfaqet fillimisht */
 }
 
 .add-accessory-to-cart-btn i {
     font-size: 24px;
     transition: transform 0.3s ease;
-    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
+    transform: translateX(-10px);
+    /* Ikona fillon e spostuar pak */
 }
 
 .add-accessory-to-cart-btn:hover i {
-    transform: translateX(0); /* Ikona rikthehet në vend */
+    transform: translateX(0);
+    /* Ikona rikthehet në vend */
 }
 
 .add-accessory-to-cart-btn:hover .button-text {
-    opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
+    opacity: 1;
+    /* Teksti mbetet i dukshëm gjithmonë */
 }
+
 .custom-cart-button {
     padding: 15px 30px;
     font-size: 18px;
@@ -1793,33 +2017,42 @@ textarea{
 }
 
 .custom-cart-button:hover {
-    background-color: rgba(43, 188, 149, 0.9); /* Ngjyrë pak më e thellë */
+    background-color: rgba(43, 188, 149, 0.9);
+    /* Ngjyrë pak më e thellë */
 }
 
 .custom-cart-text {
-    transition: opacity 0.3s ease; /* Kalim i butë */
-    opacity: 1; /* Teksti shfaqet fillimisht */
+    transition: opacity 0.3s ease;
+    /* Kalim i butë */
+    opacity: 1;
+    /* Teksti shfaqet fillimisht */
 }
 
 .custom-cart-button i {
     font-size: 24px;
     transition: transform 0.3s ease;
-    transform: translateX(-10px); /* Ikona fillon e spostuar pak */
+    transform: translateX(-10px);
+    /* Ikona fillon e spostuar pak */
 }
 
 .custom-cart-button:hover i {
-    transform: translateX(0); /* Ikona rikthehet në vend */
+    transform: translateX(0);
+    /* Ikona rikthehet në vend */
 }
 
 .custom-cart-button:hover .custom-cart-text {
-    opacity: 1; /* Teksti mbetet i dukshëm gjithmonë */
+    opacity: 1;
+    /* Teksti mbetet i dukshëm gjithmonë */
 }
-ul{
+
+ul {
     padding: 0;
 }
+
 .play-button {
     position: absolute;
-    bottom: 10px; /* Zhvendos butonin më poshtë */
+    bottom: 10px;
+    /* Zhvendos butonin më poshtë */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -1834,14 +2067,15 @@ ul{
 
 /* Stilizimi për gjendjen e play (trekëndësh) */
 .play-button.play::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
-    border-left: 20px solid rgba(255, 255, 255, 0.8); /* Trekëndësh i plotë */
+    border-left: 20px solid rgba(255, 255, 255, 0.8);
+    /* Trekëndësh i plotë */
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
 }
@@ -1849,21 +2083,25 @@ ul{
 /* Stilizimi për gjendjen e pause (dy vija paralele) */
 .play-button.pause::before,
 .play-button.pause::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 6px; /* Gjerësia e vijave */
-    height: 24px; /* Lartësia e vijave */
+    width: 6px;
+    /* Gjerësia e vijave */
+    height: 24px;
+    /* Lartësia e vijave */
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 .play-button.pause::before {
-    left: 30%; /* Pozicionimi i vijës së majtë */
+    left: 30%;
+    /* Pozicionimi i vijës së majtë */
 }
 
 .play-button.pause::after {
-    right: 30%; /* Pozicionimi i vijës së djathtë */
+    right: 30%;
+    /* Pozicionimi i vijës së djathtë */
 }
 
 thead th {
@@ -1885,7 +2123,9 @@ tbody tr:hover {
     cursor: pointer;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
@@ -1895,7 +2135,61 @@ table {
     margin: auto;
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    #menu-btn {
+        display: block;
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        width: 100%;
+        padding: 0 2rem;
+        top: 130%;
+        left: 0;
+        display: block;
+        right: 0;
+        border-top: 1px solid var(--green);
+        background: #fff;
+        transition: 0.3s ease, transform 0.3s ease;
+        clip-path: polygon(0 0, 100% 0, 0 0);
+    }
+
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+        border-top: 1px solid var(--green);
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-info {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .image-box {
+        margin-bottom: 20px;
+    }
 }

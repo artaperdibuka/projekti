@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Gift Card page</title>
 </head>
+
 <body>
     <header class="header">
         <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
             <nav class="navbar">
                 <a href="home.html">Home</a>
                 <a href="products.html">Products</a>
@@ -18,12 +20,12 @@
                 <a href="events.html">Events</a>
                 <a href="about.html">About us</a>
                 <a href="contact.html">Contact us</a>
-    
+
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
@@ -33,115 +35,120 @@
                 <a href="register.html" class="btn">Register</a>
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
-    
+
                 </form>
             </div>
         </div>
     </header>
-   </div>
+    </div>
     <div class="main">
-            <div class="tittle2">
-                <a href="home.html">Home</a><span>E-Gift Card</span>
-            </div>
-           <section class="gift-card-section">
-                    <div class="form-layout">
-                       <div class="box1">
-                        <div class="card-selection">
+        <div class="tittle2">
+            <a href="home.html">Home</a><span>E-Gift Card</span>
+        </div>
+        <section class="gift-card-section">
+            <div class="form-layout">
+                <div class="box1">
+                    <div class="card-selection">
+                        <div class="options">
+                            <div class="option1 selected" onclick="selectCard('Card 1', 'img/card1.png')">
+                                <img src="img/card1.png" alt="Card 1" />
+                            </div>
+                            <div class="option1" onclick="selectCard('Card 2', 'img/card2.png')">
+                                <img src="img/card2.png" alt="Card 2" />
+                            </div>
+                            <div class="option1" onclick="selectCard('Card 3', 'img/card3.png')">
+                                <img src="img/card3.png" alt="Card 3" />
+                            </div>
+                            <div class="option1" onclick="selectCard('Card 4', 'img/card4.png')">
+                                <img src="img/card4.png" alt="Card 4" />
+                            </div>
+                        </div>
+                        <div class="large-image-container" style="display: none;">
+                            <!-- Imazhi i madh do të shfaqet këtu -->
+                        </div>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="form-section">
+                        <form id="order-form" method="post">
                             <div class="options">
-                                <div class="option1 selected" onclick="selectCard('Card 1', 'img/card1.png')">
-                                    <img src="img/card1.png" alt="Card 1" />
-                                </div>
-                                <div class="option1" onclick="selectCard('Card 2', 'img/card2.png')">
-                                    <img src="img/card2.png" alt="Card 2" />
-                                </div>
-                                <div class="option1" onclick="selectCard('Card 3', 'img/card3.png')">
-                                    <img src="img/card3.png" alt="Card 3" />
-                                </div>
-                                <div class="option1" onclick="selectCard('Card 4', 'img/card4.png')">
-                                    <img src="img/card4.png" alt="Card 4" />
-                                </div>
+                                <div class="option" onclick="selectOption('10€')">10€</div>
+                                <div class="option" onclick="selectOption('20€')">20€</div>
+                                <div class="option" onclick="selectOption('50€')">50€</div>
+                                <div class="option" onclick="selectOption('100€')">100€</div>
+                                <div class="option" onclick="selectOption('200€')">200€</div>
                             </div>
-                            <div class="large-image-container" style="display: none;">
-                                <!-- Imazhi i madh do të shfaqet këtu -->
+                            <input type="text" id="selectedOption" placeholder="Select an option..." readonly />
+                            <div class="input-field">
+                                <input type="text" name="recipient" id="recipient"
+                                    placeholder="The recipient of the gift" />
+                                <div id="nameError" class="error-message"></div>
                             </div>
-                        </div>
-                       </div>
-                        <div class="box2">
-                            <div class="form-section">
-                                <form id="order-form" method="post">
-                                    <div class="options">
-                                        <div class="option" onclick="selectOption('10€')">10€</div>
-                                        <div class="option" onclick="selectOption('20€')">20€</div>
-                                        <div class="option" onclick="selectOption('50€')">50€</div>
-                                        <div class="option" onclick="selectOption('100€')">100€</div>
-                                        <div class="option" onclick="selectOption('200€')">200€</div>
-                                    </div>
-                                    <input type="text" id="selectedOption" placeholder="Select an option..." readonly />
-                                    <div class="input-field">
-                                        <input type="text" name="recipient" id="recipient" placeholder="The recipient of the gift" />
-                                        <div id="nameError" class="error-message"></div>
-                                    </div>
-                                    <div class="input-field">
-                                        <input type="text" name="giver" id="giver" placeholder="The gift giver" />
-                                        <div id="giverError" class="error-message"></div>
-                                    </div>
-                                    <div class="input-field">
-                                        <input type="email" name="email" id="email" placeholder="The email of the lucky gift receiver" />
-                                        <div id="emailError" class="error-message"></div>
-                                    </div>
-                                    <div class="input-field">
-                                        <textarea name="message" id="message" placeholder="A message for the gift receiver"></textarea>
-                                        <div id="messageError" class="error-message"></div>
-                                    </div>
-                                    <button type="submit" class="btn" onclick="addGiftCardCardToCart()">Shop Now</button>
-                                    <p class="description">Description: A gift card is a special type of product. Its value can be used as payment toward future orders from your online store. Gift card is available only for online purchases.</p>
-                                </form>
+                            <div class="input-field">
+                                <input type="text" name="giver" id="giver" placeholder="The gift giver" />
+                                <div id="giverError" class="error-message"></div>
                             </div>
-                        </div>  
-               </div>  
-           </section>            
-            <section class="services">   
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/icon2.png">
-                        <div class="detail">
-                            <h3>great savings</h3>
-                            <p>save big every order</p>
-                        </div>
+                            <div class="input-field">
+                                <input type="email" name="email" id="email"
+                                    placeholder="The email of the lucky gift receiver" />
+                                <div id="emailError" class="error-message"></div>
+                            </div>
+                            <div class="input-field">
+                                <textarea name="message" id="message"
+                                    placeholder="A message for the gift receiver"></textarea>
+                                <div id="messageError" class="error-message"></div>
+                            </div>
+                            <button type="submit" class="btn" onclick="addGiftCardCardToCart()">Shop Now</button>
+                            <p class="description">Description: A gift card is a special type of product. Its value can
+                                be used as payment toward future orders from your online store. Gift card is available
+                                only for online purchases.</p>
+                        </form>
                     </div>
-                    <div class="box">
-                        <img src="img/icon1.png">
-                        <div class="detail">
-                            <h3>24*7</h3>
-                            <p>one-on-one support</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon0.png">
-                        <div class="detail">
-                            <h3>gift vouchers</h3>
-                            <p>vouchers on every festivals</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon.png">
-                        <div class="detail">
-                            <h3>worlwide delivery</h3>
-                            <p>dropship worldwide</p>
-                        </div>
-                    </div>
-                </div>
-           </section>
-           <div class="top-footer">
-            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                <div class="input-field-subscribe">
-                    <input type="email" id="emailInput" name="" placeholder="email address...">
-                    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
                 </div>
             </div>
+        </section>
+        <section class="services">
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/icon2.png">
+                    <div class="detail">
+                        <h3>great savings</h3>
+                        <p>save big every order</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon1.png">
+                    <div class="detail">
+                        <h3>24*7</h3>
+                        <p>one-on-one support</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon0.png">
+                    <div class="detail">
+                        <h3>gift vouchers</h3>
+                        <p>vouchers on every festivals</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon.png">
+                    <div class="detail">
+                        <h3>worlwide delivery</h3>
+                        <p>dropship worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="top-footer">
+            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+            <div class="input-field-subscribe">
+                <input type="email" id="emailInput" name="" placeholder="email address...">
+                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
 
-        <footer>     
-            <div  class="overlay"></div>
+        <footer>
+            <div class="overlay"></div>
             <div class="footer-content">
                 <div class="img-box">
                     <img src="img/logoo.png">
@@ -156,7 +163,7 @@
                             <li>press</li>
                             <li>blog</li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="card">
                         <h3>services</h3>
                         <ul>
@@ -178,53 +185,53 @@
                     </div>
                     <div class="card">
                         <h3>newsletter</h3>
-                         <p>Sign Up For Newsletter</p>
-                         <div class="social-links">
+                        <p>Sign Up For Newsletter</p>
+                        <div class="social-links">
                             <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                         </div>
                         </div>
                     </div>
+                </div>
                 <div class="bottom-footer">
                     <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
     </div>
-</div>
-<script>
-    // Handle form submission
-// Handle form submission
-const orderForm = document.getElementById('order-form');
-orderForm.addEventListener('submit', function(event) {
-event.preventDefault(); // Parandalon dërgimin e formularit
-
-    // Merr të dhënat nga formulari
-    const recipient = document.getElementById('recipient').value;
-    const giver = document.getElementById('giver').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const selectedOption = document.getElementById('selectedOption').value;
-
-    // Ruaj të dhënat në localStorage
-    const orderData = {
-        recipient,
-        giver,
-        email,
-        message,
-        selectedOption
-    };
-    
-    localStorage.setItem('order', JSON.stringify(orderData));
-
-    // Drejto në faqen e karrocës
-    window.location.href = 'cart.html';  // Ndryshoni në emrin e saktë të faqes së karrocës
-});
-</script>
+    </div>
     <script>
-          
-window.onload = function() {
+        // Handle form submission
+        // Handle form submission
+        const orderForm = document.getElementById('order-form');
+        orderForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Parandalon dërgimin e formularit
+
+            // Merr të dhënat nga formulari
+            const recipient = document.getElementById('recipient').value;
+            const giver = document.getElementById('giver').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const selectedOption = document.getElementById('selectedOption').value;
+
+            // Ruaj të dhënat në localStorage
+            const orderData = {
+                recipient,
+                giver,
+                email,
+                message,
+                selectedOption
+            };
+
+            localStorage.setItem('order', JSON.stringify(orderData));
+
+            // Drejto në faqen e karrocës
+            window.location.href = 'cart.html';  // Ndryshoni në emrin e saktë të faqes së karrocës
+        });
+    </script>
+    <script>
+
+        window.onload = function () {
             selectCard('Card 1', 'img/card1.png'); // Zgjedh automatikisht kartën e parë
         };
 
@@ -245,58 +252,59 @@ window.onload = function() {
             }
         }
 
-function selectOption(option) {
-    const selectedOptionInput = document.getElementById("selectedOption");
-    selectedOptionInput.value = option;
+        function selectOption(option) {
+            const selectedOptionInput = document.getElementById("selectedOption");
+            selectedOptionInput.value = option;
 
-    // Remove the 'selected' class from all options
-    let options = document.querySelectorAll('.options .option');
-    options.forEach(opt => opt.classList.remove('selected'));
+            // Remove the 'selected' class from all options
+            let options = document.querySelectorAll('.options .option');
+            options.forEach(opt => opt.classList.remove('selected'));
 
-    // Add the 'selected' class to the clicked option
-    const selectedOption = Array.from(options).find(opt => opt.textContent === option);
-    selectedOption.classList.add('selected');
-}
-function addGiftCardCardToCart() {
-    // Prevent the default form submission
-    event.preventDefault();
+            // Add the 'selected' class to the clicked option
+            const selectedOption = Array.from(options).find(opt => opt.textContent === option);
+            selectedOption.classList.add('selected');
+        }
+        function addGiftCardCardToCart() {
+            // Prevent the default form submission
+            event.preventDefault();
 
-    // Get the selected gift card details
-    const selectedOption = document.getElementById('selectedOption').value;
-    const recipient = document.getElementById('recipient').value;
-    const giver = document.getElementById('giver').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const cardName = document.querySelector('.options .option1.selected img').alt; // Get the selected card name
-    const cardImageSrc = document.querySelector('.options .option1.selected img').src; // Get the selected card image
+            // Get the selected gift card details
+            const selectedOption = document.getElementById('selectedOption').value;
+            const recipient = document.getElementById('recipient').value;
+            const giver = document.getElementById('giver').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const cardName = document.querySelector('.options .option1.selected img').alt; // Get the selected card name
+            const cardImageSrc = document.querySelector('.options .option1.selected img').src; // Get the selected card image
 
-    // Create the gift card object
-    const giftCard = {
-        name: cardName,
-        imageSrc: cardImageSrc,
-        price: selectedOption,
-        recipient,
-        giver,
-        email,
-        message
-    };
+            // Create the gift card object
+            const giftCard = {
+                name: cardName,
+                imageSrc: cardImageSrc,
+                price: selectedOption,
+                recipient,
+                giver,
+                email,
+                message
+            };
 
-    // Get the current cart from localStorage or create a new one
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Get the current cart from localStorage or create a new one
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Add the gift card to the cart
-    cart.push(giftCard);
+            // Add the gift card to the cart
+            cart.push(giftCard);
 
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Redirect to the cart page
-    window.location.href = 'cart.html';
-}
+            // Redirect to the cart page
+            window.location.href = 'cart.html';
+        }
 
-        </script>
-<script src="script.js"></script>
-<script src="count.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    </script>
+    <script src="script.js"></script>
+    <script src="count.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
 </body>
-</html> 
+
+</html>

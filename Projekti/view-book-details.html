@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <title>BookstoreBuzuku - Book details page</title>
 </head>
+
 <body>
     <header class="header">
         <div class="flex">
-            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"  ></a>
+            <a href="home.html" class="logo"><img src="img/logoo.png" height="65" width="230"></a>
             <nav class="navbar">
                 <a href="home.html">Home</a>
                 <a href="products.html">Products</a>
@@ -19,12 +20,12 @@
                 <a href="events.html">Events</a>
                 <a href="about.html">About us</a>
                 <a href="contact.html">Contact us</a>
-    
+
             </nav>
             <div class="icons">
                 <i class="bx bxs-user" id="user-btn"></i>
                 <a href="wishlist.html" class="cart-btn"><i class="bx bx-heart"></i><sup id="wishlist-count">0</sup></a>
-                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup  id="cart-count">0</sup></a>
+                <a href="cart.html" class="cart-btn"><i class="bx bx-cart-download"></i><sup id="cart-count">0</sup></a>
                 <i class="bx bx-list-plus" id="menu-btn" style="font-size: 2rem;"></i>
             </div>
             <div class="user-box">
@@ -34,13 +35,13 @@
                 <a href="register.html" class="btn">Register</a>
                 <form method="post">
                     <button type="submit" name="logout" class="logout-btn">Log out</button>
-    
+
                 </form>
             </div>
         </div>
     </header>
-  
-  
+
+
 
     <div class="main">
         <div class="tittle2">
@@ -49,94 +50,94 @@
             <span id="breadcrumb-category"></span>
             <span id="breadcrumb-detail"></span>
         </div>
-            <section id="book-details" class="book-detail">
-                <!-- The book details container -->
-                <div class="details">
-                    <!-- Image Box -->
-                    <div class="image-box">
-                        <img id="book-image" src="" alt="Book Image">
-                    </div>
-            
-                    <!-- Book Information -->
-                    <div class="book-info">
-                        <h1 id="book-title">Loading...</h1>
-                        <h2 id="book-author">Loading...</h2>
-                        <p id="book-description">Loading...</p>
-                        <p id="book-category"> Loading ...</p>
-                        <p><strong>Price:</strong> <span id="book-price">Loading...</span></p>
-                        <div class="button">
-                            <button type="submit" name="add_to_cart" class="custom-cart-button">
-                                <span class="custom-cart-text">Shto në shportë</span>
-                                <i class="bx bx-cart"></i>
-                            </button>
-                        </div>
-                        
-                    </div>
+        <section id="book-details" class="book-detail">
+            <!-- The book details container -->
+            <div class="details">
+                <!-- Image Box -->
+                <div class="image-box">
+                    <img id="book-image" src="" alt="Book Image">
                 </div>
-            </section>
 
-            <section id="accessory-details" class="accessory-detail">
-                <div class="details">
-                    <div class="image-box">
-                        <img id="accessory-image" src="" alt="Accessory Image">
+                <!-- Book Information -->
+                <div class="book-info">
+                    <h1 id="book-title">Loading...</h1>
+                    <h2 id="book-author">Loading...</h2>
+                    <p id="book-description">Loading...</p>
+                    <p id="book-category"> Loading ...</p>
+                    <p><strong>Price:</strong> <span id="book-price">Loading...</span></p>
+                    <div class="button">
+                        <button type="submit" name="add_to_cart" class="custom-cart-button">
+                            <span class="custom-cart-text">Shto në shportë</span>
+                            <i class="bx bx-cart"></i>
+                        </button>
                     </div>
-                    <div class="accessory-info">
-                        <h1 id="accessory-title">Loading...</h1>
-                        <p><strong>Price:</strong> <span id="accessory-price">Loading...</span></p>
-                        <div class="custom-button-container">
-                            <button type="submit" name="add_accessory_to_cart" class="add-accessory-to-cart-btn">
-                                <span class="button-text">Add to Cart</span>
-                                <i class="bx bx-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-  
-            <section class="services">
-                    
-                <div class="box-container">
-                    <div class="box">
-                        <img src="img/icon2.png">
-                        <div class="detail">
-                            <h3>great savings</h3>
-                            <p>save big every order</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon1.png">
-                        <div class="detail">
-                            <h3>24*7</h3>
-                            <p>one-on-one support</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon0.png">
-                        <div class="detail">
-                            <h3>gift vouchers</h3>
-                            <p>vouchers on every festivals</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="img/icon.png">
-                        <div class="detail">
-                            <h3>worlwide delivery</h3>
-                            <p>dropship worldwide</p>
-                        </div>
-                    </div>
-                </div>
-           </section>
-           <div class="top-footer">
-            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
-                <div class="input-field-subscribe">
-                    <input type="email" id="emailInput" name="" placeholder="email address...">
-                    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+
                 </div>
             </div>
+        </section>
+
+        <section id="accessory-details" class="accessory-detail">
+            <div class="details">
+                <div class="image-box">
+                    <img id="accessory-image" src="" alt="Accessory Image">
+                </div>
+                <div class="accessory-info">
+                    <h1 id="accessory-title">Loading...</h1>
+                    <p><strong>Price:</strong> <span id="accessory-price">Loading...</span></p>
+                    <div class="custom-button-container">
+                        <button type="submit" name="add_accessory_to_cart" class="add-accessory-to-cart-btn">
+                            <span class="button-text">Add to Cart</span>
+                            <i class="bx bx-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/icon2.png">
+                    <div class="detail">
+                        <h3>great savings</h3>
+                        <p>save big every order</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon1.png">
+                    <div class="detail">
+                        <h3>24*7</h3>
+                        <p>one-on-one support</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon0.png">
+                    <div class="detail">
+                        <h3>gift vouchers</h3>
+                        <p>vouchers on every festivals</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/icon.png">
+                    <div class="detail">
+                        <h3>worlwide delivery</h3>
+                        <p>dropship worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="top-footer">
+            <h2><i class="bx bx-envelope"></i> Sign Up For Newsletter</h2>
+            <div class="input-field-subscribe">
+                <input type="email" id="emailInput" name="" placeholder="email address...">
+                <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
 
         <footer>
-            
-            <div  class="overlay"></div>
+
+            <div class="overlay"></div>
             <div class="footer-content">
                 <div class="img-box">
                     <img src="img/logoo.png">
@@ -151,7 +152,7 @@
                             <li>press</li>
                             <li>blog</li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="card">
                         <h3>services</h3>
                         <ul>
@@ -173,323 +174,324 @@
                     </div>
                     <div class="card">
                         <h3>newsletter</h3>
-                         <p>Sign Up For Newsletter</p>
-                         <div class="social-links">
+                        <p>Sign Up For Newsletter</p>
+                        <div class="social-links">
                             <a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-                         </div>
                         </div>
                     </div>
+                </div>
                 <div class="bottom-footer">
                     <p>© 1990 - 2025 Libraria Buzuku. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
     </div>
-</div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const bookId = urlParams.get('book');
-        const category = urlParams.get('category');
-        const accessoryId = urlParams.get('accessory');
+    </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book');
+            const category = urlParams.get('category');
+            const accessoryId = urlParams.get('accessory');
 
-        const breadcrumbCategory = document.getElementById('breadcrumb-category');
-        const breadcrumbDetail = document.getElementById('breadcrumb-detail');
-        
+            const breadcrumbCategory = document.getElementById('breadcrumb-category');
+            const breadcrumbDetail = document.getElementById('breadcrumb-detail');
 
 
-        // Book data (mund të jetë i njëjti si në faqen e mëparshme)
-        const booksData = {
-        'SOUL': {
-            name: 'SOUL',
-            author: 'Olivia Vilson',
-            description: 'A deep exploration of the soul through poetry and narrative.',
-            category: 'Novel',
-            price: '19€',
-            imageSrc: 'img/book1.jpg',
-        },
-        'WALK INTO THE SHADOW': {
-        name: 'WALK INTO THE SHADOW',
-        author: 'Estelle Darcy',
-        description: 'A mysterious journey into the unknown.',
-        category: 'Poetry',
-        price: '24€',
-        imageSrc: 'img/book2.webp',
-    },
-    'HIDE AND SEEK': {
-        name: 'HIDE AND SEEK',
-        author: 'Olivia Vilson',
-        description: 'An intriguing tale of suspense and discovery.',
-        category: 'Novel',
-        price: '22€',
-        imageSrc: 'img/book3.webp',
-    },
-    'THE REGENERATION OF STELLA YIN': {
-        name: 'THE REGENERATION OF STELLA YIN',
-        author: 'Kristen Loesch',
-        description: 'A biography that delves into the life of Stella Yin.',
-        category: 'Biography',
-        price: '11€',
-        imageSrc: 'img/book4.jpg',
-    },
-    'THE LONGEST REVOLUTION': {
-        name: 'THE LONGEST REVOLUTION',
-        author: 'Simone Writer',
-        description: 'A novel capturing the essence of a transformative era.',
-        category: 'Novel',
-        price: '13€',
-        imageSrc: 'img/book7.jpg',
-    },
-    'OMNI': {
-        name: 'OMNI',
-        author: 'Andreas Brandhost',
-        description: 'A science fiction epic exploring the limits of human potential.',
-        category: 'Novel',
-        price: '27€',
-        imageSrc: 'img/book5.jpg',
-    },
-    'BEIEANG': {
-        name: 'BEIEANG',
-        author: 'Lisa Brennan',
-        description: 'A heartfelt collection of poetry.',
-        category: 'Poetry',
-        price: '18€',
-        imageSrc: 'img/book8.jpg',
-    },
-    'GENIE UND REBELL': {
-        name: 'GENIE UND REBELL',
-        author: 'John Lennon',
-        description: 'A biography of the legendary John Lennon.',
-        category: 'Biography',
-        price: '13€',
-        imageSrc: 'img/book9.jpg',
-    },
-    'EISIGES LAND': {
-        name: 'EISIGES LAND',
-        author: 'Tore Kvaeven',
-        description: 'An inspiring biography set in icy terrains.',
-        category: 'Biography',
-        price: '32€',
-        imageSrc: 'img/book6.jpg',
-    },
-    'KEEP THE MEMORIES': {
-        name: 'KEEP THE MEMORIES',
-        author: 'Raleigh College',
-        description: 'A nostalgic novel filled with heartfelt stories.',
-        category: 'Novel',
-        price: '12€',
-        imageSrc: 'img/book10.jpg',
-    },
-    'ANGEL\'S TRIBUTE': {
-        name: 'ANGEL\'S TRIBUTE',
-        author: 'Andrew J.Smith',
-        description: 'A dramatic novel of love and loss.',
-        category: 'Novel',
-        price: '22€',
-        imageSrc: 'img/book11.jpg',
-    },
-    'RUDOLF STEINER': {
-        name: 'RUDOLF STEINER',
-        author: 'Helmut Zander',
-        description: 'A comprehensive biography of Rudolf Steiner.',
-        category: 'Biography',
-        price: '23€',
-        imageSrc: 'img/book12.jpg',
-    },
-    'THE MIRROR AND THE LIGHT': {
-        name: 'THE MIRROR AND THE LIGHT',
-        author: 'Hilary Mantel',
-        description: 'A poetic masterpiece exploring human nature.',
-        category: 'Poetry',
-        price: '10€',
-        imageSrc: 'img/book13.jpg',
-    },
-    'WHEN NIGHT FALLS SILENT': {
-        name: 'WHEN NIGHT FALLS SILENT',
-        author: 'Author Name',
-        description: 'A biography recounting the journey of an iconic figure.',
-        category: 'Biography',
-        price: '21€',
-        imageSrc: 'img/book14.jpg',
-    },
-    'TALES FROM BETWEEN PRESENTS': {
-        name: 'TALES FROM BETWEEN PRESENTS',
-        author: 'Ai Jiang',
-        description: 'An adventurous novel full of surprises.',
-        category: 'Novel',
-        price: '15€',
-        imageSrc: 'img/book16.jpg',
-    },
-    'AUTUMN OF THE GRIMOIRE': {
-        name: 'AUTUMN OF THE GRIMOIRE',
-        author: 'J. L. Vampa',
-        description: 'A fantastical novel with magical elements.',
-        category: 'Novel',
-        price: '14€',
-        imageSrc: 'img/book17.jpg',
-    },
-    'SANGUE E CENERE': {
-        name: 'SANGUE E CENERE',
-        author: 'Jennifer Armentrout',
-        description: 'A poetic journey through love and mystery.',
-        category: 'Poetry',
-        price: '23€',
-        imageSrc: 'img/book18.jpg',
-    },
 
-        // ... (other books data)
-    };
-    const accessoriesData = {
-    'WoodenPageHolders': {
-        name: 'Wooden Page Holders',
-        price: '4€',
-        imageSrc: 'img/book_a1.png',
-    },
-    'WoodenBookmark': {
-        name: 'Wooden Bookmark',
-        price: '2€',
-        imageSrc: 'img/book_a2.webp',
-    },
-    'BookThumbHolder': {
-        name: 'Book Thumb Holder',
-        price: '6€',
-        imageSrc: 'img/book_a3.webp',
-    },
-    'ReadingAid': {
-        name: 'Reading Aid',
-        price: '14€',
-        imageSrc: 'img/book_a4.webp',
-    },
-    'BookStand': {
-        name: 'Book Stand',
-        price: '7€',
-        imageSrc: 'img/book_a5.jpg',
-    },
-    'CornerPageBookmarks': {
-        name: 'Corner Page Bookmarks',
-        price: '1€',
-        imageSrc: 'img/book_a6.jpg',
-    },
-    'HandsFreeBookReading': {
-        name: 'Hands-Free Book Reading',
-        price: '21€',
-        imageSrc: 'img/book_a7.webp',
-    },
-    'BookOrganizer': {
-        name: 'Book Organizer',
-        price: '8€',
-        imageSrc: 'img/book_a8.jpg',
-    },
-};
+            // Book data (mund të jetë i njëjti si në faqen e mëparshme)
+            const booksData = {
+                'SOUL': {
+                    name: 'SOUL',
+                    author: 'Olivia Vilson',
+                    description: 'A deep exploration of the soul through poetry and narrative.',
+                    category: 'Novel',
+                    price: '19€',
+                    imageSrc: 'img/book1.jpg',
+                },
+                'WALK INTO THE SHADOW': {
+                    name: 'WALK INTO THE SHADOW',
+                    author: 'Estelle Darcy',
+                    description: 'A mysterious journey into the unknown.',
+                    category: 'Poetry',
+                    price: '24€',
+                    imageSrc: 'img/book2.webp',
+                },
+                'HIDE AND SEEK': {
+                    name: 'HIDE AND SEEK',
+                    author: 'Olivia Vilson',
+                    description: 'An intriguing tale of suspense and discovery.',
+                    category: 'Novel',
+                    price: '22€',
+                    imageSrc: 'img/book3.webp',
+                },
+                'THE REGENERATION OF STELLA YIN': {
+                    name: 'THE REGENERATION OF STELLA YIN',
+                    author: 'Kristen Loesch',
+                    description: 'A biography that delves into the life of Stella Yin.',
+                    category: 'Biography',
+                    price: '11€',
+                    imageSrc: 'img/book4.jpg',
+                },
+                'THE LONGEST REVOLUTION': {
+                    name: 'THE LONGEST REVOLUTION',
+                    author: 'Simone Writer',
+                    description: 'A novel capturing the essence of a transformative era.',
+                    category: 'Novel',
+                    price: '13€',
+                    imageSrc: 'img/book7.jpg',
+                },
+                'OMNI': {
+                    name: 'OMNI',
+                    author: 'Andreas Brandhost',
+                    description: 'A science fiction epic exploring the limits of human potential.',
+                    category: 'Novel',
+                    price: '27€',
+                    imageSrc: 'img/book5.jpg',
+                },
+                'BEIEANG': {
+                    name: 'BEIEANG',
+                    author: 'Lisa Brennan',
+                    description: 'A heartfelt collection of poetry.',
+                    category: 'Poetry',
+                    price: '18€',
+                    imageSrc: 'img/book8.jpg',
+                },
+                'GENIE UND REBELL': {
+                    name: 'GENIE UND REBELL',
+                    author: 'John Lennon',
+                    description: 'A biography of the legendary John Lennon.',
+                    category: 'Biography',
+                    price: '13€',
+                    imageSrc: 'img/book9.jpg',
+                },
+                'EISIGES LAND': {
+                    name: 'EISIGES LAND',
+                    author: 'Tore Kvaeven',
+                    description: 'An inspiring biography set in icy terrains.',
+                    category: 'Biography',
+                    price: '32€',
+                    imageSrc: 'img/book6.jpg',
+                },
+                'KEEP THE MEMORIES': {
+                    name: 'KEEP THE MEMORIES',
+                    author: 'Raleigh College',
+                    description: 'A nostalgic novel filled with heartfelt stories.',
+                    category: 'Novel',
+                    price: '12€',
+                    imageSrc: 'img/book10.jpg',
+                },
+                'ANGEL\'S TRIBUTE': {
+                    name: 'ANGEL\'S TRIBUTE',
+                    author: 'Andrew J.Smith',
+                    description: 'A dramatic novel of love and loss.',
+                    category: 'Novel',
+                    price: '22€',
+                    imageSrc: 'img/book11.jpg',
+                },
+                'RUDOLF STEINER': {
+                    name: 'RUDOLF STEINER',
+                    author: 'Helmut Zander',
+                    description: 'A comprehensive biography of Rudolf Steiner.',
+                    category: 'Biography',
+                    price: '23€',
+                    imageSrc: 'img/book12.jpg',
+                },
+                'THE MIRROR AND THE LIGHT': {
+                    name: 'THE MIRROR AND THE LIGHT',
+                    author: 'Hilary Mantel',
+                    description: 'A poetic masterpiece exploring human nature.',
+                    category: 'Poetry',
+                    price: '10€',
+                    imageSrc: 'img/book13.jpg',
+                },
+                'WHEN NIGHT FALLS SILENT': {
+                    name: 'WHEN NIGHT FALLS SILENT',
+                    author: 'Author Name',
+                    description: 'A biography recounting the journey of an iconic figure.',
+                    category: 'Biography',
+                    price: '21€',
+                    imageSrc: 'img/book14.jpg',
+                },
+                'TALES FROM BETWEEN PRESENTS': {
+                    name: 'TALES FROM BETWEEN PRESENTS',
+                    author: 'Ai Jiang',
+                    description: 'An adventurous novel full of surprises.',
+                    category: 'Novel',
+                    price: '15€',
+                    imageSrc: 'img/book16.jpg',
+                },
+                'AUTUMN OF THE GRIMOIRE': {
+                    name: 'AUTUMN OF THE GRIMOIRE',
+                    author: 'J. L. Vampa',
+                    description: 'A fantastical novel with magical elements.',
+                    category: 'Novel',
+                    price: '14€',
+                    imageSrc: 'img/book17.jpg',
+                },
+                'SANGUE E CENERE': {
+                    name: 'SANGUE E CENERE',
+                    author: 'Jennifer Armentrout',
+                    description: 'A poetic journey through love and mystery.',
+                    category: 'Poetry',
+                    price: '23€',
+                    imageSrc: 'img/book18.jpg',
+                },
 
-    if (category) {
-        breadcrumbCategory.innerHTML = ` <a href="products.html?category=${category}">${category}</a>`;
-    } else {
-        breadcrumbCategory.innerHTML = ` <a href="products.html">All Books</a>`;
-    }
+                // ... (other books data)
+            };
+            const accessoriesData = {
+                'WoodenPageHolders': {
+                    name: 'Wooden Page Holders',
+                    price: '4€',
+                    imageSrc: 'img/book_a1.png',
+                },
+                'WoodenBookmark': {
+                    name: 'Wooden Bookmark',
+                    price: '2€',
+                    imageSrc: 'img/book_a2.webp',
+                },
+                'BookThumbHolder': {
+                    name: 'Book Thumb Holder',
+                    price: '6€',
+                    imageSrc: 'img/book_a3.webp',
+                },
+                'ReadingAid': {
+                    name: 'Reading Aid',
+                    price: '14€',
+                    imageSrc: 'img/book_a4.webp',
+                },
+                'BookStand': {
+                    name: 'Book Stand',
+                    price: '7€',
+                    imageSrc: 'img/book_a5.jpg',
+                },
+                'CornerPageBookmarks': {
+                    name: 'Corner Page Bookmarks',
+                    price: '1€',
+                    imageSrc: 'img/book_a6.jpg',
+                },
+                'HandsFreeBookReading': {
+                    name: 'Hands-Free Book Reading',
+                    price: '21€',
+                    imageSrc: 'img/book_a7.webp',
+                },
+                'BookOrganizer': {
+                    name: 'Book Organizer',
+                    price: '8€',
+                    imageSrc: 'img/book_a8.jpg',
+                },
+            };
 
-    // Përditëso breadcrumb me emrin e librit
-    if (bookId) {
-        breadcrumbDetail.innerHTML = ` Book Details`;
-    } else if (accessoryId && accessoriesData[accessoryId]) {
-        const accessory = accessoriesData[accessoryId];
-        breadcrumbCategory.innerHTML = ' <a href="accessories.html">Accessories</a>'; // Accessories si link
-        breadcrumbDetail.innerHTML = ` Accessory Details`; // Emri i aksesorit
-    }
-        // Display book details if bookId exists
-    if (bookId && booksData[bookId]) {
-        const book = booksData[bookId];
-        document.getElementById('book-title').textContent = book.name;
-        document.getElementById('book-author').textContent = `By: ${book.author}`;
-        document.getElementById('book-description').textContent = `Description: ${book.description}`;
-        document.getElementById('book-category').textContent = `Category: ${book.category}`;
-        document.getElementById('book-price').textContent = `Price: ${book.price}`;
-        document.getElementById('book-image').src = book.imageSrc;
+            if (category) {
+                breadcrumbCategory.innerHTML = ` <a href="products.html?category=${category}">${category}</a>`;
+            } else {
+                breadcrumbCategory.innerHTML = ` <a href="products.html">All Books</a>`;
+            }
 
-        // Hide accessory section
-        document.getElementById('accessory-details').style.display = 'none';
+            // Përditëso breadcrumb me emrin e librit
+            if (bookId) {
+                breadcrumbDetail.innerHTML = ` Book Details`;
+            } else if (accessoryId && accessoriesData[accessoryId]) {
+                const accessory = accessoriesData[accessoryId];
+                breadcrumbCategory.innerHTML = ' <a href="accessories.html">Accessories</a>'; // Accessories si link
+                breadcrumbDetail.innerHTML = ` Accessory Details`; // Emri i aksesorit
+            }
+            // Display book details if bookId exists
+            if (bookId && booksData[bookId]) {
+                const book = booksData[bookId];
+                document.getElementById('book-title').textContent = book.name;
+                document.getElementById('book-author').textContent = `By: ${book.author}`;
+                document.getElementById('book-description').textContent = `Description: ${book.description}`;
+                document.getElementById('book-category').textContent = `Category: ${book.category}`;
+                document.getElementById('book-price').textContent = `Price: ${book.price}`;
+                document.getElementById('book-image').src = book.imageSrc;
 
-        // Add to Cart and Wishlist buttons for books
-        document.querySelector('.add-accessory-to-cart-btn').addEventListener('click', () => {
+                // Hide accessory section
+                document.getElementById('accessory-details').style.display = 'none';
 
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const uniqueId = Date.now(); // Use timestamp as unique ID
-            cart.push({ id: uniqueId, ...book });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCounts();
-            alert(`${book.name} added to your cart!`);
-        });
+                // Add to Cart and Wishlist buttons for books
+                document.querySelector('.add-accessory-to-cart-btn').addEventListener('click', () => {
 
-        const addToCartButton = document.querySelector('button[name="add_to_cart"]');
-        if (addToCartButton) {
-                addToCartButton.addEventListener('click', () => {
                     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                    const uniqueId = Date.now(); // Përdor timestamp si ID unike
-                    cart.push({ id: uniqueId, ...book }); // Shto produktin në cart me ID unike
+                    const uniqueId = Date.now(); // Use timestamp as unique ID
+                    cart.push({ id: uniqueId, ...book });
                     localStorage.setItem('cart', JSON.stringify(cart));
                     updateCounts();
                     alert(`${book.name} added to your cart!`);
                 });
+
+                const addToCartButton = document.querySelector('button[name="add_to_cart"]');
+                if (addToCartButton) {
+                    addToCartButton.addEventListener('click', () => {
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        const uniqueId = Date.now(); // Përdor timestamp si ID unike
+                        cart.push({ id: uniqueId, ...book }); // Shto produktin në cart me ID unike
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCounts();
+                        alert(`${book.name} added to your cart!`);
+                    });
+                }
             }
-    }
 
-    // Display accessory details if accessoryId exists
-    if (accessoryId && accessoriesData[accessoryId]) {
-        const accessory = accessoriesData[accessoryId];
-        document.getElementById('accessory-title').textContent = accessory.name;
-        document.getElementById('accessory-price').textContent = `Price: ${accessory.price}`;
-        document.getElementById('accessory-image').src = accessory.imageSrc;
+            // Display accessory details if accessoryId exists
+            if (accessoryId && accessoriesData[accessoryId]) {
+                const accessory = accessoriesData[accessoryId];
+                document.getElementById('accessory-title').textContent = accessory.name;
+                document.getElementById('accessory-price').textContent = `Price: ${accessory.price}`;
+                document.getElementById('accessory-image').src = accessory.imageSrc;
 
-        // Hide book section
-        document.getElementById('book-details').style.display = 'none';
+                // Hide book section
+                document.getElementById('book-details').style.display = 'none';
 
-        // Add to Cart and Wishlist buttons for accessories
-        document.querySelector('button[name="add_accessory_to_cart"]').addEventListener('click', () => {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const uniqueId = Date.now(); // Use timestamp as unique ID
-            cart.push({ id: uniqueId, ...accessory });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCounts();
-            alert(`${accessory.name} added to your cart!`);
+                // Add to Cart and Wishlist buttons for accessories
+                document.querySelector('button[name="add_accessory_to_cart"]').addEventListener('click', () => {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const uniqueId = Date.now(); // Use timestamp as unique ID
+                    cart.push({ id: uniqueId, ...accessory });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCounts();
+                    alert(`${accessory.name} added to your cart!`);
+                });
+
+                document.querySelector('button[name="add_accessory_to_wishlist"]').addEventListener('click', () => {
+                    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                    const existsInWishlist = wishlist.some(item => item.name === accessory.name);
+
+                    if (!existsInWishlist) {
+                        const uniqueId = Date.now();
+                        wishlist.push({ id: uniqueId, ...accessory });
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                        updateCounts();
+                        alert(`${accessory.name} added to your wishlist!`);
+                    } else {
+                        alert(`${accessory.name} is already in your wishlist.`);
+                    }
+                });
+            }
+
         });
 
-        document.querySelector('button[name="add_accessory_to_wishlist"]').addEventListener('click', () => {
+        // Funksioni për të përditësuar numrat në header
+        function updateCounts() {
             const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            const existsInWishlist = wishlist.some(item => item.name === accessory.name);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('wishlist-count').textContent = wishlist.length;
+            document.getElementById('cart-count').textContent = cart.length;
+        }
 
-            if (!existsInWishlist) {
-                const uniqueId = Date.now();
-                wishlist.push({ id: uniqueId, ...accessory });
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                updateCounts();
-                alert(`${accessory.name} added to your wishlist!`);
-            } else {
-                alert(`${accessory.name} is already in your wishlist.`);
-            }
-        });
-    }
-        
-    });
+        // Përditëso numrat kur faqja ngarkohet
+        updateCounts();
 
-    // Funksioni për të përditësuar numrat në header
-    function updateCounts() {
-        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        document.getElementById('wishlist-count').textContent = wishlist.length;
-        document.getElementById('cart-count').textContent = cart.length;
-    }
-
-    // Përditëso numrat kur faqja ngarkohet
-    updateCounts();
-
-</script>
-<script src="script.js"></script>
-<script src="count.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </script>
+    <script src="script.js"></script>
+    <script src="count.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-</html> 
+
+</html>
