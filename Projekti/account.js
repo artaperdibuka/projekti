@@ -8,32 +8,35 @@ function register(event) {
     const confirmPassword = document.querySelector('input[name="cpass"]').value;
 
     if (password === confirmPassword) {
+        // Store user data in localStorage (for demonstration purposes only)
         localStorage.setItem("username", name);
         localStorage.setItem("email", email);
+        localStorage.setItem("password", password); // Store password (not secure for production)
         localStorage.setItem("isLoggedIn", "true");
+
+        // Show success message
         window.Swal.fire({
             icon: 'success',
-            title: 'Message',
-            text: 'Register successful!',
+            title: 'Success',
+            text: 'Registration successful!',
             confirmButtonText: 'OK'
         }).then(() => {
-            // Zbraz fushat pas klikimit OK
+            // Redirect to login page
             window.location.href = "login.html";
         });
-
     } else {
-     
+        // Show error message for password mismatch
         window.Swal.fire({
-            icon: 'success',
-            title: 'try again',
+            icon: 'error',
+            title: 'Error',
             text: 'Passwords do not match!',
             confirmButtonText: 'OK'
         }).then(() => {
-            // Zbraz fushat pas klikimit OK
-            name.value = '';
-            email.value = '';
-            password.value = '';
-            confirmPassword.value = '';
+            // Clear form fields
+            document.querySelector('input[name="name"]').value = '';
+            document.querySelector('input[name="email"]').value = '';
+            document.querySelector('input[name="pass"]').value = '';
+            document.querySelector('input[name="cpass"]').value = '';
         });
     }
 }
@@ -45,29 +48,35 @@ function login(event) {
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="pass"]').value;
 
-    if (email === localStorage.getItem("email") && password) {
+    // Retrieve stored user data
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    if (email === storedEmail && password === storedPassword) {
+        // Set login state
         localStorage.setItem("isLoggedIn", "true");
+
+        // Show success message
         window.Swal.fire({
             icon: 'success',
-            title: 'Message',
+            title: 'Success',
             text: 'Login successful!',
             confirmButtonText: 'OK'
         }).then(() => {
-            // Zbraz fushat pas klikimit OK
+            // Redirect to home page
             window.location.href = "home.html";
         });
-        
     } else {
-      
+        // Show error message for invalid credentials
         window.Swal.fire({
-            icon: 'success',
-            title: 'try again',
+            icon: 'error',
+            title: 'Error',
             text: 'Invalid email or password.',
             confirmButtonText: 'OK'
         }).then(() => {
-            // Zbraz fushat pas klikimit OK
-            email.value = '';
-            password.value = '';
+            // Clear form fields
+            document.querySelector('input[name="email"]').value = '';
+            document.querySelector('input[name="pass"]').value = '';
         });
     }
 }
